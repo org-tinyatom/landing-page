@@ -3,11 +3,194 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TinyAtom: Build Internal Tools Without Servers (Free, Local-First)</title>
     <meta
       name="description"
-      content="Create secure internal tools without maintaining servers or code repositories. TinyAtom is free for everyone."
+      content="TinyAtom is a free macOS desktop app for building and running small internal tools without servers, code repos, or cloud hosting. Local-first for businesses and individuals."
     />
-    <title>TinyAtom | Internal tools without servers</title>
+    <meta
+      name="keywords"
+      content="internal tools, build internal tools, local-first software, desktop app builder, no-code internal tools, low-code internal tools, free internal tools, local database app, team tools without servers, private internal tools, marketplace for internal tools, TinyAtom, macOS internal tools, offline first tools, custom business software without hosting"
+    />
+    <link rel="canonical" href="https://tinyatom.app/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="author" content="TinyAtom" />
+    <meta name="application-name" content="TinyAtom" />
+    <link rel="alternate" type="text/plain" href="https://tinyatom.app/llms.txt" title="LLM summary" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="assets/tinyatom-logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
+
+    <!-- Open Graph (social previews) -->
+    <meta property="og:site_name" content="TinyAtom" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tinyatom.app/" />
+    <meta
+      property="og:title"
+      content="TinyAtom: Build Internal Tools Without Servers"
+    />
+    <meta
+      property="og:description"
+      content="Free macOS desktop app to build and run small internal tools locally. No servers, no repos, no cloud bill. For businesses and individuals."
+    />
+    <meta property="og:image" content="https://tinyatom.app/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="TinyAtom logo with the tagline Build internal tools without running servers"
+    />
+
+    <!-- Twitter / X cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TinyAtom: Build Internal Tools Without Servers" />
+    <meta
+      name="twitter:description"
+      content="Free macOS app for local-first internal tools. No servers, no repos, no cloud bill."
+    />
+    <meta name="twitter:image" content="https://tinyatom.app/assets/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="TinyAtom logo with the tagline Build internal tools without running servers"
+    />
+
+    <!-- Structured data: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TinyAtom",
+        "url": "https://tinyatom.app/",
+        "logo": "https://tinyatom.app/assets/tinyatom-logo.svg",
+        "description": "TinyAtom is a free desktop app for building and running small internal tools on your computer without servers or cloud hosting.",
+        "sameAs": []
+      }
+    </script>
+    <!-- Structured data: WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TinyAtom",
+        "url": "https://tinyatom.app/",
+        "description": "Build internal tools without running servers. Free, local-first desktop software for businesses and individuals.",
+        "inLanguage": "en",
+        "publisher": { "@type": "Organization", "name": "TinyAtom" }
+      }
+    </script>
+    <!-- Structured data: SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TinyAtom",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Internal tools builder",
+        "operatingSystem": "macOS",
+        "url": "https://tinyatom.app/",
+        "image": "https://tinyatom.app/assets/og-image.png",
+        "downloadUrl": "https://tinyatom.app/download",
+        "description": "Desktop app for building and running small internal tools without servers, code repositories, or cloud hosting. Tools and data stay on the computer. Free for everyone.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free for everyone. No subscription required."
+        },
+        "featureList": [
+          "Build internal tools with a coding assistant",
+          "Run tools locally without a server",
+          "Store tool data on the computer",
+          "Review file and capability access before install",
+          "Install community marketplace tools",
+          "Private company tool lists for teams",
+          "Free for businesses and individuals"
+        ]
+      }
+    </script>
+    <!-- Structured data: WebPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "TinyAtom: Build Internal Tools Without Servers",
+        "url": "https://tinyatom.app/",
+        "description": "Free macOS desktop app for building and running small internal tools without servers or cloud hosting.",
+        "isPartOf": { "@type": "WebSite", "url": "https://tinyatom.app/" },
+        "about": {
+          "@type": "Thing",
+          "name": "Local-first internal tools"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://tinyatom.app/assets/og-image.png"
+        }
+      }
+    </script>
+    <!-- Structured data: FAQ (matches visible FAQ section) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is TinyAtom?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TinyAtom is a free macOS desktop app for building and running small internal tools without a software project. You describe the tool, build it with your coding assistant, review what it can access, and install it. Tools run locally and data stays on your computer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is TinyAtom for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TinyAtom is for businesses that need specific internal tools without a custom software project or extra cloud product, and for individuals who want free local software for personal workflows without another subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to run a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. TinyAtom tools run on the computer where they are installed. There is no app server to host and no hosting bill for a tool used by a few people."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is my data stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each tool stores its data on your computer. Before a tool can open files or use a computer feature, TinyAtom checks that the tool asked for access and that you allowed it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is TinyAtom free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. TinyAtom is free for everyone, including businesses and individuals. There is no subscription required to use the app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I install tools other people built?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Browse the public marketplace for community tools, review what each tool can access, and install the ones that fit. Businesses can also keep internal tools on a private company list."
+            }
+          }
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,9 +205,8 @@
       href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"
       rel="stylesheet"
     />
-    <link rel="icon" href="assets/tinyatom-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=enhance17" />
-    <script src="main.js?v=enhance17" defer></script>
+    <link rel="stylesheet" href="styles.css?v=seo4" />
+    <script src="main.js?v=seo4" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -32,7 +214,13 @@
     <header class="site-header" id="site-header">
       <div class="site-header-inner">
         <a class="brand" href="#top" aria-label="TinyAtom home">
-          <img class="brand-logo" src="assets/tinyatom-logo.svg" alt="" width="28" height="28" />
+          <img
+            class="brand-logo"
+            src="assets/tinyatom-logo.svg"
+            alt="TinyAtom logo"
+            width="28"
+            height="28"
+          />
           <span class="brand-name">TinyAtom</span>
         </a>
 
@@ -41,6 +229,7 @@
           <a href="#business">For businesses</a>
           <a href="#individuals">For individuals</a>
           <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
           <a href="#security">Security</a>
         </nav>
 
@@ -430,6 +619,68 @@
         </div>
       </section>
 
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="faq-inner">
+          <div class="faq-intro reveal">
+            <p class="kicker">FAQ</p>
+            <h2 class="section-title" id="faq-title">Questions people ask about TinyAtom</h2>
+            <p class="section-lead">
+              Short answers for businesses, individuals, and anyone evaluating a local-first tool
+              builder.
+            </p>
+          </div>
+          <div class="faq-list reveal" style="--reveal-delay: 60ms">
+            <details class="faq-item">
+              <summary>What is TinyAtom?</summary>
+              <p>
+                TinyAtom is a free macOS desktop app for building and running small internal tools
+                without a software project. You describe the tool, build it with your coding
+                assistant, review what it can access, and install it. Tools run locally and data stays
+                on your computer.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Who is TinyAtom for?</summary>
+              <p>
+                Businesses that need specific internal tools without a custom software project or
+                extra cloud product, and individuals who want free local software for personal
+                workflows without another subscription.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Do I need to run a server?</summary>
+              <p>
+                No. TinyAtom tools run on the computer where they are installed. There is no app
+                server to host and no hosting bill for a tool used by a few people.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Where is my data stored?</summary>
+              <p>
+                Each tool stores its data on your computer. Before a tool can open files or use a
+                computer feature, TinyAtom checks that the tool asked for access and that you allowed
+                it.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Is TinyAtom free?</summary>
+              <p>
+                Yes. TinyAtom is free for everyone, including businesses and individuals. There is no
+                subscription required to use the app.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I install tools other people built?</summary>
+              <p>
+                Yes. Browse the public marketplace for community tools, review what each tool can
+                access, and install the ones that fit. Businesses can also keep internal tools on a
+                private company list.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <section class="cta-section reveal" id="download">
         <div class="cta-panel">
           <div>
@@ -455,7 +706,9 @@
           <a href="#what-is-tinyatom">What is TinyAtom</a>
           <a href="#business">For businesses</a>
           <a href="#individuals">For individuals</a>
+          <a href="#faq">FAQ</a>
           <a href="#security">Security</a>
+          <a href="/llms.txt">llms.txt</a>
         </nav>
       </div>
     </footer>
