@@ -252,7 +252,10 @@ a { color: inherit; }
 
 @media (min-width: 1321px) {
   :root {
-    --surface-width: calc((min(100vw, var(--wide-page-max)) - var(--page-gutter) - var(--hero-reserved)) * 0.97);
+    /* The rendered width of the hero mock: its column inside the 1680px frame,
+       plus however far it bleeds past that frame, times its 0.97 scale. The
+       business value panel reuses this so the two share a left edge. */
+    --surface-width: calc((min(100vw, var(--wide-page-max)) - var(--page-gutter) - var(--hero-reserved) + var(--frame-inset)) * 0.97);
   }
 
   .hero h1 { font-size: clamp(4rem, 4.3vw, 4.5rem); }
@@ -358,14 +361,6 @@ a { color: inherit; }
   overflow: hidden;
 }
 .business-section .section-intro { max-width: 500px; padding-top: 0; }
-.business-section .kicker { margin-bottom: 32px; }
-.business-section .section-title {
-  max-width: 480px;
-  margin: 0 0 32px;
-  font-size: clamp(3.6rem, 5vw, 4.85rem);
-  line-height: 0.94;
-  letter-spacing: -0.06em;
-}
 .business-section .section-lead { max-width: 450px; }
 .business-link { position: relative; display: inline-flex; align-items: center; gap: 16px; margin-top: 34px; padding-bottom: 12px; color: var(--atom-accent); font-size: 1rem; font-weight: 700; text-decoration: none; }
 .business-link::after { position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--atom-accent-28); content: ''; }
@@ -472,7 +467,6 @@ a { color: inherit; }
   .business-section, .how-section, .security-inner { grid-template-columns: 1fr; gap: 58px; }
   .business-section { max-width: var(--wide-page-max); padding: 96px var(--page-gutter); overflow: visible; }
   .business-section .section-intro { max-width: 670px; padding-top: 0; }
-  .business-section .section-title { max-width: 670px; font-size: clamp(3rem, 6vw, 4.4rem); }
   .value-list { margin-right: 0; justify-self: center; border-radius: var(--atom-radius-2xl); }
   .value-row { grid-template-columns: 42px minmax(0, 1fr) 90px; min-height: 0; padding: 48px 42px; }
   .value-number { display: block; }
@@ -530,8 +524,6 @@ a { color: inherit; }
   .friction-strip ul { grid-template-columns: 1fr; gap: 9px; }
   .business-section { padding: 86px 18px; }
   .value-list { margin-right: 0; border-right: 1px solid var(--atom-line-3); border-radius: var(--atom-radius-2xl); }
-  .business-section .kicker { margin-bottom: 24px; }
-  .business-section .section-title { font-size: clamp(2.75rem, 11vw, 3.6rem); line-height: 0.98; }
   .business-link { margin-top: 28px; }
   .value-row { grid-template-columns: 34px minmax(0, 1fr) 56px; gap: 14px; padding: 32px 20px; }
   .value-row h3 { margin-bottom: 12px; font-size: 1.25rem; }
