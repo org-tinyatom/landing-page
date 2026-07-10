@@ -23,8 +23,8 @@
       rel="stylesheet"
     />
     <link rel="icon" href="assets/tinyatom-logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=enhance7" />
-    <script src="main.js?v=enhance6" defer></script>
+    <link rel="stylesheet" href="styles.css?v=enhance17" />
+    <script src="main.js?v=enhance17" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -37,10 +37,11 @@
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <a href="#business">For business</a>
+          <a href="#what-is-tinyatom">What is TinyAtom</a>
+          <a href="#business">For businesses</a>
+          <a href="#individuals">For individuals</a>
           <a href="#how">How it works</a>
           <a href="#security">Security</a>
-          <a href="#everyone">For everyone</a>
         </nav>
 
         <a class="btn btn-primary header-cta" href="#download">Get TinyAtom</a>
@@ -168,14 +169,51 @@
         </div>
       </section>
 
-      <section class="friction-strip reveal" aria-label="Setup TinyAtom removes">
-        <p>Make the tool without setting up a software project.</p>
-        <ul>
-          <li><span aria-hidden="true">×</span> No server to run</li>
-          <li><span aria-hidden="true">×</span> No code repo to maintain</li>
-          <li><span aria-hidden="true">×</span> No release system to set up</li>
-          <li><span aria-hidden="true">×</span> No cloud account required</li>
-        </ul>
+      <section class="what-section" id="what-is-tinyatom">
+        <div class="what-inner">
+          <div class="what-grid reveal">
+            <div class="what-intro">
+              <p class="kicker">What is TinyAtom</p>
+              <h2 class="section-title">
+                A desktop app for building and running small internal tools without a software
+                project.
+              </h2>
+              <p class="section-lead">
+                TinyAtom helps you go from a job you need done to working software on your computer.
+                You describe the tool, build it with your coding assistant, review what it can access,
+                and install it. Tools run locally. Data stays local. There is no server to host and no
+                repo to maintain for every small app.
+              </p>
+            </div>
+
+            <div class="what-who">
+              <article class="what-card">
+                <h3>Businesses</h3>
+                <p>
+                  Teams that need specific internal tools such as intake, approvals, inventory, and
+                  field reports, without waiting on a custom software project or paying for another
+                  cloud product. Build what you need, install it on employee computers, or use tools
+                  from the community marketplace and keep private tools on a company list.
+                </p>
+                <a class="business-link" href="#business"
+                  >For businesses <i class="ph ph-arrow-right" aria-hidden="true"></i
+                ></a>
+              </article>
+              <article class="what-card">
+                <h3>Individuals</h3>
+                <p>
+                  People who want free local software for personal workflows such as organizing
+                  research, tracking applications, or managing a side project, without another
+                  subscription. Install community tools or build your own. Your files and data stay
+                  on your machine.
+                </p>
+                <a class="business-link" href="#individuals"
+                  >For individuals <i class="ph ph-arrow-right" aria-hidden="true"></i
+                ></a>
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="section business-section" id="business">
@@ -232,64 +270,22 @@
             </div>
             <span class="value-icon" aria-hidden="true"><i class="ph ph-shield-check"></i></span>
           </article>
-        </div>
-      </section>
-
-      <section class="section comparison-section">
-        <div class="comparison-head reveal">
-          <p class="kicker">Less to maintain</p>
-          <h2 class="section-title">What you do not have to set up.</h2>
-        </div>
-        <div
-          class="comparison-table reveal"
-          style="--reveal-delay: 60ms"
-          role="table"
-          aria-label="Typical custom tools compared with TinyAtom"
-        >
-          <div class="comparison-row comparison-labels" role="row">
-            <span role="columnheader">A typical custom tool</span>
-            <span role="columnheader">With TinyAtom</span>
-          </div>
-          <div class="comparison-row" role="row">
-            <span role="cell"
-              ><span class="comparison-mark is-old" aria-hidden="true">×</span>A database and
-              server on the internet</span
-            >
-            <strong role="cell"
-              ><span class="comparison-mark is-new" aria-hidden="true">✓</span>The tool and its
-              data stay on the computer</strong
-            >
-          </div>
-          <div class="comparison-row" role="row">
-            <span role="cell"
-              ><span class="comparison-mark is-old" aria-hidden="true">×</span>A code repo and a
-              separate update system</span
-            >
-            <strong role="cell"
-              ><span class="comparison-mark is-new" aria-hidden="true">✓</span>Build and install
-              from TinyAtom</strong
-            >
-          </div>
-          <div class="comparison-row" role="row">
-            <span role="cell"
-              ><span class="comparison-mark is-old" aria-hidden="true">×</span>A new login and admin
-              page</span
-            >
-            <strong role="cell"
-              ><span class="comparison-mark is-new" aria-hidden="true">✓</span>TinyAtom controls
-              what each tool can use</strong
-            >
-          </div>
-          <div class="comparison-row" role="row">
-            <span role="cell"
-              ><span class="comparison-mark is-old" aria-hidden="true">×</span>Another monthly
-              software bill</span
-            >
-            <strong role="cell"
-              ><span class="comparison-mark is-new" aria-hidden="true">✓</span>Free for
-              everyone</strong
-            >
-          </div>
+          <article class="value-row">
+            <span class="value-number">04</span>
+            <div>
+              <h3>Use tools the community already built</h3>
+              <p>
+                Not every job needs a custom build. Browse the public marketplace for tools other
+                people have already made, check what each one can access, and install the ones that
+                fit your team. Keep internal tools in a private company list when they should stay
+                inside the business.
+              </p>
+              <p class="example-line">
+                Public marketplace · community tools · private company list · access review
+              </p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-storefront"></i></span>
+          </article>
         </div>
       </section>
 
@@ -373,43 +369,63 @@
         </div>
       </section>
 
-      <section class="section everyone-section" id="everyone">
-        <div class="section-intro everyone-intro reveal">
-          <p class="kicker">For individuals and businesses</p>
-          <h2 class="section-title">Start with one job you want to make easier.</h2>
+      <section class="section business-section" id="individuals">
+        <div class="section-intro reveal">
+          <p class="kicker">For individuals</p>
+          <h2 class="section-title">Make software for the work only you need done.</h2>
           <p class="section-lead">
-            Use TinyAtom for free. Install an existing atom or create a small tool for work you do
-            often.
+            TinyAtom is free for personal use. Build a small tool for a job you repeat, or install
+            one the community already made. Everything runs on your computer. No account, no
+            subscription, and no server to keep online.
           </p>
+          <a class="business-link" href="#download"
+            >Get TinyAtom free <i class="ph ph-arrow-right" aria-hidden="true"></i
+          ></a>
         </div>
 
-        <div class="use-cases reveal" style="--reveal-delay: 60ms">
-          <article>
-            <p class="use-case-tag">For yourself</p>
-            <h3>Make a tool for your own tasks</h3>
-            <p>
-              Track applications, organize research, rename files, or manage a personal project
-              without another subscription.
-            </p>
-            <span>Runs on your computer</span>
+        <div class="value-list reveal" style="--reveal-delay: 80ms">
+          <article class="value-row">
+            <span class="value-number">01</span>
+            <div>
+              <h3>Turn a repeated personal task into software</h3>
+              <p>
+                Describe what you need: tracking applications, organizing research, renaming files,
+                or managing a side project, and build it with your coding assistant. You keep the
+                result as a local tool you can open any day.
+              </p>
+              <p class="example-line">
+                Personal tools · no monthly SaaS bill · fits your process
+              </p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-user"></i></span>
           </article>
-          <article>
-            <p class="use-case-tag">For a small business</p>
-            <h3>Move a repeated task out of a spreadsheet</h3>
-            <p>
-              Create a small tool for clients, stock, jobs, or expenses without hiring a team to run
-              it.
-            </p>
-            <span>Free for everyone</span>
+          <article class="value-row">
+            <span class="value-number">02</span>
+            <div>
+              <h3>Install tools other people already built</h3>
+              <p>
+                Browse the public marketplace for tools that solve common jobs. See what files,
+                data, and computer features each tool asks to use before you install it, so you stay
+                in control of what runs on your machine.
+              </p>
+              <p class="example-line">
+                Marketplace · access review · local install · many tools in one app
+              </p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-storefront"></i></span>
           </article>
-          <article>
-            <p class="use-case-tag">From the marketplace</p>
-            <h3>Install a tool that already exists</h3>
-            <p>
-              Find tools in the public marketplace or your company’s private list. Check what they
-              can access before you install them.
-            </p>
-            <span>Install many tools in TinyAtom</span>
+          <article class="value-row">
+            <span class="value-number">03</span>
+            <div>
+              <h3>Your data stays on your computer</h3>
+              <p>
+                Each tool stores its data locally. You are not uploading personal files to a cloud
+                product just to run a small helper. When a tool needs file access, TinyAtom asks
+                first. Free for individuals: same product, no paywall.
+              </p>
+              <p class="example-line">Local data · explicit access · free</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-lock-simple"></i></span>
           </article>
         </div>
       </section>
@@ -436,7 +452,9 @@
         </div>
         <p>Create internal tools without running servers.</p>
         <nav aria-label="Footer">
-          <a href="#business">For business</a>
+          <a href="#what-is-tinyatom">What is TinyAtom</a>
+          <a href="#business">For businesses</a>
+          <a href="#individuals">For individuals</a>
           <a href="#security">Security</a>
         </nav>
       </div>
