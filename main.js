@@ -1,6 +1,85 @@
 const STORAGE_KEY = 'tinyatom-landing-theme';
 const THEME_ORDER = ['system', 'light', 'dark'];
 
+// Only the macOS build ships today. Flip `available` and set `href` as the other
+// builds land — the CTAs read entirely from this table.
+const PLATFORMS = {
+  macos: {
+    name: 'macOS',
+    icon: 'ph-apple-logo',
+    label: 'Get TinyAtom for macOS',
+    href: '/download',
+    available: true,
+  },
+  windows: {
+    name: 'Windows',
+    icon: 'ph-windows-logo',
+    label: 'Join the Windows waitlist',
+    href: '/waitlist?os=windows',
+    available: false,
+    note: 'The Windows build is in progress. Leave your email and we will send it the day it ships.',
+  },
+  linux: {
+    name: 'Linux',
+    icon: 'ph-linux-logo',
+    label: 'Join the Linux waitlist',
+    href: '/waitlist?os=linux',
+    available: false,
+    note: 'The Linux build is in progress. Leave your email and we will send it the day it ships.',
+  },
+  // Phones and anything we cannot place: TinyAtom installs on a computer, so send
+  // them to the download page rather than naming an OS we are only guessing at.
+  other: {
+    name: 'Other',
+    icon: 'ph-desktop',
+    label: 'Get TinyAtom',
+    href: '/download',
+    available: true,
+  },
+};
+
+function detectPlatform() {
+  const hinted = navigator.userAgentData?.platform || '';
+  const agent = `${hinted} ${navigator.userAgent || ''}`.toLowerCase();
+
+  if (/android|iphone|ipod|mobile/.test(agent)) return 'other';
+  if (/win/.test(agent)) return 'windows';
+  // iPadOS reports a desktop Mac user agent and cannot be told apart from a Mac here.
+  if (/mac|ipad/.test(agent)) return 'macos';
+  if (/linux|x11|cros/.test(agent)) return 'linux';
+  return 'other';
+}
+
+function initDownloadCta() {
+  const key = detectPlatform();
+  const platform = PLATFORMS[key];
+
+  document.documentElement.dataset.os = key;
+
+  document.querySelectorAll('[data-download-cta]').forEach((cta) => {
+    cta.href = platform.href;
+    cta.dataset.os = key;
+
+    const icon = cta.querySelector('[data-download-icon]');
+    if (icon) icon.className = `ph ${platform.icon}`;
+
+    const label = cta.querySelector('[data-download-label]');
+    if (label) label.textContent = platform.label;
+  });
+
+  document.querySelectorAll('[data-download-note]').forEach((note) => {
+    if (!platform.note) return;
+    note.textContent = platform.note;
+    note.hidden = false;
+  });
+
+  // Record which platform visitors actually arrive on, so demand drives build order.
+  window.posthog?.capture('landing_platform_detected', {
+    platform: key,
+    available: platform.available,
+  });
+}
+
 const THEME_LABELS = {
   system: 'system',
   light: 'light',
@@ -112,4 +191,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initHeaderScroll();
   initReveal();
+  initDownloadCta();
 });

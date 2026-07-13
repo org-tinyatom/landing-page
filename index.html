@@ -6,11 +6,11 @@
     <title>TinyAtom: Build Internal Tools Without Servers (Free, Local-First)</title>
     <meta
       name="description"
-      content="TinyAtom is a free macOS desktop app for building and running small internal tools without servers, code repos, or cloud hosting. Local-first for businesses and individuals."
+      content="TinyAtom is a free desktop app for building and running small internal tools without servers, code repos, or cloud hosting. Local-first for businesses and individuals."
     />
     <meta
       name="keywords"
-      content="internal tools, build internal tools, local-first software, desktop app builder, no-code internal tools, low-code internal tools, free internal tools, local database app, team tools without servers, private internal tools, marketplace for internal tools, TinyAtom, macOS internal tools, offline first tools, custom business software without hosting"
+      content="internal tools, build internal tools, local-first software, desktop app builder, no-code internal tools, low-code internal tools, free internal tools, local database app, team tools without servers, private internal tools, marketplace for internal tools, TinyAtom, desktop internal tools, offline first tools, custom business software without hosting"
     />
     <link rel="canonical" href="https://tinyatom.app/" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -36,7 +36,7 @@
     />
     <meta
       property="og:description"
-      content="Free macOS desktop app to build and run small internal tools locally. No servers, no repos, no cloud bill. For businesses and individuals."
+      content="Free desktop app to build and run small internal tools locally. No servers, no repos, no cloud bill. For businesses and individuals."
     />
     <meta property="og:image" content="https://tinyatom.app/assets/og-image.png" />
     <meta property="og:image:type" content="image/png" />
@@ -52,7 +52,7 @@
     <meta name="twitter:title" content="TinyAtom: Build Internal Tools Without Servers" />
     <meta
       name="twitter:description"
-      content="Free macOS app for local-first internal tools. No servers, no repos, no cloud bill."
+      content="Free desktop app for local-first internal tools. No servers, no repos, no cloud bill."
     />
     <meta name="twitter:image" content="https://tinyatom.app/assets/og-image.png" />
     <meta
@@ -121,7 +121,7 @@
         "@type": "WebPage",
         "name": "TinyAtom: Build Internal Tools Without Servers",
         "url": "https://tinyatom.app/",
-        "description": "Free macOS desktop app for building and running small internal tools without servers or cloud hosting.",
+        "description": "Free desktop app for building and running small internal tools without servers or cloud hosting.",
         "isPartOf": { "@type": "WebSite", "url": "https://tinyatom.app/" },
         "about": {
           "@type": "Thing",
@@ -144,7 +144,7 @@
             "name": "What is TinyAtom?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "TinyAtom is a free macOS desktop app for building and running small internal tools without a software project. You describe the tool, build it with your coding assistant, review what it can access, and install it. Tools run locally and data stays on your computer."
+              "text": "TinyAtom is a free desktop app for building and running small internal tools without a software project. You describe the tool, build it with your coding assistant, review what it can access, and install it. Tools run locally and data stays on your computer."
             }
           },
           {
@@ -251,14 +251,9 @@
             with your team. No servers. No deployments. No updating systems.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary btn-lg hero-download" href="#download">
-              <svg class="btn-icon apple-logo" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-                <path
-                  fill="currentColor"
-                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
-                />
-              </svg>
-              Get TinyAtom for macOS
+            <a class="btn btn-primary btn-lg hero-download" href="/download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Get TinyAtom for macOS</span>
             </a>
             <a class="btn btn-outline btn-lg hero-watch" href="#how">
               <i class="ph ph-play-circle" aria-hidden="true"></i>
@@ -275,83 +270,205 @@
           class="hero-product reveal"
           style="--reveal-delay: 160ms"
           role="img"
-          aria-label="TinyAtom Studio showing two tools created by the user"
+          aria-label="The TinyAtom desktop app, cycling through its Installed, Marketplace, and Studio sections"
         >
-          <div class="product-window">
-            <div class="mock-window-bar" aria-hidden="true">
+          <div class="product-window" aria-hidden="true">
+            <div class="mock-titlebar">
               <div class="mock-window-controls">
                 <i class="ph-fill ph-circle mock-window-close"></i>
                 <i class="ph-fill ph-circle mock-window-minimize"></i>
                 <i class="ph-fill ph-circle mock-window-expand"></i>
               </div>
+              <span class="mock-titlebar-name">TinyAtom</span>
             </div>
+
+            <div class="mock-appbar">
+              <div class="mock-brand">
+                <img src="assets/tinyatom-logo.svg" alt="" width="30" height="30" />
+                <span><strong>TinyAtom</strong><small>v0.1.0</small></span>
+              </div>
+              <div class="mock-appbar-actions">
+                <i class="ph ph-gear-six"></i>
+                <i class="ph ph-sun"></i>
+              </div>
+            </div>
+
             <div class="mock-home">
-              <aside class="mock-sidebar" aria-label="TinyAtom sections">
-                <div class="mock-brand">
-                  <img src="assets/tinyatom-logo.svg" alt="" width="32" height="32" />
-                  <span><strong>TinyAtom</strong><small>0.1.0</small></span>
-                </div>
-                <nav class="mock-nav" aria-label="Studio navigation">
-                  <div class="mock-nav-item">
-                    <i class="ph ph-squares-four mock-nav-icon" aria-hidden="true"></i
-                    ><span>Installed</span><small>3</small>
+              <aside class="mock-sidebar">
+                <nav class="mock-nav">
+                  <div class="mock-nav-item is-active" data-mock-tab="installed">
+                    <i class="ph ph-squares-four mock-nav-icon"></i><span>Installed</span
+                    ><small>3</small>
                   </div>
-                  <div class="mock-nav-item">
-                    <i class="ph ph-diamond mock-nav-icon" aria-hidden="true"></i
-                    ><span>Marketplace</span><small>12</small>
+                  <div class="mock-nav-item" data-mock-tab="marketplace">
+                    <i class="ph ph-storefront mock-nav-icon"></i><span>Marketplace</span
+                    ><small>12</small>
                   </div>
-                  <div class="mock-nav-item is-active">
-                    <i class="ph-fill ph-diamond mock-nav-icon" aria-hidden="true"></i
-                    ><span>Studio</span><small>2</small>
+                  <div class="mock-nav-item" data-mock-tab="studio">
+                    <i class="ph ph-wrench mock-nav-icon"></i><span>Studio</span><small>3</small>
                   </div>
                 </nav>
                 <div class="mock-storage">
-                  <i class="ph-fill ph-circle" aria-hidden="true"></i>
+                  <i class="ph-fill ph-circle"></i>
                   <span>Stored on<br />this computer</span>
                 </div>
               </aside>
+
               <div class="mock-main">
-                <i class="ph ph-dots-three mock-menu" aria-hidden="true"></i>
-                <div class="mock-view-head">
-                  <div>
-                    <h3>Studio</h3>
-                    <p>2 creations</p>
+                <!-- Installed -->
+                <section class="mock-view is-active" data-mock-view="installed">
+                  <div class="mock-view-head">
+                    <div>
+                      <h3>Installed atoms</h3>
+                      <p>3 atoms installed</p>
+                    </div>
                   </div>
-                  <span class="mock-create"
-                    ><i class="ph ph-plus" aria-hidden="true"></i> Create atom</span
-                  >
-                </div>
-                <div class="mock-cards">
-                  <article class="mock-card">
-                    <div class="mock-card-head">
-                      <span class="mock-card-tile">O</span>
-                      <div>
-                        <strong>Operations desk</strong><small>Installed v1.0.0</small>
+                  <div class="mock-toolbar">
+                    <span class="mock-field-label">Category</span>
+                    <span class="mock-select">All <i class="ph ph-caret-down"></i></span>
+                    <span class="mock-field-label">Sort by</span>
+                    <span class="mock-select">Popularity <i class="ph ph-caret-down"></i></span>
+                    <span class="mock-search">
+                      <i class="ph ph-magnifying-glass"></i>Search installed atoms…
+                    </span>
+                  </div>
+                  <div class="mock-cards">
+                    <article class="mock-card">
+                      <div class="mock-card-head">
+                        <span class="mock-card-tile">O</span>
+                        <div>
+                          <strong>Operations desk <i class="ph-fill ph-seal-check"></i></strong>
+                        </div>
+                        <i class="ph ph-dots-three-vertical mock-card-menu"></i>
                       </div>
+                      <p class="mock-data">Data 17 MB</p>
+                      <div class="mock-card-foot">
+                        <span class="mock-btn">Open <i class="ph ph-arrow-right"></i></span>
+                      </div>
+                    </article>
+                    <article class="mock-card">
+                      <div class="mock-card-head">
+                        <span class="mock-card-tile">C</span>
+                        <div>
+                          <strong>Client intake <i class="ph-fill ph-seal-check"></i></strong>
+                        </div>
+                        <i class="ph ph-dots-three-vertical mock-card-menu"></i>
+                      </div>
+                      <p class="mock-data">Data 4 MB</p>
+                      <div class="mock-card-foot">
+                        <span class="mock-btn">Open <i class="ph ph-arrow-right"></i></span>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+
+                <!-- Marketplace -->
+                <section class="mock-view" data-mock-view="marketplace">
+                  <div class="mock-view-head">
+                    <div>
+                      <h3>Marketplace</h3>
+                      <p>Discover tiny tools from the community and your company</p>
                     </div>
-                    <p>Receive requests, assign owners, and track what is blocked.</p>
-                    <div class="mock-card-foot">
-                      <span>Open in Studio</span
-                      ><i class="ph ph-arrow-right" aria-hidden="true"></i>
+                    <div class="mock-head-actions">
+                      <span class="mock-btn">Trusted publishers</span>
+                      <span class="mock-btn"
+                        ><i class="ph ph-buildings"></i> Add company atoms</span
+                      >
                     </div>
-                  </article>
-                  <article class="mock-card">
-                    <div class="mock-card-head">
-                      <span class="mock-card-tile">C</span>
-                      <div><strong>Client intake</strong><small>Draft · v0.2.0</small></div>
+                  </div>
+                  <div class="mock-toolbar">
+                    <span class="mock-field-label">Category</span>
+                    <span class="mock-select">All <i class="ph ph-caret-down"></i></span>
+                    <span class="mock-field-label">Sort by</span>
+                    <span class="mock-select">Popularity <i class="ph ph-caret-down"></i></span>
+                    <span class="mock-search">
+                      <i class="ph ph-magnifying-glass"></i>Search marketplace…
+                    </span>
+                  </div>
+                  <div class="mock-cards">
+                    <article class="mock-card">
+                      <div class="mock-card-head">
+                        <span class="mock-card-tile">F</span>
+                        <div>
+                          <strong>Field reports <i class="ph-fill ph-seal-check"></i></strong>
+                          <small>By TinyAtom</small>
+                        </div>
+                      </div>
+                      <div class="mock-card-foot">
+                        <span class="mock-btn"
+                          ><i class="ph ph-download-simple"></i> Install</span
+                        >
+                      </div>
+                    </article>
+                    <article class="mock-card">
+                      <div class="mock-card-head">
+                        <span class="mock-card-tile">S</span>
+                        <div>
+                          <strong>Shift handover <i class="ph-fill ph-seal-check"></i></strong>
+                          <small>By TinyAtom</small>
+                        </div>
+                      </div>
+                      <div class="mock-card-foot">
+                        <span class="mock-btn"
+                          ><i class="ph ph-download-simple"></i> Install</span
+                        >
+                      </div>
+                    </article>
+                  </div>
+                </section>
+
+                <!-- Studio -->
+                <section class="mock-view" data-mock-view="studio">
+                  <div class="mock-view-head">
+                    <div>
+                      <h3>Studio</h3>
+                      <p>3 creations</p>
                     </div>
-                    <p>Collect new client details and prepare the first tasks.</p>
-                    <div class="mock-card-foot">
-                      <span>Open in Studio</span
-                      ><i class="ph ph-arrow-right" aria-hidden="true"></i>
+                    <div class="mock-head-actions">
+                      <span class="mock-btn"><i class="ph ph-plus"></i> Create atom</span>
                     </div>
-                  </article>
-                  <article class="mock-empty-card">
-                    <i class="ph ph-plus" aria-hidden="true"></i>
-                    <strong>Create another atom</strong>
-                  </article>
-                </div>
-                <span class="mock-tool-count">2 tools</span>
+                  </div>
+                  <div class="mock-cards">
+                    <article class="mock-card">
+                      <div class="mock-card-head">
+                        <span class="mock-card-tile">O</span>
+                        <div>
+                          <strong>Operations desk</strong><small>Installed · v1.0.0</small>
+                        </div>
+                        <i class="ph ph-trash mock-card-menu"></i>
+                      </div>
+                      <div class="mock-card-foot">
+                        <span class="mock-btn"
+                          >Open in Studio <i class="ph ph-arrow-right"></i
+                        ></span>
+                      </div>
+                    </article>
+                    <article class="mock-card">
+                      <div class="mock-card-head">
+                        <span class="mock-card-tile">C</span>
+                        <div><strong>Client intake</strong><small>Draft · v0.2.0</small></div>
+                        <i class="ph ph-trash mock-card-menu"></i>
+                      </div>
+                      <div class="mock-card-foot">
+                        <span class="mock-btn"
+                          >Open in Studio <i class="ph ph-arrow-right"></i
+                        ></span>
+                      </div>
+                    </article>
+                    <article class="mock-card">
+                      <div class="mock-card-head">
+                        <span class="mock-card-tile">I</span>
+                        <div><strong>Inventory count</strong><small>Draft · v0.1.1</small></div>
+                        <i class="ph ph-trash mock-card-menu"></i>
+                      </div>
+                      <div class="mock-card-foot">
+                        <span class="mock-btn"
+                          >Open in Studio <i class="ph ph-arrow-right"></i
+                        ></span>
+                      </div>
+                    </article>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
@@ -394,7 +511,7 @@
                   People who want free local software for personal workflows such as organizing
                   research, tracking applications, or managing a side project, without another
                   subscription. Install community tools or build your own. Your files and data stay
-                  on your machine.
+                  on your computer.
                 </p>
                 <a class="business-link" href="#individuals"
                   >For individuals <i class="ph ph-arrow-right" aria-hidden="true"></i
@@ -595,7 +712,7 @@
               <p>
                 Browse the public marketplace for tools that solve common jobs. See what files,
                 data, and computer features each tool asks to use before you install it, so you stay
-                in control of what runs on your machine.
+                in control of what runs on your computer.
               </p>
               <p class="example-line">
                 Marketplace · access review · local install · many tools in one app
@@ -633,10 +750,10 @@
             <details class="faq-item">
               <summary>What is TinyAtom?</summary>
               <p>
-                TinyAtom is a free macOS desktop app for building and running small internal tools
-                without a software project. You describe the tool, build it with your coding
-                assistant, review what it can access, and install it. Tools run locally and data stays
-                on your computer.
+                TinyAtom is a free desktop app for building and running small internal tools without
+                a software project. You describe the tool, build it with your coding assistant,
+                review what it can access, and install it. Tools run locally and data stays on your
+                computer.
               </p>
             </details>
             <details class="faq-item">
@@ -684,12 +801,16 @@
       <section class="cta-section reveal" id="download">
         <div class="cta-panel">
           <div>
-            <p class="kicker">TinyAtom for macOS</p>
+            <p class="kicker">Get TinyAtom</p>
             <h2 class="section-title">Start with one tool you need.</h2>
-            <p class="section-lead">Free for everyone.</p>
+            <p class="section-lead">Free for everyone. Runs on your computer.</p>
           </div>
           <div class="cta-actions">
-            <a class="btn btn-primary btn-lg" href="/download">Download for macOS</a>
+            <a class="btn btn-primary btn-lg" href="/download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Get TinyAtom for macOS</span>
+            </a>
+            <p class="cta-note" data-download-note hidden></p>
           </div>
         </div>
       </section>
@@ -697,19 +818,30 @@
 
     <footer class="site-footer">
       <div class="site-footer-inner">
-        <div class="footer-brand">
-          <img src="assets/tinyatom-logo.svg" alt="" width="22" height="22" />
-          <span>TinyAtom</span>
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="assets/tinyatom-logo.svg" alt="" width="24" height="24" />
+            <span>TinyAtom</span>
+          </div>
+          <p class="footer-tagline">
+            Describe the tool you need and TinyAtom helps you build it on your computer. No servers,
+            no subscriptions, no data leaving your computer.
+          </p>
         </div>
-        <p>Create internal tools without running servers.</p>
-        <nav aria-label="Footer">
-          <a href="#what-is-tinyatom">What is TinyAtom</a>
-          <a href="#business">For businesses</a>
-          <a href="#individuals">For individuals</a>
-          <a href="#faq">FAQ</a>
-          <a href="#security">Security</a>
-          <a href="/llms.txt">llms.txt</a>
+        <nav class="footer-nav" aria-label="Footer">
+          <h2 class="footer-nav-title">Explore</h2>
+          <ul>
+            <li><a href="#what-is-tinyatom">What is TinyAtom</a></li>
+            <li><a href="#business">For businesses</a></li>
+            <li><a href="#individuals">For individuals</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
         </nav>
+      </div>
+      <div class="site-footer-bottom">
+        <p>&copy; 2026 TinyAtom. All rights reserved.</p>
+        <p>Your tools and your data stay on your computer.</p>
       </div>
     </footer>
 
