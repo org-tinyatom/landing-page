@@ -1140,19 +1140,9 @@ button { font-family: inherit; }
     clamp(40px, 5.5vw, 64px);
   border: 1px solid var(--atom-line-3);
   border-radius: var(--atom-radius-2xl);
-  background:
-    radial-gradient(ellipse 80% 120% at 100% 50%, var(--atom-accent-16), transparent 55%),
-    linear-gradient(135deg, color-mix(in srgb, var(--atom-accent-08) 70%, var(--atom-surface-terminal)), var(--atom-surface-terminal));
+  background: var(--atom-surface-terminal);
   overflow: hidden;
   box-shadow: var(--atom-shadow-card);
-}
-.cta-panel::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--atom-accent-40), transparent);
-  pointer-events: none;
 }
 .cta-panel .section-title {
   max-width: none;
@@ -1184,9 +1174,12 @@ button { font-family: inherit; }
   border-top: 1px solid var(--atom-line-2);
   background: var(--atom-well);
 }
+/* Columns size to their content and the free space is pushed between them, so the
+   brand sits hard left, Explore lands in the middle, and Legal is flush right. */
 .site-footer-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
   align-items: start;
   gap: 48px;
   padding: 56px var(--frame-pad-right) 40px var(--page-gutter);
@@ -1245,6 +1238,123 @@ button { font-family: inherit; }
   margin: 0;
   color: var(--atom-muted);
   font-size: 0.75rem;
+}
+
+/* -- Legal pages (privacy, terms) -- */
+.legal-page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: clamp(56px, 7vw, 88px) var(--page-gutter) clamp(80px, 9vw, 120px);
+}
+.legal-head {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--atom-line-3);
+}
+.legal-head h1 {
+  margin: 0 0 14px;
+  color: var(--atom-ink-bright);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: var(--title-weight);
+  line-height: 1.1;
+  letter-spacing: var(--title-tracking);
+}
+.legal-updated {
+  margin: 0;
+  color: var(--atom-muted);
+  font-size: 0.8125rem;
+}
+.legal-summary {
+  margin: 24px 0 0;
+  color: var(--atom-ink-soft);
+  font-size: var(--lead-size);
+  line-height: var(--lead-leading);
+}
+
+/* Draft banner: remove once a lawyer has signed off and placeholders are filled. */
+.legal-draft {
+  margin: 0 0 40px;
+  padding: 16px 18px;
+  border: 1px solid var(--atom-line-3);
+  border-radius: var(--atom-radius-lg);
+  background: var(--atom-panel);
+  color: var(--atom-ink-soft);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+.legal-draft strong { color: var(--atom-ink-bright); }
+
+.legal-toc {
+  margin: 0 0 48px;
+  padding: 22px 24px;
+  border: 1px solid var(--atom-line-2);
+  border-radius: var(--atom-radius-lg);
+  background: var(--atom-panel);
+}
+.legal-toc h2 {
+  margin: 0 0 14px;
+  color: var(--atom-ink-bright);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.legal-toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 32px;
+}
+.legal-toc li { margin-bottom: 8px; break-inside: avoid; }
+.legal-toc a {
+  color: var(--atom-ink-soft);
+  font-size: 0.8125rem;
+  text-decoration: none;
+}
+.legal-toc a:hover { color: var(--atom-accent); }
+
+.legal-body h2 {
+  margin: 48px 0 16px;
+  color: var(--atom-ink-bright);
+  font-size: 1.375rem;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+.legal-body h3 {
+  margin: 28px 0 10px;
+  color: var(--atom-ink-bright);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.legal-body p,
+.legal-body li {
+  color: var(--atom-ink-soft);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+.legal-body p { margin: 0 0 16px; }
+.legal-body ul,
+.legal-body ol { margin: 0 0 16px; padding-left: 22px; }
+.legal-body li { margin-bottom: 8px; }
+.legal-body a { color: var(--atom-accent); text-decoration: underline; }
+.legal-body strong { color: var(--atom-ink-bright); font-weight: 600; }
+/* Warranty and liability clauses are conventionally set apart and emphasised. */
+.legal-body .legal-emphasis {
+  padding: 18px 20px;
+  border: 1px solid var(--atom-line-3);
+  border-radius: var(--atom-radius-lg);
+  color: var(--atom-ink);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.legal-placeholder {
+  color: var(--atom-accent);
+  font-weight: 600;
 }
 
 /* -- Theme FAB -- */
@@ -1522,6 +1632,17 @@ button { font-family: inherit; }
   .site-footer-bottom {
     padding: 18px 18px 80px;
   }
+  .legal-page { padding-left: 18px; padding-right: 18px; }
+  .legal-toc ol { columns: 1; }
+  .legal-body h2 { font-size: 1.2rem; }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .site-footer-inner {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+  .footer-about { grid-column: 1 / -1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

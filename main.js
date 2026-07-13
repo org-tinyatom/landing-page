@@ -2,7 +2,7 @@ const STORAGE_KEY = 'tinyatom-landing-theme';
 const THEME_ORDER = ['system', 'light', 'dark'];
 
 // Only the macOS build ships today. Flip `available` and set `href` as the other
-// builds land — the CTAs read entirely from this table.
+// builds land. The CTAs read entirely from this table.
 const PLATFORMS = {
   macos: {
     name: 'macOS',
