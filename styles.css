@@ -591,20 +591,6 @@ button { font-family: inherit; }
   text-align: center;
 }
 
-.mock-storage {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  min-height: 92px;
-  margin-top: auto;
-  padding: 22px 24px;
-  border-top: 1px solid var(--atom-line-2);
-  color: var(--atom-ink-soft);
-  font-size: 0.75rem;
-  line-height: 1.35;
-}
-.mock-storage i { color: var(--atom-success); font-size: 0.65rem; }
-
 /* Views are stacked in one grid cell so switching tabs never resizes the window. */
 .mock-main {
   display: grid;
@@ -616,11 +602,11 @@ button { font-family: inherit; }
   min-width: 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
+  transform: translateY(6px);
   transition:
-    opacity 420ms var(--atom-ease),
-    transform 420ms var(--atom-ease),
-    visibility 0s linear 420ms;
+    opacity 260ms var(--atom-ease),
+    transform 260ms var(--atom-ease),
+    visibility 0s linear 260ms;
 }
 .mock-view.is-active {
   opacity: 1;
@@ -633,9 +619,10 @@ button { font-family: inherit; }
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 22px;
 }
+.mock-view-head > div:first-child { min-width: 0; flex: 1; }
 .mock-view-head h3 {
   margin: 0;
   color: var(--atom-ink-bright);
@@ -720,9 +707,9 @@ button { font-family: inherit; }
 .mock-card {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 13px;
   min-width: 0;
-  padding: 16px;
+  padding: 15px;
   border: 1px solid var(--atom-line-2);
   border-radius: var(--atom-radius-xl);
   background: var(--atom-panel);
@@ -732,18 +719,18 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 .mock-card-tile {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   flex: none;
   border-radius: var(--atom-radius-lg);
   background: linear-gradient(145deg, var(--atom-accent-28), var(--atom-accent-12));
   color: var(--atom-accent);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -751,13 +738,14 @@ button { font-family: inherit; }
 .mock-card-head strong {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   min-width: 0;
   color: var(--atom-ink-bright);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   letter-spacing: -0.015em;
+  white-space: nowrap;
 }
-.mock-card-head strong i { flex: none; color: var(--atom-muted); font-size: 0.85rem; }
+.mock-card-head strong i { flex: none; color: var(--atom-muted); font-size: 0.8rem; }
 .mock-card-head small {
   overflow: hidden;
   color: var(--atom-ink-soft);
@@ -765,7 +753,7 @@ button { font-family: inherit; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.mock-card-menu { color: var(--atom-muted); font-size: 1rem; }
+.mock-card-menu { color: var(--atom-muted); font-size: 0.95rem; }
 
 .mock-data {
   margin: 0;
@@ -1595,7 +1583,6 @@ button { font-family: inherit; }
   }
   .mock-nav-icon { font-size: 0.95rem; }
   .mock-nav-item small { display: none; }
-  .mock-storage { display: none; }
   .mock-main { min-height: 440px; padding: 20px 14px 24px; }
   .mock-view-head { margin-bottom: 18px; }
   .mock-view-head h3 { font-size: 1.4rem; }
