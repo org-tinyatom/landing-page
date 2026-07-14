@@ -1271,19 +1271,6 @@ button { font-family: inherit; }
   line-height: var(--lead-leading);
 }
 
-/* Draft banner: remove once a lawyer has signed off and placeholders are filled. */
-.legal-draft {
-  margin: 0 0 40px;
-  padding: 16px 18px;
-  border: 1px solid var(--atom-line-3);
-  border-radius: var(--atom-radius-lg);
-  background: var(--atom-panel);
-  color: var(--atom-ink-soft);
-  font-size: 0.8125rem;
-  line-height: 1.6;
-}
-.legal-draft strong { color: var(--atom-ink-bright); }
-
 .legal-toc {
   margin: 0 0 48px;
   padding: 22px 24px;
@@ -1352,11 +1339,6 @@ button { font-family: inherit; }
   text-transform: uppercase;
   letter-spacing: 0.01em;
 }
-.legal-placeholder {
-  color: var(--atom-accent);
-  font-weight: 600;
-}
-
 /* -- Theme FAB -- */
 .theme-fab {
   position: fixed;
