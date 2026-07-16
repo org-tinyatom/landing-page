@@ -14,6 +14,7 @@ TinyAtom helps you go from a job you need done to working software on your compu
 
 - [Home](https://tinyatom.app/): Product overview, who it is for, how it works, security, FAQ, download
 - [Blog](https://tinyatom.app/blog/): Guides and comparisons on local-first internal tools
+- [Local tools vs SaaS](https://tinyatom.app/blog/local-tools-vs-saas): Why local internal tools are easier, faster, and safer than buying third-party SaaS
 - [Build internal tools](https://tinyatom.app/blog/build-internal-tools): How to build internal tools without servers
 - [Retool alternative](https://tinyatom.app/blog/retool-alternative): Local-first alternative for small internal tools
 
