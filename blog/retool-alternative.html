@@ -131,7 +131,7 @@
       href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=flow1" />
+    <link rel="stylesheet" href="/styles.css?v=flow2" />
     <style>
       .compare-wrap {
         max-width: 900px;
@@ -187,7 +187,7 @@
         border: 0;
       }
     </style>
-    <script src="/main.js?v=flow1" defer></script>
+    <script src="/main.js?v=flow2" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -210,8 +210,8 @@
           <a href="/#business">For businesses</a>
           <a href="/#individuals">For individuals</a>
           <a href="/#how">How it works</a>
+          <a href="/blog/">Blog</a>
           <a href="/#faq">FAQ</a>
-          <a href="/#security">Security</a>
         </nav>
 
         <a class="btn btn-primary header-cta" href="/#download">Get TinyAtom</a>
@@ -219,17 +219,28 @@
     </header>
 
     <main id="main">
-      <section class="section">
-        <div class="section-intro reveal">
-          <p class="kicker">Retool alternative</p>
-          <h1 class="section-title">A local-first alternative to Retool for small internal tools.</h1>
-          <p class="section-lead">
+      <header class="blog-hero">
+        <div class="blog-hero-inner">
+          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <a href="/blog/">Blog</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <span aria-current="page">Retool alternative</span>
+          </nav>
+          <p class="kicker">Comparison · Retool alternative</p>
+          <h1>A local-first alternative to Retool for small internal tools</h1>
+          <p class="blog-hero-lead">
             Retool is a strong platform for building internal applications in the cloud. If what you
             need is a small internal tool that runs on your own computer, keeps its data local, and
             costs nothing per seat, TinyAtom is built for that. You describe the tool, build it with a
             coding assistant, review what it can access, and install it. No server, no repository, no
             monthly bill.
           </p>
+          <div class="blog-meta">
+            <span><i class="ph ph-clock" aria-hidden="true"></i> 5 min read</span>
+            <span class="blog-tags">Retool alternative · Local-first · Free</span>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
               <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
@@ -241,7 +252,7 @@
             </a>
           </div>
         </div>
-      </section>
+      </header>
 
       <section class="section business-section">
         <div class="section-intro reveal">
@@ -483,6 +494,14 @@
             <li><a href="/#individuals">For individuals</a></li>
             <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#security">Security</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Blog">
+          <h2 class="footer-nav-title">Blog</h2>
+          <ul>
+            <li><a href="/blog/">All posts</a></li>
+            <li><a href="/blog/build-internal-tools.html">Build internal tools</a></li>
+            <li><a href="/blog/retool-alternative.html">Retool alternative</a></li>
           </ul>
         </nav>
         <nav class="footer-nav" aria-label="Legal">

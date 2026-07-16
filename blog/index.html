@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | TinyAtom</title>
+    <meta
+      name="description"
+      content="Guides and comparisons on building local-first internal tools without servers: how TinyAtom works, and how it compares to hosted platforms like Retool."
+    />
+    <meta
+      name="keywords"
+      content="internal tools blog, build internal tools, local-first internal tools, retool alternative, internal tools without servers, TinyAtom guides"
+    />
+    <link rel="canonical" href="https://tinyatom.app/blog/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="author" content="TinyAtom" />
+    <link rel="alternate" type="text/plain" href="https://tinyatom.app/llms.txt" title="LLM summary" />
+
+    <link rel="icon" href="/assets/tinyatom-logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+
+    <meta property="og:site_name" content="TinyAtom" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tinyatom.app/blog/" />
+    <meta property="og:title" content="TinyAtom Blog: Local-First Internal Tools" />
+    <meta
+      property="og:description"
+      content="Guides and comparisons on building internal tools without servers, and how TinyAtom compares to hosted platforms."
+    />
+    <meta property="og:image" content="https://tinyatom.app/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TinyAtom Blog: Local-First Internal Tools" />
+    <meta
+      name="twitter:description"
+      content="Guides and comparisons on building internal tools without servers."
+    />
+    <meta name="twitter:image" content="https://tinyatom.app/assets/og-image.png" />
+
+    <!-- Structured data: Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tinyatom.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tinyatom.app/blog/" }
+        ]
+      }
+    </script>
+    <!-- Structured data: Blog -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "TinyAtom Blog",
+        "url": "https://tinyatom.app/blog/",
+        "description": "Guides and comparisons on building local-first internal tools without servers.",
+        "inLanguage": "en",
+        "publisher": {
+          "@type": "Organization",
+          "name": "TinyAtom",
+          "logo": { "@type": "ImageObject", "url": "https://tinyatom.app/assets/tinyatom-logo.svg" }
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "Build Internal Tools Without Servers",
+            "url": "https://tinyatom.app/blog/build-internal-tools",
+            "datePublished": "2026-07-15",
+            "description": "How to build internal tools without servers, code repositories, or cloud hosting, using TinyAtom."
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "A Local-First Retool Alternative for Small Internal Tools",
+            "url": "https://tinyatom.app/blog/retool-alternative",
+            "datePublished": "2026-07-15",
+            "description": "How TinyAtom compares to Retool for small internal tools: local-first, free, and no server to run."
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Sora:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=flow2" />
+    <script src="/main.js?v=flow2" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/" aria-label="TinyAtom home">
+          <img
+            class="brand-logo"
+            src="/assets/tinyatom-logo.svg"
+            alt="TinyAtom logo"
+            width="28"
+            height="28"
+          />
+          <span class="brand-name">TinyAtom</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#what-is-tinyatom">What is TinyAtom</a>
+          <a href="/#business">For businesses</a>
+          <a href="/#individuals">For individuals</a>
+          <a href="/#how">How it works</a>
+          <a href="/blog/">Blog</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
+
+        <a class="btn btn-primary header-cta" href="/#download">Get TinyAtom</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="blog-hero">
+        <div class="blog-hero-inner">
+          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <span aria-current="page">Blog</span>
+          </nav>
+          <p class="kicker">Blog</p>
+          <h1>Guides on local-first internal tools</h1>
+          <p class="blog-hero-lead">
+            Short, practical reads on building internal tools that run on your own computer, with no
+            servers, no repositories, and no monthly bill. Written for teams and individuals weighing
+            a local-first approach.
+          </p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="blog-list reveal">
+          <a class="blog-card" href="/blog/build-internal-tools.html">
+            <p class="kicker">Guide</p>
+            <h2>Build internal tools without running servers</h2>
+            <p>
+              Why the usual options do not fit small internal jobs, and how to go from a described
+              job to installed local software with a coding assistant.
+            </p>
+            <span class="blog-card-foot">Read guide <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </a>
+          <a class="blog-card" href="/blog/retool-alternative.html">
+            <p class="kicker">Comparison</p>
+            <h2>A local-first Retool alternative for small internal tools</h2>
+            <p>
+              Where TinyAtom fits and where Retool fits, side by side: local versus cloud, free
+              versus per-seat, and which to choose for the job in front of you.
+            </p>
+            <span class="blog-card-foot">Read comparison <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="cta-section reveal">
+        <div class="cta-panel">
+          <div>
+            <h2 class="section-title">Start with one tool you need.</h2>
+            <p class="section-lead">Free for everyone. Runs on your computer.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Get TinyAtom for macOS</span>
+            </a>
+            <p class="cta-note" data-download-note hidden></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="/assets/tinyatom-logo.svg" alt="" width="24" height="24" />
+            <span>TinyAtom</span>
+          </div>
+          <p class="footer-tagline">
+            Describe the tool you need and TinyAtom helps you build it on your computer. No servers,
+            no subscriptions, no data leaving your computer.
+          </p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <h2 class="footer-nav-title">Explore</h2>
+          <ul>
+            <li><a href="/#what-is-tinyatom">What is TinyAtom</a></li>
+            <li><a href="/#business">For businesses</a></li>
+            <li><a href="/#individuals">For individuals</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#security">Security</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Blog">
+          <h2 class="footer-nav-title">Blog</h2>
+          <ul>
+            <li><a href="/blog/">All posts</a></li>
+            <li><a href="/blog/build-internal-tools.html">Build internal tools</a></li>
+            <li><a href="/blog/retool-alternative.html">Retool alternative</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal">
+          <h2 class="footer-nav-title">Legal</h2>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Use</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer-bottom">
+        <p>&copy; 2026 TinyAtom. All rights reserved.</p>
+        <p>Your tools and your data stay on your computer.</p>
+      </div>
+    </footer>
+
+    <button
+      type="button"
+      class="theme-fab"
+      id="theme-fab"
+      aria-label="Theme: system. Click to switch."
+    >
+      <span class="theme-fab-icon theme-fab-icon-system" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <path d="M8 21h8"></path>
+          <path d="M12 17v4"></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-light" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+          ></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-dark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path>
+        </svg>
+      </span>
+    </button>
+  </body>
+</html>

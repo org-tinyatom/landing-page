@@ -1178,10 +1178,11 @@ button { font-family: inherit; }
   background: var(--atom-well);
 }
 /* Columns size to their content and the free space is pushed between them, so the
-   brand sits hard left, Explore lands in the middle, and Legal is flush right. */
+   brand sits hard left, the Explore / Blog nav columns land in the middle, and Legal
+   is flush right. */
 .site-footer-inner {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   justify-content: space-between;
   align-items: start;
   gap: 48px;

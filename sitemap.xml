@@ -21,14 +21,21 @@
   </url>
 
   <url>
-    <loc>https://tinyatom.app/build-internal-tools/</loc>
+    <loc>https://tinyatom.app/blog/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://tinyatom.app/blog/build-internal-tools</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://tinyatom.app/retool-alternative/</loc>
+    <loc>https://tinyatom.app/blog/retool-alternative</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
