@@ -234,10 +234,101 @@ function initMockTabs() {
   });
 }
 
+const FLOW_STEP_MS = 3400;
+
+// Drives the "How it works" flow demo: a stepper and an app window that advance
+// together through describe, build, review, and publish. Separate data-* hooks
+// keep it independent from the hero's initMockTabs().
+function initFlowDemo() {
+  const demo = document.querySelector('[data-flow-demo]');
+  if (!demo) return;
+
+  const steps = [...demo.querySelectorAll('[data-flow-step]')];
+  const views = [...demo.querySelectorAll('[data-flow-view]')];
+  const bar = demo.querySelector('.flow-progress-bar');
+  if (!steps.length || steps.length !== views.length) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let index = 0;
+  let timer = null;
+
+  const fillProgress = () => {
+    if (!bar) return;
+    bar.style.transition = 'none';
+    bar.style.width = '0%';
+    // Force reflow so the width reset takes effect before the fill transition.
+    void bar.offsetWidth;
+    bar.style.transition = `width ${FLOW_STEP_MS}ms linear`;
+    bar.style.width = '100%';
+  };
+
+  const show = (next) => {
+    index = next;
+    steps.forEach((step, n) => {
+      step.classList.toggle('is-active', n === index);
+      step.classList.toggle('is-done', n < index);
+    });
+    views.forEach((view, n) => view.classList.toggle('is-active', n === index));
+    if (!reduce) fillProgress();
+  };
+
+  const advance = () => show((index + 1) % steps.length);
+  const start = () => {
+    if (reduce || timer !== null) return;
+    fillProgress();
+    timer = setInterval(advance, FLOW_STEP_MS);
+  };
+  const stop = () => {
+    clearInterval(timer);
+    timer = null;
+  };
+  const restart = () => {
+    stop();
+    start();
+  };
+
+  show(0);
+
+  // Let people drive the flow themselves by clicking or keying a step.
+  steps.forEach((step, i) => {
+    step.addEventListener('click', () => {
+      show(i);
+      restart();
+    });
+    step.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        show(i);
+        restart();
+      }
+    });
+  });
+
+  if (reduce) return;
+
+  // Pause while a visitor is reading a step, resume when they move away.
+  demo.addEventListener('pointerenter', stop);
+  demo.addEventListener('pointerleave', start);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), {
+      threshold: 0.3,
+    }).observe(demo);
+  } else {
+    start();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else if (demo.getBoundingClientRect().bottom > 0) start();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initHeaderScroll();
   initReveal();
   initDownloadCta();
   initMockTabs();
+  initFlowDemo();
 });

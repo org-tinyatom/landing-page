@@ -205,8 +205,8 @@
       href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=seo4" />
-    <script src="main.js?v=seo4" defer></script>
+    <link rel="stylesheet" href="styles.css?v=flow1" />
+    <script src="main.js?v=flow1" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -589,47 +589,207 @@
         <div class="section-intro how-intro reveal">
           <h2 class="section-title">Go from an idea to a tool your team can install.</h2>
           <p class="section-lead">
-            Plan, build, check, and install your tool in TinyAtom. You approve the important choices
-            as you go.
+            Plan, build, check, and ship your tool in TinyAtom. You approve the important choices as
+            you go, and the app shows you exactly what happens at each step.
           </p>
         </div>
 
-        <ol class="steps reveal" style="--reveal-delay: 80ms">
-          <li>
-            <span>1</span>
-            <div>
-              <h3>Describe the job</h3>
-              <p>
-                Explain who will use the tool, what they need to do, and what a good result looks
-                like.
-              </p>
+        <div class="flow-demo reveal" data-flow-demo style="--reveal-delay: 80ms">
+          <ol class="steps flow-steps">
+            <li data-flow-step="0" tabindex="0" role="button" aria-label="Show step 1: Describe the job">
+              <span>1</span>
+              <div>
+                <h3>Describe the job</h3>
+                <p>Explain who will use the tool and what a good result looks like.</p>
+              </div>
+            </li>
+            <li data-flow-step="1" tabindex="0" role="button" aria-label="Show step 2: Build it with your coding assistant">
+              <span>2</span>
+              <div>
+                <h3>Build it with your coding assistant</h3>
+                <p>Use Claude, Codex, Cursor, Gemini, or a local shell to create it.</p>
+              </div>
+            </li>
+            <li data-flow-step="2" tabindex="0" role="button" aria-label="Show step 3: Check what it can use">
+              <span>3</span>
+              <div>
+                <h3>Check what it can use</h3>
+                <p>Review the files, data, and features it asks for before it runs.</p>
+              </div>
+            </li>
+            <li data-flow-step="3" tabindex="0" role="button" aria-label="Show step 4: Install, share, or publish">
+              <span>4</span>
+              <div>
+                <h3>Install, share, or publish</h3>
+                <p>Install it, add it to your company list, or publish it to the marketplace.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div
+            class="flow-window"
+            role="img"
+            aria-label="The TinyAtom desktop app moving through describing, building, reviewing, and publishing a tool"
+          >
+            <div class="flow-window-inner" aria-hidden="true">
+              <div class="mock-titlebar">
+                <div class="mock-window-controls">
+                  <i class="ph-fill ph-circle mock-window-close"></i>
+                  <i class="ph-fill ph-circle mock-window-minimize"></i>
+                  <i class="ph-fill ph-circle mock-window-expand"></i>
+                </div>
+                <span class="mock-titlebar-name">TinyAtom</span>
+              </div>
+
+              <div class="mock-appbar">
+                <div class="mock-brand">
+                  <img src="assets/tinyatom-logo.svg" alt="" width="30" height="30" />
+                  <span><strong>TinyAtom</strong><small>v0.1.0</small></span>
+                </div>
+                <div class="mock-appbar-actions">
+                  <i class="ph ph-gear-six"></i>
+                  <i class="ph ph-sun"></i>
+                </div>
+              </div>
+
+              <div class="flow-body">
+                <!-- Step 1: Describe -->
+                <section class="flow-view is-active" data-flow-view="0">
+                  <div class="flow-screen">
+                    <div class="flow-screen-head">
+                      <span class="flow-eyebrow"><i class="ph ph-wrench"></i> Studio · New atom</span>
+                      <h4>Describe the tool you need</h4>
+                    </div>
+                    <div class="flow-form">
+                      <div class="flow-field">
+                        <span class="flow-field-label">Name</span>
+                        <div class="flow-input">Client intake</div>
+                      </div>
+                      <div class="flow-field">
+                        <span class="flow-field-label">What should it do?</span>
+                        <div class="flow-input flow-input-area">
+                          Collect new client details, save them on this computer, and let the front
+                          desk mark each one as contacted.<span class="flow-caret"></span>
+                        </div>
+                      </div>
+                      <div class="flow-field">
+                        <span class="flow-field-label">Who will use it?</span>
+                        <div class="flow-input">Front desk team</div>
+                      </div>
+                    </div>
+                    <div class="flow-actions">
+                      <span class="flow-btn flow-btn-primary"><i class="ph ph-sparkle"></i> Start building</span>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Step 2: Build -->
+                <section class="flow-view" data-flow-view="1">
+                  <div class="flow-screen">
+                    <div class="flow-screen-head">
+                      <span class="flow-eyebrow"><i class="ph ph-wrench"></i> Studio · Building</span>
+                      <h4>Your coding assistant builds it</h4>
+                    </div>
+                    <div class="flow-assistant-pills">
+                      <span class="flow-pill is-active">Claude</span>
+                      <span class="flow-pill">Codex</span>
+                      <span class="flow-pill">Cursor</span>
+                      <span class="flow-pill">Gemini</span>
+                    </div>
+                    <div class="flow-assistant">
+                      <span class="flow-assistant-avatar"><i class="ph ph-sparkle"></i></span>
+                      <div>
+                        <strong>Claude</strong>
+                        <small>Building “Client intake” on your computer</small>
+                      </div>
+                      <span class="flow-chip">Working</span>
+                    </div>
+                    <ul class="flow-log">
+                      <li class="is-done"><i class="ph-fill ph-check-circle"></i> Created an intake form with 6 fields</li>
+                      <li class="is-done"><i class="ph-fill ph-check-circle"></i> Added a local database for saved clients</li>
+                      <li class="is-done"><i class="ph-fill ph-check-circle"></i> Wired up the “contacted” status</li>
+                      <li class="is-active"><i class="ph ph-circle-notch"></i> Building the front desk view…</li>
+                    </ul>
+                  </div>
+                </section>
+
+                <!-- Step 3: Review capabilities -->
+                <section class="flow-view" data-flow-view="2">
+                  <div class="flow-screen">
+                    <div class="flow-screen-head">
+                      <span class="flow-eyebrow"><i class="ph ph-shield-check"></i> Review access</span>
+                      <h4>Check what Client intake can use</h4>
+                    </div>
+                    <ul class="flow-caps">
+                      <li>
+                        <span class="flow-cap-icon"><i class="ph ph-folder"></i></span>
+                        <div>
+                          <strong>Files</strong>
+                          <small>Read and write in one folder you choose</small>
+                        </div>
+                        <span class="flow-cap-state is-allowed"><i class="ph ph-check"></i> Allowed</span>
+                      </li>
+                      <li>
+                        <span class="flow-cap-icon"><i class="ph ph-database"></i></span>
+                        <div>
+                          <strong>Local database</strong>
+                          <small>Save client records on this computer</small>
+                        </div>
+                        <span class="flow-cap-state is-allowed"><i class="ph ph-check"></i> Allowed</span>
+                      </li>
+                      <li>
+                        <span class="flow-cap-icon"><i class="ph ph-wifi-slash"></i></span>
+                        <div>
+                          <strong>Network</strong>
+                          <small>None requested. Nothing leaves your computer</small>
+                        </div>
+                        <span class="flow-cap-state is-none">Not used</span>
+                      </li>
+                    </ul>
+                    <div class="flow-actions flow-actions-split">
+                      <span class="flow-note"><i class="ph ph-lock-simple"></i> Nothing runs until you allow it</span>
+                      <span class="flow-btn flow-btn-primary"><i class="ph ph-check"></i> Approve and install</span>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Step 4: Install / share / publish -->
+                <section class="flow-view" data-flow-view="3">
+                  <div class="flow-screen">
+                    <div class="flow-screen-head">
+                      <span class="flow-eyebrow"><i class="ph-fill ph-check-circle"></i> Installed</span>
+                      <h4>Client intake is ready to share</h4>
+                    </div>
+                    <div class="flow-installed">
+                      <span class="flow-card-tile">C</span>
+                      <div>
+                        <strong>Client intake <i class="ph-fill ph-seal-check"></i></strong>
+                        <small>Installed · v1.0.0 · runs on this computer</small>
+                      </div>
+                      <span class="flow-btn">Open <i class="ph ph-arrow-right"></i></span>
+                    </div>
+                    <div class="flow-share">
+                      <div class="flow-share-card">
+                        <span class="flow-share-icon"><i class="ph ph-buildings"></i></span>
+                        <strong>Private company list</strong>
+                        <small>Keep it inside your team</small>
+                        <span class="flow-btn flow-btn-block">Add to company</span>
+                      </div>
+                      <div class="flow-share-card is-primary">
+                        <span class="flow-share-icon"><i class="ph ph-storefront"></i></span>
+                        <strong>Public marketplace</strong>
+                        <small>Reviewed for security before it goes live</small>
+                        <span class="flow-btn flow-btn-primary flow-btn-block"><i class="ph ph-upload-simple"></i> Publish</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              <div class="flow-progress"><span class="flow-progress-bar"></span></div>
             </div>
-          </li>
-          <li>
-            <span>2</span>
-            <div>
-              <h3>Build it with your coding assistant</h3>
-              <p>Use Claude, Codex, Cursor, Gemini, or a local shell to create the tool.</p>
-            </div>
-          </li>
-          <li>
-            <span>3</span>
-            <div>
-              <h3>Check what it can use</h3>
-              <p>
-                See the files, data, and computer features the tool asks to use before you install
-                it.
-              </p>
-            </div>
-          </li>
-          <li>
-            <span>4</span>
-            <div>
-              <h3>Install or share it</h3>
-              <p>Keep it on one computer or add it to your company’s private list.</p>
-            </div>
-          </li>
-        </ol>
+          </div>
+        </div>
       </section>
 
       <section class="security-section" id="security">
@@ -666,11 +826,12 @@
       <section class="section business-section" id="individuals">
         <div class="section-intro reveal">
           <p class="kicker">For individuals</p>
-          <h2 class="section-title">Make software for the work only you need done.</h2>
+          <h2 class="section-title">Start free with tools the community already built.</h2>
           <p class="section-lead">
-            TinyAtom is free for personal use. Build a small tool for a job you repeat, or install
-            one the community already made. Everything runs on your computer. No account, no
-            subscription, and no server to keep online.
+            TinyAtom is free for personal use, and installing a community tool is the fastest way to
+            see how it works. Browse the marketplace, install what fits, or build your own small tool
+            for a job you repeat. Everything runs on your computer. No account, no subscription, and
+            no server to keep online.
           </p>
           <a class="business-link" href="#download"
             >Get TinyAtom free <i class="ph ph-arrow-right" aria-hidden="true"></i
@@ -678,20 +839,6 @@
         </div>
 
         <div class="value-list reveal" style="--reveal-delay: 80ms">
-          <article class="value-row">
-            <div>
-              <h3>Turn a repeated personal task into software</h3>
-              <p>
-                Describe what you need: tracking applications, organizing research, renaming files,
-                or managing a side project, and build it with your coding assistant. You keep the
-                result as a local tool you can open any day.
-              </p>
-              <p class="example-line">
-                Personal tools · no monthly SaaS bill · fits your process
-              </p>
-            </div>
-            <span class="value-icon" aria-hidden="true"><i class="ph ph-user"></i></span>
-          </article>
           <article class="value-row">
             <div>
               <h3>Install tools other people already built</h3>
@@ -705,6 +852,20 @@
               </p>
             </div>
             <span class="value-icon" aria-hidden="true"><i class="ph ph-storefront"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Turn a repeated personal task into software</h3>
+              <p>
+                Describe what you need: tracking applications, organizing research, renaming files,
+                or managing a side project, and build it with your coding assistant. You keep the
+                result as a local tool you can open any day.
+              </p>
+              <p class="example-line">
+                Personal tools · no monthly SaaS bill · fits your process
+              </p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-user"></i></span>
           </article>
           <article class="value-row">
             <div>

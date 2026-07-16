@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Build Internal Tools Without Servers | TinyAtom</title>
+    <meta
+      name="description"
+      content="Build internal tools without servers, code repositories, or cloud hosting. TinyAtom is a free desktop app that turns a job your team repeats into local software you can install."
+    />
+    <meta
+      name="keywords"
+      content="build internal tools, internal tools without servers, internal tools without code, local internal tools, free internal tools, custom internal software, internal tools builder, private internal tools"
+    />
+    <link rel="canonical" href="https://tinyatom.app/blog/build-internal-tools" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="author" content="TinyAtom" />
+    <link rel="alternate" type="text/plain" href="https://tinyatom.app/llms.txt" title="LLM summary" />
+
+    <link rel="icon" href="/assets/tinyatom-logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+
+    <meta property="og:site_name" content="TinyAtom" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tinyatom.app/blog/build-internal-tools" />
+    <meta property="og:title" content="Build Internal Tools Without Servers" />
+    <meta
+      property="og:description"
+      content="A free desktop app that turns a job your team repeats into local software you can install. No servers, no repos, no cloud bill."
+    />
+    <meta property="og:image" content="https://tinyatom.app/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Build Internal Tools Without Servers" />
+    <meta
+      name="twitter:description"
+      content="Free desktop app for local-first internal tools. No servers, no repos, no cloud bill."
+    />
+    <meta name="twitter:image" content="https://tinyatom.app/assets/og-image.png" />
+
+    <!-- Structured data: Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tinyatom.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tinyatom.app/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Build internal tools", "item": "https://tinyatom.app/blog/build-internal-tools" }
+        ]
+      }
+    </script>
+    <!-- Structured data: BlogPosting -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Build Internal Tools Without Servers",
+        "description": "How to build internal tools without servers, code repositories, or cloud hosting, using TinyAtom.",
+        "url": "https://tinyatom.app/blog/build-internal-tools",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tinyatom.app/blog/build-internal-tools" },
+        "datePublished": "2026-07-15",
+        "dateModified": "2026-07-15",
+        "image": "https://tinyatom.app/assets/og-image.png",
+        "inLanguage": "en",
+        "author": { "@type": "Organization", "name": "TinyAtom", "url": "https://tinyatom.app/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "TinyAtom",
+          "logo": { "@type": "ImageObject", "url": "https://tinyatom.app/assets/tinyatom-logo.svg" }
+        },
+        "about": { "@type": "Thing", "name": "Internal tools" }
+      }
+    </script>
+    <!-- Structured data: FAQ (matches visible FAQ section) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you build internal tools without a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With TinyAtom, each tool runs on the computer where it is installed. You describe the job, build the tool with a coding assistant, review what it can access, and install it. There is no app server to host and no hosting bill for a tool used by a few people."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to know how to code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You build tools with a coding assistant such as Claude, Codex, Cursor, Gemini, or a local shell inside TinyAtom Studio. You describe what you need in plain language and review the result before you install it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is the data for an internal tool stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each tool stores its data on the computer where it runs. Before a tool can open files or use a computer feature, TinyAtom checks that the tool asked for access and that you allowed it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I share an internal tool with my team?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Install the tool on employee computers, or keep your internal tools together on a private company list so the team can find and install them. Tools that should stay inside the business do not have to be published to the public marketplace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is TinyAtom free for businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. TinyAtom is free for everyone, including businesses. There is no subscription and no per-seat cost to build, install, or run internal tools."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Sora:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=flow1" />
+    <script src="/main.js?v=flow1" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/" aria-label="TinyAtom home">
+          <img
+            class="brand-logo"
+            src="/assets/tinyatom-logo.svg"
+            alt="TinyAtom logo"
+            width="28"
+            height="28"
+          />
+          <span class="brand-name">TinyAtom</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#what-is-tinyatom">What is TinyAtom</a>
+          <a href="/#business">For businesses</a>
+          <a href="/#individuals">For individuals</a>
+          <a href="/#how">How it works</a>
+          <a href="/blog/">Blog</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
+
+        <a class="btn btn-primary header-cta" href="/#download">Get TinyAtom</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="blog-hero">
+        <div class="blog-hero-inner">
+          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <a href="/blog/">Blog</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <span aria-current="page">Build internal tools</span>
+          </nav>
+          <p class="kicker">Guide · For businesses</p>
+          <h1>Build internal tools without running servers</h1>
+          <p class="blog-hero-lead">
+            Some jobs your team repeats are too specific for ready-made software and too small to
+            justify a custom software project. TinyAtom gives you another option: describe the tool
+            you need, build it with a coding assistant, and install it as local software. No servers,
+            no code repository to maintain, and no cloud hosting bill.
+          </p>
+          <div class="blog-meta">
+            <span><i class="ph ph-clock" aria-hidden="true"></i> 4 min read</span>
+            <span class="blog-tags">Internal tools · Local-first · No servers</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Get TinyAtom for macOS</span>
+            </a>
+            <a class="btn btn-outline btn-lg" href="/#how">
+              <i class="ph ph-play-circle" aria-hidden="true"></i>
+              See how it works
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section class="section business-section">
+        <div class="section-intro reveal">
+          <h2 class="section-title">Why the usual options do not fit small internal tools.</h2>
+          <p class="section-lead">
+            Most internal jobs fall into a gap. Off-the-shelf apps make you change how the team works.
+            A custom build is slow and expensive. Spreadsheets and scripts break as soon as more than
+            one person touches them.
+          </p>
+        </div>
+
+        <div class="value-list reveal" style="--reveal-delay: 80ms">
+          <article class="value-row">
+            <div>
+              <h3>Ready-made SaaS is too generic</h3>
+              <p>
+                A tool built for everyone rarely matches the exact steps, names, and rules your team
+                already uses. You end up bending the business to fit the software, and paying a
+                monthly bill for the privilege.
+              </p>
+              <p class="example-line">Generic workflows · monthly cost · features you do not use</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-package"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>A custom project is too heavy</h3>
+              <p>
+                Standing up a real application means a server to run, a repository to maintain, a
+                release process, and a cloud account. That is a lot of weight for a tool five people
+                will use.
+              </p>
+              <p class="example-line">Servers · repos · deployments · ongoing maintenance</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-stack"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Spreadsheets and scripts do not hold up</h3>
+              <p>
+                A shared spreadsheet or a one-off script works until the job grows. Then the rules
+                live in one person's head, the data gets overwritten, and no one trusts the numbers.
+              </p>
+              <p class="example-line">Fragile · undocumented · easy to break</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-warning"></i></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section how-section">
+        <div class="section-intro how-intro reveal">
+          <h2 class="section-title">How TinyAtom builds an internal tool.</h2>
+          <p class="section-lead">
+            Plan, build, check, and install your tool in one desktop app. You approve the important
+            choices as you go.
+          </p>
+        </div>
+
+        <ol class="steps reveal" style="--reveal-delay: 80ms">
+          <li>
+            <span>1</span>
+            <div>
+              <h3>Describe the job</h3>
+              <p>
+                Explain who will use the tool, what they need to do, and what a good result looks
+                like. Use your own steps and terms.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>2</span>
+            <div>
+              <h3>Build it with your coding assistant</h3>
+              <p>
+                Use Claude, Codex, Cursor, Gemini, or a local shell inside TinyAtom Studio to create
+                the tool from your description.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>3</span>
+            <div>
+              <h3>Check what it can use</h3>
+              <p>
+                Review the files, data, and computer features the tool asks for before it runs.
+                Nothing is granted that you did not allow.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>4</span>
+            <div>
+              <h3>Install or share it</h3>
+              <p>
+                Install it on one computer, or keep it on a private company list so the rest of the
+                team can install it too.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section business-section">
+        <div class="section-intro reveal">
+          <h2 class="section-title">Internal jobs teams build tools for.</h2>
+          <p class="section-lead">
+            If a job is specific to how your team works and repeats often enough to be worth a small
+            tool, it is a good fit.
+          </p>
+        </div>
+
+        <div class="value-list reveal" style="--reveal-delay: 80ms">
+          <article class="value-row">
+            <div>
+              <h3>Intake and requests</h3>
+              <p>
+                Collect requests in a structured form, keep them in one place, and move them through
+                the steps your team actually uses.
+              </p>
+              <p class="example-line">Client intake · support requests · internal orders</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-note-pencil"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Approvals and onboarding</h3>
+              <p>
+                Route items for sign-off, or walk a new hire or new account through the exact
+                checklist your team follows.
+              </p>
+              <p class="example-line">Approvals · onboarding · checklists</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-check-circle"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Inventory and field reports</h3>
+              <p>
+                Track what you have, log what happened on site, and keep the records on the computer
+                that captured them.
+              </p>
+              <p class="example-line">Inventory · field reports · logs</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-clipboard-text"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Tools the community already built</h3>
+              <p>
+                Not every job needs a custom build. Browse the public marketplace, check what each
+                tool can access, and install the ones that fit. Keep internal tools on a private
+                company list when they should stay inside the business.
+              </p>
+              <p class="example-line">Public marketplace · private company list · access review</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-storefront"></i></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="faq-inner">
+          <div class="faq-intro reveal">
+            <h2 class="section-title" id="faq-title">Building internal tools: common questions</h2>
+            <p class="section-lead">
+              Short answers for teams evaluating a local-first way to build internal tools.
+            </p>
+          </div>
+          <div class="faq-list reveal" style="--reveal-delay: 60ms">
+            <details class="faq-item">
+              <summary>How do you build internal tools without a server?</summary>
+              <p>
+                Each tool runs on the computer where it is installed. You describe the job, build the
+                tool with a coding assistant, review what it can access, and install it. There is no
+                app server to host and no hosting bill for a tool used by a few people.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Do I need to know how to code?</summary>
+              <p>
+                You build tools with a coding assistant such as Claude, Codex, Cursor, Gemini, or a
+                local shell inside TinyAtom Studio. You describe what you need in plain language and
+                review the result before you install it.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Where is the data for an internal tool stored?</summary>
+              <p>
+                Each tool stores its data on the computer where it runs. Before a tool can open files
+                or use a computer feature, TinyAtom checks that the tool asked for access and that you
+                allowed it.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>How do I share an internal tool with my team?</summary>
+              <p>
+                Install the tool on employee computers, or keep your internal tools together on a
+                private company list so the team can find and install them. Tools that should stay
+                inside the business do not have to be published to the public marketplace.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Is TinyAtom free for businesses?</summary>
+              <p>
+                Yes. TinyAtom is free for everyone, including businesses. There is no subscription and
+                no per-seat cost to build, install, or run internal tools.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section reveal">
+        <div class="cta-panel">
+          <div>
+            <h2 class="section-title">Start with one internal tool you need.</h2>
+            <p class="section-lead">Free for everyone. Runs on your computer.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Get TinyAtom for macOS</span>
+            </a>
+            <p class="cta-note" data-download-note hidden></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="/assets/tinyatom-logo.svg" alt="" width="24" height="24" />
+            <span>TinyAtom</span>
+          </div>
+          <p class="footer-tagline">
+            Describe the tool you need and TinyAtom helps you build it on your computer. No servers,
+            no subscriptions, no data leaving your computer.
+          </p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <h2 class="footer-nav-title">Explore</h2>
+          <ul>
+            <li><a href="/#what-is-tinyatom">What is TinyAtom</a></li>
+            <li><a href="/#business">For businesses</a></li>
+            <li><a href="/#individuals">For individuals</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#security">Security</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal">
+          <h2 class="footer-nav-title">Legal</h2>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Use</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer-bottom">
+        <p>&copy; 2026 TinyAtom. All rights reserved.</p>
+        <p>Your tools and your data stay on your computer.</p>
+      </div>
+    </footer>
+
+    <button
+      type="button"
+      class="theme-fab"
+      id="theme-fab"
+      aria-label="Theme: system. Click to switch."
+    >
+      <span class="theme-fab-icon theme-fab-icon-system" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <path d="M8 21h8"></path>
+          <path d="M12 17v4"></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-light" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+          ></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-dark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path>
+        </svg>
+      </span>
+    </button>
+  </body>
+</html>

@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://tinyatom.app/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -15,21 +15,21 @@
 
   <url>
     <loc>https://tinyatom.app/llms.txt</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://tinyatom.app/build-internal-tools/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://tinyatom.app/retool-alternative/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A Local-First Retool Alternative for Small Internal Tools | TinyAtom</title>
+    <meta
+      name="description"
+      content="TinyAtom is a free, local-first alternative to Retool for small internal tools. Tools run on your computer with no server, no per-seat cost, and data that stays local."
+    />
+    <meta
+      name="keywords"
+      content="retool alternative, free retool alternative, local retool alternative, retool alternative for small teams, internal tools without a server, self-hosted internal tools alternative, local-first internal tools"
+    />
+    <link rel="canonical" href="https://tinyatom.app/blog/retool-alternative" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="author" content="TinyAtom" />
+    <link rel="alternate" type="text/plain" href="https://tinyatom.app/llms.txt" title="LLM summary" />
+
+    <link rel="icon" href="/assets/tinyatom-logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+
+    <meta property="og:site_name" content="TinyAtom" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tinyatom.app/blog/retool-alternative" />
+    <meta property="og:title" content="A Local-First Retool Alternative for Small Internal Tools" />
+    <meta
+      property="og:description"
+      content="Free, local-first alternative to Retool for small internal tools. No server, no per-seat cost, data stays on your computer."
+    />
+    <meta property="og:image" content="https://tinyatom.app/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Local-First Retool Alternative for Small Internal Tools" />
+    <meta
+      name="twitter:description"
+      content="Free, local-first alternative to Retool for small internal tools. No server, no per-seat cost."
+    />
+    <meta name="twitter:image" content="https://tinyatom.app/assets/og-image.png" />
+
+    <!-- Structured data: Breadcrumb -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tinyatom.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tinyatom.app/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Retool alternative", "item": "https://tinyatom.app/blog/retool-alternative" }
+        ]
+      }
+    </script>
+    <!-- Structured data: BlogPosting -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A Local-First Retool Alternative for Small Internal Tools",
+        "description": "How TinyAtom compares to Retool for small internal tools: local-first, free, and no server to run.",
+        "url": "https://tinyatom.app/blog/retool-alternative",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tinyatom.app/blog/retool-alternative" },
+        "datePublished": "2026-07-15",
+        "dateModified": "2026-07-15",
+        "image": "https://tinyatom.app/assets/og-image.png",
+        "inLanguage": "en",
+        "author": { "@type": "Organization", "name": "TinyAtom", "url": "https://tinyatom.app/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "TinyAtom",
+          "logo": { "@type": "ImageObject", "url": "https://tinyatom.app/assets/tinyatom-logo.svg" }
+        },
+        "about": { "@type": "Thing", "name": "Internal tools" }
+      }
+    </script>
+    <!-- Structured data: FAQ (matches visible FAQ section) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is TinyAtom a Retool alternative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TinyAtom is a local-first alternative for small internal tools. Where Retool is a cloud platform for building and hosting internal apps, TinyAtom builds tools that run on the computer where they are installed, with no server to host and no per-seat subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is TinyAtom free compared to Retool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TinyAtom is free for everyone, with no per-seat cost. It is best suited to small internal tools rather than large multi-team applications."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does TinyAtom need a server or cloud database like Retool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. A TinyAtom tool runs on the computer where it is installed and stores its data there. There is no app server to host and no cloud database required for the tool runtime."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When is Retool the better choice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Retool fits larger internal applications that need many editors collaborating in a browser, shared cloud databases and API connections, and centrally hosted apps reachable from anywhere. TinyAtom is aimed at smaller tools that run locally and keep data on the computer."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Sora:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=flow1" />
+    <style>
+      .compare-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        overflow-x: auto;
+      }
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+      .compare-table th,
+      .compare-table td {
+        text-align: left;
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.28);
+        vertical-align: top;
+      }
+      .compare-table thead th {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.8rem;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        opacity: 0.75;
+      }
+      .compare-table tbody th {
+        font-weight: 600;
+        white-space: nowrap;
+        padding-right: 1.5rem;
+      }
+      .compare-table col.col-tinyatom {
+        width: 38%;
+      }
+      .compare-table td.cell-tinyatom {
+        background: rgba(0, 120, 212, 0.08);
+        font-weight: 500;
+      }
+      .compare-note {
+        max-width: 900px;
+        margin: 1.25rem auto 0;
+        font-size: 0.85rem;
+        opacity: 0.7;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+    <script src="/main.js?v=flow1" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/" aria-label="TinyAtom home">
+          <img
+            class="brand-logo"
+            src="/assets/tinyatom-logo.svg"
+            alt="TinyAtom logo"
+            width="28"
+            height="28"
+          />
+          <span class="brand-name">TinyAtom</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#what-is-tinyatom">What is TinyAtom</a>
+          <a href="/#business">For businesses</a>
+          <a href="/#individuals">For individuals</a>
+          <a href="/#how">How it works</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#security">Security</a>
+        </nav>
+
+        <a class="btn btn-primary header-cta" href="/#download">Get TinyAtom</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="section">
+        <div class="section-intro reveal">
+          <p class="kicker">Retool alternative</p>
+          <h1 class="section-title">A local-first alternative to Retool for small internal tools.</h1>
+          <p class="section-lead">
+            Retool is a strong platform for building internal applications in the cloud. If what you
+            need is a small internal tool that runs on your own computer, keeps its data local, and
+            costs nothing per seat, TinyAtom is built for that. You describe the tool, build it with a
+            coding assistant, review what it can access, and install it. No server, no repository, no
+            monthly bill.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Get TinyAtom for macOS</span>
+            </a>
+            <a class="btn btn-outline btn-lg" href="/#how">
+              <i class="ph ph-play-circle" aria-hidden="true"></i>
+              See how it works
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section business-section">
+        <div class="section-intro reveal">
+          <h2 class="section-title">TinyAtom and Retool at a glance.</h2>
+          <p class="section-lead">
+            The two solve related problems in different ways. This is where each one fits.
+          </p>
+        </div>
+
+        <div class="compare-wrap reveal" style="--reveal-delay: 80ms">
+          <table class="compare-table">
+            <caption class="sr-only">Comparison of TinyAtom and Retool for internal tools</caption>
+            <colgroup>
+              <col />
+              <col class="col-tinyatom" />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">TinyAtom</th>
+                <th scope="col">Retool</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Where tools run</th>
+                <td class="cell-tinyatom">On the computer where they are installed</td>
+                <td>Hosted in the cloud, reached from a browser</td>
+              </tr>
+              <tr>
+                <th scope="row">Server to run</th>
+                <td class="cell-tinyatom">None for the tool runtime</td>
+                <td>Cloud platform, or a self-hosted deployment you operate</td>
+              </tr>
+              <tr>
+                <th scope="row">Where data lives</th>
+                <td class="cell-tinyatom">On the computer, per tool</td>
+                <td>In the databases and APIs you connect</td>
+              </tr>
+              <tr>
+                <th scope="row">Pricing</th>
+                <td class="cell-tinyatom">Free for everyone, no per-seat cost</td>
+                <td>Paid plans, typically priced per user</td>
+              </tr>
+              <tr>
+                <th scope="row">How you build</th>
+                <td class="cell-tinyatom">Describe the job, build with a coding assistant, review, install</td>
+                <td>Drag-and-drop builder plus queries and code in the browser</td>
+              </tr>
+              <tr>
+                <th scope="row">Best fit</th>
+                <td class="cell-tinyatom">Small internal tools for a person or a team</td>
+                <td>Larger internal apps with many editors and shared cloud data</td>
+              </tr>
+              <tr>
+                <th scope="row">Sharing</th>
+                <td class="cell-tinyatom">Install on team computers, or a private company list</td>
+                <td>Centrally hosted, shared by link and permissions</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="compare-note">
+            Retool is a trademark of its respective owner. TinyAtom is not affiliated with or endorsed
+            by Retool. This comparison is provided to help you choose the right tool for your needs.
+          </p>
+        </div>
+      </section>
+
+      <section class="section business-section">
+        <div class="section-intro reveal">
+          <h2 class="section-title">Which one should you choose?</h2>
+          <p class="section-lead">
+            Neither is a replacement for the other in every case. The right choice depends on the size
+            of the job and where you want the data to live.
+          </p>
+        </div>
+
+        <div class="value-list reveal" style="--reveal-delay: 80ms">
+          <article class="value-row">
+            <div>
+              <h3>Choose TinyAtom when the tool is small and local</h3>
+              <p>
+                The job is specific to how you work, a handful of people use it, and the data should
+                stay on the computer. You do not want a server to run, a per-seat bill, or a cloud
+                account for a tool this size.
+              </p>
+              <p class="example-line">Local data · no server · no per-seat cost · fast to build</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-desktop"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Choose Retool when the app is larger and shared</h3>
+              <p>
+                Many people edit the same application in a browser, it connects to shared cloud
+                databases and APIs, and it needs to be reachable from anywhere and centrally managed.
+                A hosted platform fits that better than a local app.
+              </p>
+              <p class="example-line">Many editors · shared cloud data · hosted access</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-cloud"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Use TinyAtom alongside what you already run</h3>
+              <p>
+                You do not have to replace anything. Keep larger platforms for the apps that need
+                them, and use TinyAtom for the small internal jobs that are not worth a hosted build.
+              </p>
+              <p class="example-line">Small tools · no migration · free to try</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-puzzle-piece"></i></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section how-section">
+        <div class="section-intro how-intro reveal">
+          <h2 class="section-title">How you build a tool in TinyAtom.</h2>
+          <p class="section-lead">
+            Plan, build, check, and install in one desktop app. You approve the important choices as
+            you go.
+          </p>
+        </div>
+
+        <ol class="steps reveal" style="--reveal-delay: 80ms">
+          <li>
+            <span>1</span>
+            <div>
+              <h3>Describe the job</h3>
+              <p>Explain who will use the tool, what they need to do, and what a good result looks like.</p>
+            </div>
+          </li>
+          <li>
+            <span>2</span>
+            <div>
+              <h3>Build it with your coding assistant</h3>
+              <p>Use Claude, Codex, Cursor, Gemini, or a local shell inside TinyAtom Studio.</p>
+            </div>
+          </li>
+          <li>
+            <span>3</span>
+            <div>
+              <h3>Check what it can use</h3>
+              <p>Review the files, data, and computer features the tool asks for before it runs.</p>
+            </div>
+          </li>
+          <li>
+            <span>4</span>
+            <div>
+              <h3>Install or share it</h3>
+              <p>Install it on one computer, or keep it on a private company list for the team.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="faq-inner">
+          <div class="faq-intro reveal">
+            <h2 class="section-title" id="faq-title">Retool alternative: common questions</h2>
+            <p class="section-lead">
+              Short answers for teams comparing a local-first tool builder with a hosted platform.
+            </p>
+          </div>
+          <div class="faq-list reveal" style="--reveal-delay: 60ms">
+            <details class="faq-item">
+              <summary>Is TinyAtom a Retool alternative?</summary>
+              <p>
+                TinyAtom is a local-first alternative for small internal tools. Where Retool is a
+                cloud platform for building and hosting internal apps, TinyAtom builds tools that run
+                on the computer where they are installed, with no server to host and no per-seat
+                subscription.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Is TinyAtom free compared to Retool?</summary>
+              <p>
+                TinyAtom is free for everyone, with no per-seat cost. It is best suited to small
+                internal tools rather than large multi-team applications.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Does TinyAtom need a server or cloud database like Retool?</summary>
+              <p>
+                No. A TinyAtom tool runs on the computer where it is installed and stores its data
+                there. There is no app server to host and no cloud database required for the tool
+                runtime.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>When is Retool the better choice?</summary>
+              <p>
+                Retool fits larger internal applications that need many editors collaborating in a
+                browser, shared cloud databases and API connections, and centrally hosted apps
+                reachable from anywhere. TinyAtom is aimed at smaller tools that run locally and keep
+                data on the computer.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section reveal">
+        <div class="cta-panel">
+          <div>
+            <h2 class="section-title">Try the local-first way to build internal tools.</h2>
+            <p class="section-lead">Free for everyone. Runs on your computer.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Get TinyAtom for macOS</span>
+            </a>
+            <p class="cta-note" data-download-note hidden></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="/assets/tinyatom-logo.svg" alt="" width="24" height="24" />
+            <span>TinyAtom</span>
+          </div>
+          <p class="footer-tagline">
+            Describe the tool you need and TinyAtom helps you build it on your computer. No servers,
+            no subscriptions, no data leaving your computer.
+          </p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <h2 class="footer-nav-title">Explore</h2>
+          <ul>
+            <li><a href="/#what-is-tinyatom">What is TinyAtom</a></li>
+            <li><a href="/#business">For businesses</a></li>
+            <li><a href="/#individuals">For individuals</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#security">Security</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal">
+          <h2 class="footer-nav-title">Legal</h2>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Use</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer-bottom">
+        <p>&copy; 2026 TinyAtom. All rights reserved.</p>
+        <p>Your tools and your data stay on your computer.</p>
+      </div>
+    </footer>
+
+    <button
+      type="button"
+      class="theme-fab"
+      id="theme-fab"
+      aria-label="Theme: system. Click to switch."
+    >
+      <span class="theme-fab-icon theme-fab-icon-system" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <path d="M8 21h8"></path>
+          <path d="M12 17v4"></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-light" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+          ></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-dark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path>
+        </svg>
+      </span>
+    </button>
+  </body>
+</html>
