@@ -7,8 +7,8 @@ const PLATFORMS = {
   macos: {
     name: 'macOS',
     icon: 'ph-apple-logo',
-    label: 'Get TinyAtom for macOS',
-    href: '/download',
+    label: 'Download the macOS beta',
+    href: '/download/mac',
     available: true,
   },
   windows: {
@@ -32,8 +32,8 @@ const PLATFORMS = {
   other: {
     name: 'Other',
     icon: 'ph-desktop',
-    label: 'Get TinyAtom',
-    href: '/download',
+    label: 'Download the macOS beta',
+    href: '/download/mac',
     available: true,
   },
 };
