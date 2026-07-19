@@ -29,6 +29,6 @@ Before installing anything, you see which files and computer features the tool i
 
 ## Availability
 
-Free for everyone. The macOS build is available now; Windows and Linux are in progress.
+Free for everyone. The Apple silicon beta requires macOS 13 or later; Windows and Linux are in progress.
 
-[Download TinyAtom](https://tinyatom.app/download)
+[Download the TinyAtom macOS beta](https://tinyatom.app/download/mac)
