@@ -4,24 +4,54 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <meta
-      http-equiv="refresh"
-      content="0; url=https://github.com/org-tinyatom/tinyatom-downloads/releases/download/v0.1.0-beta.1/TinyAtom-0.1.0-beta.1-arm64.dmg"
-    />
     <title>Downloading TinyAtom for macOS</title>
     <script>
-      window.location.replace(
-        'https://github.com/org-tinyatom/tinyatom-downloads/releases/download/v0.1.0-beta.1/TinyAtom-0.1.0-beta.1-arm64.dmg',
-      );
+      const releasesUrl =
+        'https://api.github.com/repos/org-tinyatom/tinyatom-downloads/releases?per_page=20';
+
+      window.addEventListener('DOMContentLoaded', () => {
+        fetch(releasesUrl, {
+          headers: { Accept: 'application/vnd.github+json' },
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error('Release lookup failed');
+            return response.json();
+          })
+          .then((releases) => {
+            if (!Array.isArray(releases)) throw new Error('Invalid release response');
+
+            const asset = releases
+              .filter((release) => !release.draft)
+              .sort(
+                (left, right) =>
+                  new Date(right.published_at).getTime() -
+                  new Date(left.published_at).getTime(),
+              )
+              .flatMap((release) => release.assets)
+              .find((candidate) => /^TinyAtom-.+-arm64\.dmg$/.test(candidate.name));
+
+            if (!asset) throw new Error('No macOS download found');
+
+            const downloadLink = document.querySelector('[data-latest-download]');
+            downloadLink.href = asset.browser_download_url;
+            downloadLink.textContent = `Download ${asset.name}`;
+            window.location.replace(asset.browser_download_url);
+          })
+          .catch(() => {
+            document.querySelector('[data-download-status]').textContent =
+              'The automatic download could not start. Choose the newest TinyAtom release below.';
+          });
+      });
     </script>
   </head>
   <body>
+    <p data-download-status>Finding the latest TinyAtom download…</p>
     <p>
-      Your TinyAtom download should start automatically.
       <a
-        href="https://github.com/org-tinyatom/tinyatom-downloads/releases/download/v0.1.0-beta.1/TinyAtom-0.1.0-beta.1-arm64.dmg"
-        >Download TinyAtom 0.1.0-beta.1 for Apple silicon</a
-      >.
+        data-latest-download
+        href="https://github.com/org-tinyatom/tinyatom-downloads/releases"
+        >View TinyAtom releases</a
+      >
     </p>
   </body>
 </html>
