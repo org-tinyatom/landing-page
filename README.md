@@ -2,7 +2,7 @@
 
 TinyAtom is a free desktop app for building and running small internal tools without servers, code repositories, or cloud hosting. Tools run on the user's computer and their data stays there.
 
-The pitch: go from a job you need done to working software on your computer, without setting up a software project. No server to run, no repo to maintain for every small tool, no cloud account for the tool runtime, and no monthly SaaS bill for a five-person internal tool.
+The pitch: build the internal tools your startup needs without putting them on the engineering roadmap. Turn the spreadsheets, scripts, and manual workflows your team runs on into local desktop tools. No server to run, no repo to maintain for every small tool, no cloud account for the tool runtime, and no production app for engineers to babysit.
 
 **https://tinyatom.app/**
 
@@ -15,9 +15,9 @@ The pitch: go from a job you need done to working software on your computer, wit
 
 ## Who it is for
 
-**Businesses** that need specific internal software too small to justify a custom project: intake forms, onboarding, inventory, field reports, approvals, and other repeated internal jobs. Teams can build tools around how they actually work, install them on employee computers, pull from the community marketplace, or keep private tools on a company list.
+**Startup teams**: technical founders and small teams that keep hitting the same trigger — "we need this internally, but it is not worth assigning an engineer to it." The best fits are tools used by one person or a small team, too specific for off-the-shelf SaaS, and built from CSVs, files, forms, or API data: a customer-feedback organizer, a user-interview repository, a QA checklist, an incident-review organizer, a release-readiness dashboard, an investor-update generator, a candidate comparison tool. Teams install tools on their own computers and keep private tools on a company list.
 
-**Individuals** who want free local tools for personal workflows (research, applications, side projects) without adding another subscription.
+**Individuals** who want free local tools for personal workflows (research, applications, side projects) without adding another subscription. This is also the easiest on-ramp before bringing TinyAtom to a team.
 
 TinyAtom is *not* a hosted SaaS admin panel builder, and it does not ask you to deploy infrastructure.
 
