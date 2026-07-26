@@ -1,6 +1,10 @@
 const STORAGE_KEY = 'tinyatom-landing-theme';
 const THEME_ORDER = ['system', 'light', 'dark'];
 
+function captureAnalytics(eventName, properties = {}) {
+  window.tinyatomAnalytics?.capture(eventName, properties);
+}
+
 // Only the macOS build ships today. Flip `available` and set `href` as the other
 // builds land. The CTAs read entirely from this table.
 const PLATFORMS = {
@@ -74,7 +78,7 @@ function initDownloadCta() {
   });
 
   // Record which platform visitors actually arrive on, so demand drives build order.
-  window.posthog?.capture('landing_platform_detected', {
+  captureAnalytics('landing.platform_detected', {
     platform: key,
     available: platform.available,
   });
@@ -294,12 +298,20 @@ function initFlowDemo() {
     step.addEventListener('click', () => {
       show(i);
       restart();
+      captureAnalytics('landing.flow_step_selected', {
+        step: i + 1,
+        label: step.textContent.trim().replace(/\s+/g, ' '),
+      });
     });
     step.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         show(i);
         restart();
+        captureAnalytics('landing.flow_step_selected', {
+          step: i + 1,
+          label: step.textContent.trim().replace(/\s+/g, ' '),
+        });
       }
     });
   });
@@ -324,6 +336,71 @@ function initFlowDemo() {
   });
 }
 
+function getAnalyticsLocation(element) {
+  if (element.closest('.site-header')) return 'header';
+  if (element.closest('.hero')) return 'hero';
+  if (element.closest('.cta-section')) return 'final_cta';
+  if (element.closest('article')) return 'article';
+  if (element.closest('footer')) return 'footer';
+  return 'body';
+}
+
+function initEngagementAnalytics() {
+  document.querySelectorAll('[data-download-cta]').forEach((cta) => {
+    cta.addEventListener('click', () => {
+      captureAnalytics('landing.download_requested', {
+        location: getAnalyticsLocation(cta),
+        platform: cta.dataset.os || detectPlatform(),
+        destination: cta.getAttribute('href'),
+      });
+    });
+  });
+
+  document.querySelectorAll('.header-cta[href="#download"]').forEach((cta) => {
+    cta.addEventListener('click', () => {
+      captureAnalytics('landing.download_section_requested', {
+        location: getAnalyticsLocation(cta),
+      });
+    });
+  });
+
+  document.querySelectorAll('.hero-watch[href="#how"]').forEach((cta) => {
+    cta.addEventListener('click', () => {
+      captureAnalytics('landing.how_it_works_requested', {
+        location: getAnalyticsLocation(cta),
+      });
+    });
+  });
+
+  document.querySelectorAll('details.faq-item').forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (!item.open) return;
+      captureAnalytics('landing.faq_opened', {
+        question: item.querySelector('summary')?.textContent.trim() || '',
+      });
+    });
+  });
+
+  if (!('IntersectionObserver' in window)) return;
+
+  const sections = ['how', 'security', 'faq', 'download']
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        captureAnalytics('landing.section_viewed', {
+          section: entry.target.id,
+        });
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.35 },
+  );
+  sections.forEach((section) => observer.observe(section));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initHeaderScroll();
@@ -331,4 +408,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initDownloadCta();
   initMockTabs();
   initFlowDemo();
+  initEngagementAnalytics();
 });
