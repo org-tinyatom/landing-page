@@ -64,7 +64,7 @@
       <article class="legal-page">
         <div class="legal-head">
           <h1>Privacy Policy</h1>
-          <p class="legal-updated">Last updated: 13 July 2026</p>
+          <p class="legal-updated">Last updated: 26 July 2026</p>
           <p class="legal-summary">
             The tools you build with TinyAtom, and the data those tools hold, stay on your computer.
             We never receive them. We do collect a limited amount of information about how the
@@ -141,11 +141,18 @@
           <h3>3.2 Desktop app telemetry</h3>
           <p>The TinyAtom application sends us:</p>
           <ul>
-            <li><strong>Crash and error reports:</strong> stack traces, error messages, the application state at the time of the failure, application version, and operating system version. Crash reports can occasionally contain fragments of file paths or other incidental data; we do not seek this out, and we do not use it for any purpose other than diagnosing the failure.</li>
-            <li><strong>Usage events:</strong> which features are used and how often, such as creating, installing, or opening an atom. These are recorded as events, not as the contents of your work.</li>
+            <li><strong>Redacted error events:</strong> the affected process, failure category, standard error name, safe process reason, and numeric exit or load code where available. We do not send raw error messages, stack traces, file paths, application state, diagnostic reports, or logs.</li>
+            <li><strong>Usage events:</strong> coarse screen views and the outcome and duration of actions involving setup, dependencies, coding-agent terminals, atom creation, review gates, installation, updates, Marketplace catalogs, publishing, permissions, runtime dependencies, linked files, atom data management, diagnostics, and application updates. These are recorded as events, not as the contents of your work.</li>
             <li><strong>Version and update checks:</strong> the application asks our servers whether a newer version exists, which necessarily discloses your current version, your operating system, and your IP address.</li>
             <li><strong>Installation identifier:</strong> a random identifier generated on your device so we can tell repeat sessions apart from new ones. It is not linked to your name or email.</li>
           </ul>
+          <p>
+            Desktop telemetry does not include atom names or identifiers, atom source or documents,
+            prompts, terminal input or output, file paths or file contents, repository or catalog
+            addresses, publisher names, account information, credentials, or tokens. We do not
+            create named analytics profiles, derive location for desktop analytics, or use session
+            recording, heatmaps, automatic click capture, surveys, or feature flags.
+          </p>
 
           <h3>3.3 Information you give us</h3>
           <ul>
@@ -211,7 +218,7 @@
             cross-context behavioural advertising.</strong> We share it only with:
           </p>
           <ul>
-            <li><strong>Service providers</strong> who process information on our behalf and under contract: our analytics provider, error and crash reporting provider, hosting and content delivery providers, and email provider. They may use it only to provide services to us.</li>
+            <li><strong>Service providers</strong> who process information on our behalf and under contract: our analytics provider, hosting and content delivery providers, and email provider. They may use it only to provide services to us.</li>
             <li><strong>Legal and safety recipients:</strong> where we believe in good faith that disclosure is required by law, or is reasonably necessary to investigate a malicious atom or security incident, to protect our rights or property, or to protect the safety of any person.</li>
             <li><strong>A successor:</strong> if we are involved in a merger, acquisition, financing, or sale of assets, information may transfer as part of that transaction. We will give notice if a different privacy policy would then apply.</li>
           </ul>
@@ -231,8 +238,7 @@
             this policy, then delete or anonymise it. As a general rule:
           </p>
           <ul>
-            <li>analytics and usage events: up to 14 months;</li>
-            <li>crash and error reports: up to 90 days;</li>
+            <li>analytics, usage, and redacted error events: up to 14 months;</li>
             <li>waitlist emails: until you unsubscribe or we notify you that the build is ready, whichever is later;</li>
             <li>marketplace publisher records and published atoms: for as long as the atom is listed, and afterwards as needed for security, dispute resolution, and legal compliance;</li>
             <li>support correspondence: up to 2 years.</li>
@@ -263,9 +269,9 @@
             identifier and no account. In that case, the information we can provide may be limited.
           </p>
           <p>
-            You can opt out of app telemetry at any time in the application's settings, and you can
-            opt out of website analytics by declining cookies or using a browser or extension that
-            blocks them. Opting out will not reduce your access to the Service.
+            You can opt out of app telemetry at any time under <strong>About TinyAtom</strong>, and
+            you can opt out of website analytics by declining cookies or using a browser or extension
+            that blocks them. Opting out will not reduce your access to the Service.
           </p>
           <p>
             If you are in the EEA or UK and believe we have mishandled your information, you may
