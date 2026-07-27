@@ -57,7 +57,7 @@
   posthog.init('phc_ummCggeXe5y5pGbxvUjgUfvhKgE6jj2fiNwYV9eyHp5B', {
     api_host: 'https://us.i.posthog.com',
     defaults: '2026-05-30',
-    persistence: 'memory',
+    persistence: 'localStorage',
     person_profiles: 'never',
     capture_pageview: false,
     capture_pageleave: false,
