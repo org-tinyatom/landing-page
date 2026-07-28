@@ -8,16 +8,20 @@
   --atom-ink: #d0d0d0;
   --atom-ink-soft: #a3a3a3;
   --atom-muted: #737373;
-  --atom-accent: #0078d4;
-  --atom-accent-hover: #1a8ae6;
-  --atom-accent-deep: #005a9e;
+  /* Accent fills carry white ink, so they stay deep enough to pass contrast.
+     --atom-accent-text is the separate, lighter tone used when the accent is
+     *text* sitting on the page background, where a fill-weight blue goes muddy. */
+  --atom-accent: #2f74e0;
+  --atom-accent-hover: #4488f0;
+  --atom-accent-deep: #1f56ad;
   --atom-accent-ink: #ffffff;
-  --atom-accent-06: rgba(0, 120, 212, 0.06);
-  --atom-accent-08: rgba(0, 120, 212, 0.08);
-  --atom-accent-12: rgba(0, 120, 212, 0.12);
-  --atom-accent-16: rgba(0, 120, 212, 0.16);
-  --atom-accent-28: rgba(0, 120, 212, 0.28);
-  --atom-accent-40: rgba(0, 120, 212, 0.4);
+  --atom-accent-text: #7fb0ff;
+  --atom-accent-06: rgba(47, 116, 224, 0.06);
+  --atom-accent-08: rgba(47, 116, 224, 0.08);
+  --atom-accent-12: rgba(47, 116, 224, 0.12);
+  --atom-accent-16: rgba(47, 116, 224, 0.16);
+  --atom-accent-28: rgba(47, 116, 224, 0.28);
+  --atom-accent-40: rgba(47, 116, 224, 0.4);
   --atom-success: #89d185;
   --atom-line-2: #2c2c2c;
   --atom-line-3: #383838;
@@ -32,8 +36,10 @@
   --atom-radius-2xl: 16px;
   --atom-radius-3xl: 20px;
   --atom-radius-pill: 999px;
-  --atom-shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.3);
-  --atom-shadow-card: 0 2px 6px rgba(0, 0, 0, 0.22);
+  /* On a dark page a mid-grey shadow just smears; depth comes from a hairline
+     top highlight plus a long, very dark falloff. Light mode overrides both. */
+  --atom-shadow-soft: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 24px 60px -24px rgba(0, 0, 0, 0.75);
+  --atom-shadow-card: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 28px -16px rgba(0, 0, 0, 0.7);
   --atom-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --atom-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --wide-page-max: 1680px;
@@ -46,12 +52,13 @@
   --bleed-gap: 80px;
   --header-height: 76px;
 
-  --title-weight: 700;
-  --title-size: clamp(2.25rem, 3.8vw, 3.35rem);
-  --title-leading: 1.08;
-  --title-tracking: -0.035em;
-  --title-gap: 20px;
-  --kicker-gap: 22px;
+  /* Section titles stay a clear step below the hero h1 so the page has one
+     loudest line instead of several competing ones. */
+  --title-weight: 650;
+  --title-size: clamp(1.95rem, 2.6vw, 2.6rem);
+  --title-leading: 1.14;
+  --title-tracking: -0.028em;
+  --title-gap: 18px;
   --lead-size: 1.0625rem;
   --lead-leading: 1.7;
   --section-pad-y: clamp(88px, 9.5vw, 128px);
@@ -74,8 +81,12 @@
     --atom-line-3: #d5d9e0;
     --atom-line-4: #c5cad3;
     --atom-line-faint: rgba(0, 0, 0, 0.05);
-    --atom-shadow-soft: 0 10px 24px rgba(15, 30, 55, 0.12);
-    --atom-shadow-card: 0 2px 6px rgba(15, 30, 55, 0.09);
+    --atom-accent: #1256b8;
+    --atom-accent-hover: #0e4899;
+    --atom-accent-deep: #0b3c80;
+    --atom-accent-text: #0f56ad;
+    --atom-shadow-soft: 0 1px 2px rgba(15, 30, 55, 0.06), 0 18px 40px -20px rgba(15, 30, 55, 0.28);
+    --atom-shadow-card: 0 1px 2px rgba(15, 30, 55, 0.05), 0 10px 24px -16px rgba(15, 30, 55, 0.22);
   }
 }
 
@@ -99,8 +110,12 @@
   --atom-line-3: #d5d9e0;
   --atom-line-4: #c5cad3;
   --atom-line-faint: rgba(0, 0, 0, 0.05);
-  --atom-shadow-soft: 0 10px 24px rgba(15, 30, 55, 0.12);
-  --atom-shadow-card: 0 2px 6px rgba(15, 30, 55, 0.09);
+  --atom-accent: #1256b8;
+  --atom-accent-hover: #0e4899;
+  --atom-accent-deep: #0b3c80;
+  --atom-accent-text: #0f56ad;
+  --atom-shadow-soft: 0 1px 2px rgba(15, 30, 55, 0.06), 0 18px 40px -20px rgba(15, 30, 55, 0.28);
+  --atom-shadow-card: 0 1px 2px rgba(15, 30, 55, 0.05), 0 10px 24px -16px rgba(15, 30, 55, 0.22);
 }
 
 [data-theme='dark'] { color-scheme: dark; }
@@ -162,15 +177,6 @@ button { font-family: inherit; }
 }
 
 /* -- Typography -- */
-.kicker {
-  margin: 0 0 var(--kicker-gap);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--atom-muted);
-}
-
 .section-title {
   margin: 0 0 var(--title-gap);
   color: var(--atom-ink-bright);
@@ -237,12 +243,16 @@ button { font-family: inherit; }
 }
 .btn-primary {
   border-color: var(--atom-accent);
-  background: var(--atom-accent);
+  /* Barely-there top highlight: gives the fill a light source instead of
+     reading as a flat swatch. */
+  background: linear-gradient(180deg, var(--atom-accent-hover), var(--atom-accent) 62%);
   color: var(--atom-accent-ink);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.18) inset, 0 6px 16px -8px var(--atom-accent-40);
 }
 .btn-primary:hover {
   border-color: var(--atom-accent-hover);
-  background: var(--atom-accent-hover);
+  background: linear-gradient(180deg, var(--atom-accent-hover), var(--atom-accent-hover) 62%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.22) inset, 0 10px 22px -10px var(--atom-accent-40);
 }
 .btn-outline {
   border-color: var(--atom-line-4);
@@ -270,7 +280,7 @@ button { font-family: inherit; }
 
 .site-header.is-scrolled {
   border-bottom-color: var(--atom-line-2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 0 var(--atom-line-faint), 0 12px 32px -18px rgba(0, 0, 0, 0.55);
 }
 
 .site-header-inner {
@@ -359,6 +369,22 @@ button { font-family: inherit; }
   overflow-x: clip;
 }
 
+/* Faint engineering grid behind the hero, faded out toward the bottom-right so
+   it never competes with the copy or the app mock. Decorative only. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--atom-line-faint) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--atom-line-faint) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(120% 90% at 0% 0%, #000 0%, transparent 68%);
+  mask-image: radial-gradient(120% 90% at 0% 0%, #000 0%, transparent 68%);
+  pointer-events: none;
+}
+
 .hero-copy,
 .hero-product {
   position: relative;
@@ -367,22 +393,36 @@ button { font-family: inherit; }
 
 .hero-copy { min-width: 0; }
 
+/* Four hand-set lines at ~17ch each; sized to stay inside --bleed-copy-col. */
 .hero h1 {
-  margin: 0 0 28px;
-  font-size: clamp(3rem, 3.5vw, 3.55rem);
+  margin: 0 0 24px;
+  font-size: clamp(2.7rem, 3.1vw, 3.4rem);
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  line-height: 1.06;
+  letter-spacing: -0.038em;
   color: var(--atom-ink-bright);
 }
 .hero h1 span { display: block; white-space: nowrap; }
 
 .hero-lead {
   max-width: 34rem;
-  margin: 0 0 48px;
+  margin: 0 0 18px;
   color: var(--atom-ink-soft);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* The "no X, no Y" line is a claim, not body copy, so it gets its own rule and
+   a hairline rail rather than reading as a third paragraph. */
+.hero-negative {
+  max-width: 34rem;
+  margin: 0 0 40px;
+  padding-left: 16px;
+  border-left: 2px solid var(--atom-accent-28);
+  color: var(--atom-ink);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
 .hero-actions {
@@ -394,7 +434,7 @@ button { font-family: inherit; }
 }
 .hero-note i::before,
 .product-window i::before { display: block; line-height: 1; }
-.hero-watch i { color: var(--atom-accent); }
+.hero-watch i { color: var(--atom-accent-text); }
 
 .hero-note {
   display: flex;
@@ -411,7 +451,7 @@ button { font-family: inherit; }
 }
 
 @media (min-width: 1321px) {
-  .hero h1 { font-size: clamp(3.5rem, 4vw, 4.1rem); }
+  .hero h1 { font-size: clamp(3rem, 3.35vw, 3.65rem); }
 }
 
 /* -- Product mock -- */
@@ -427,7 +467,7 @@ button { font-family: inherit; }
   border-right: 0;
   border-radius: var(--atom-radius-3xl) 0 0 var(--atom-radius-3xl);
   background: var(--atom-surface-terminal);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  box-shadow: var(--atom-shadow-soft);
 }
 
 /* Window chrome */
@@ -658,7 +698,7 @@ button { font-family: inherit; }
   flex: none;
   border-radius: var(--atom-radius-lg);
   background: linear-gradient(145deg, var(--atom-accent-28), var(--atom-accent-12));
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -744,10 +784,40 @@ button { font-family: inherit; }
 }
 .what-intro .section-title {
   max-width: 18ch;
-  font-size: clamp(2.1rem, 3.4vw, 3rem);
 }
 .what-intro .section-lead {
   max-width: 40em;
+}
+
+/* The six named tools from the lead, each paired with the artefact it replaces.
+   Two columns of "name / was" so the before-and-after is the visible pattern. */
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--atom-line-3);
+}
+.example-grid li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 20px 14px 0;
+  border-bottom: 1px solid var(--atom-line-3);
+}
+.example-grid-name {
+  color: var(--atom-ink-bright);
+  font-size: 0.9375rem;
+  font-weight: 550;
+  letter-spacing: -0.015em;
+}
+.example-grid-was {
+  color: var(--atom-muted);
+  font-family: var(--atom-font-mono);
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .what-who {
@@ -768,7 +838,7 @@ button { font-family: inherit; }
 }
 .what-card:hover {
   border-color: var(--atom-line-4);
-  background: color-mix(in srgb, var(--atom-accent-06) 60%, var(--atom-surface-terminal));
+  background: var(--atom-panel-hover);
 }
 .use-case-tag {
   display: inline-flex;
@@ -827,13 +897,12 @@ button { font-family: inherit; }
   overflow: hidden;
 }
 .business-section .section-intro { max-width: none; padding-top: 0; }
-.business-section .kicker { margin-bottom: 28px; }
 .business-section .section-title {
-  max-width: none;
-  margin: 0 0 28px;
-  font-size: clamp(3.1rem, 4.4vw, 4.35rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  max-width: 15ch;
+  margin: 0 0 22px;
+  font-size: clamp(2.15rem, 2.85vw, 2.85rem);
+  line-height: 1.08;
+  letter-spacing: -0.032em;
 }
 .business-section .section-lead { max-width: none; }
 
@@ -844,7 +913,7 @@ button { font-family: inherit; }
   gap: 12px;
   margin-top: 32px;
   padding-bottom: 10px;
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
   font-size: 0.975rem;
   font-weight: 650;
   text-decoration: none;
@@ -873,22 +942,38 @@ button { font-family: inherit; }
   border-right: 0;
   border-radius: var(--atom-radius-2xl) 0 0 var(--atom-radius-2xl);
   background: var(--atom-surface-terminal);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--atom-shadow-soft);
   overflow: hidden;
 }
 
 .value-row {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 56px;
   gap: 24px;
   min-height: 0;
-  padding: 22px 40px;
-  align-items: center;
+  padding: 26px 40px;
+  align-items: start;
   border-bottom: 1px solid var(--atom-line-3);
   transition: background 180ms var(--atom-ease);
 }
 .value-row:last-child { border-bottom: 0; }
-.value-row:hover { background: var(--atom-accent-06); }
+/* Neutral lift plus one accent rail. A blue wash on every row made the whole
+   list read as permanently hovered. */
+.value-row:hover { background: var(--atom-panel-hover); }
+.value-row::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  width: 2px;
+  background: var(--atom-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 240ms var(--atom-ease);
+}
+.value-row:hover::before { transform: scaleY(1); }
 
 .value-row h3 {
   margin: 0 0 8px;
@@ -905,25 +990,37 @@ button { font-family: inherit; }
   font-size: 0.9375rem;
   line-height: 1.55;
 }
+/* Mono + a hairline rule so the keyword run reads as a spec line under the
+   paragraph rather than as more prose. */
 .value-row .example-line {
   max-width: none;
-  margin-top: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--atom-line-2);
   color: var(--atom-muted);
-  font-size: 0.8125rem;
-  line-height: 1.45;
+  font-family: var(--atom-font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  letter-spacing: 0.005em;
 }
 .value-icon {
   display: grid;
   place-items: center;
-  align-self: center;
+  align-self: start;
   justify-self: end;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--atom-line-2);
+  border-radius: var(--atom-radius-lg);
+  background: var(--atom-bg);
   color: var(--atom-muted);
-  transition: color 180ms var(--atom-ease);
+  transition: border-color 180ms var(--atom-ease), color 180ms var(--atom-ease);
 }
-.value-row:hover .value-icon { color: var(--atom-accent); }
-.value-icon i { font-size: 1.5rem; }
+.value-row:hover .value-icon {
+  border-color: var(--atom-line-4);
+  color: var(--atom-ink-soft);
+}
+.value-icon i { font-size: 1.2rem; }
 
 
 /* -- How it works -- */
@@ -1042,9 +1139,7 @@ button { font-family: inherit; }
   border-bottom: 1px solid var(--atom-line-3);
   transition: background 160ms var(--atom-ease);
 }
-.security-facts div:hover {
-  background: var(--atom-accent-06);
-}
+.security-facts div:hover dd { color: var(--atom-accent-text); }
 .security-facts dt {
   color: var(--atom-muted);
   font: 600 0.75rem/1.5 var(--atom-font-sans);
@@ -1056,6 +1151,7 @@ button { font-family: inherit; }
   color: var(--atom-ink-bright);
   font-weight: 500;
   letter-spacing: -0.01em;
+  transition: color 160ms var(--atom-ease);
 }
 
 /* -- FAQ -- */
@@ -1076,6 +1172,12 @@ button { font-family: inherit; }
   max-width: var(--wide-page-max);
   margin-inline: auto;
   padding: var(--section-pad-y) var(--frame-pad-right) var(--section-pad-y) var(--page-gutter);
+}
+/* The answer list is much taller than the intro, so the intro rides along
+   instead of leaving a column of dead space. */
+.faq-intro {
+  position: sticky;
+  top: calc(var(--header-height) + 40px);
 }
 .faq-intro .section-title { max-width: 14ch; }
 .faq-list {
@@ -1114,7 +1216,7 @@ button { font-family: inherit; }
   font: 400 1.35rem/1 var(--atom-font-sans);
 }
 .faq-item[open] summary::after { content: '–'; }
-.faq-item summary:hover { background: var(--atom-accent-06); }
+.faq-item summary:hover { background: var(--atom-panel-hover); }
 .faq-item p {
   margin: 0;
   padding: 0 22px 18px;
@@ -1159,10 +1261,12 @@ button { font-family: inherit; }
   overflow: hidden;
   box-shadow: var(--atom-shadow-card);
 }
+/* Wraps rather than nowrapping: the headline is longer than it used to be and
+   the panel is only 1.5fr of the row. */
 .cta-panel .section-title {
-  max-width: none;
+  max-width: 22ch;
   margin-bottom: 12px;
-  white-space: nowrap;
+  text-wrap: balance;
 }
 .cta-panel .section-lead {
   color: var(--atom-ink-soft);
@@ -1315,7 +1419,7 @@ button { font-family: inherit; }
   font-size: 0.8125rem;
   text-decoration: none;
 }
-.legal-toc a:hover { color: var(--atom-accent); }
+.legal-toc a:hover { color: var(--atom-accent-text); }
 
 .legal-body h2 {
   margin: 48px 0 16px;
@@ -1343,7 +1447,7 @@ button { font-family: inherit; }
 .legal-body ul,
 .legal-body ol { margin: 0 0 16px; padding-left: 22px; }
 .legal-body li { margin-bottom: 8px; }
-.legal-body a { color: var(--atom-accent); text-decoration: underline; }
+.legal-body a { color: var(--atom-accent-text); text-decoration: underline; }
 .legal-body strong { color: var(--atom-ink-bright); font-weight: 600; }
 /* Warranty and liability clauses are conventionally set apart and emphasised. */
 .legal-body .legal-emphasis {
@@ -1431,19 +1535,24 @@ button { font-family: inherit; }
     padding-left: var(--page-gutter);
     overflow: visible;
   }
+  /* Stacked hero: fade the grid from the top instead of the top-left corner. */
   .hero::before {
-    top: auto;
-    bottom: 40%;
-    right: 50%;
-    transform: translateX(50%);
-    width: min(100%, 700px);
-    height: min(90vw, 700px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 55%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 55%);
   }
   .hero-copy {
     justify-self: center;
     max-width: 720px;
     margin-inline: auto;
     text-align: center;
+  }
+  /* The rail only reads as a rail against left-aligned text. */
+  .hero-negative {
+    margin-inline: auto;
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--atom-line-3);
   }
   .hero-copy,
   .hero-product { transform: none; }
@@ -1480,7 +1589,7 @@ button { font-family: inherit; }
   .business-section .section-intro { max-width: 640px; padding-top: 0; }
   .business-section .section-title {
     max-width: 640px;
-    font-size: clamp(2.75rem, 5.5vw, 4rem);
+    font-size: clamp(1.95rem, 3.6vw, 2.5rem);
   }
   .value-list {
     width: 100%;
@@ -1541,8 +1650,14 @@ button { font-family: inherit; }
     line-height: 1.08;
     letter-spacing: -0.035em;
   }
-  .hero h1 span { white-space: normal; }
-  .hero-lead { margin-bottom: 28px; font-size: 1rem; }
+  .hero h1 span { display: inline; white-space: normal; }
+  .hero-lead { margin-bottom: 14px; font-size: 1rem; }
+  .hero-negative {
+    margin-bottom: 26px;
+    font-size: 0.875rem;
+  }
+  .example-grid { grid-template-columns: 1fr; margin-top: 24px; }
+  .example-grid li { padding: 12px 0; }
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
@@ -1595,10 +1710,10 @@ button { font-family: inherit; }
     border-right: 1px solid var(--atom-line-3);
     border-radius: var(--atom-radius-2xl);
   }
-  .business-section .kicker { margin-bottom: 20px; }
-  .business-section .section-title {
-    font-size: clamp(2.4rem, 10vw, 3.2rem);
-    line-height: 1;
+    .business-section .section-title {
+    max-width: none;
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+    line-height: 1.1;
   }
   .business-link { margin-top: 24px; }
   .value-row {
@@ -1708,7 +1823,7 @@ button { font-family: inherit; }
   border: 1px solid var(--atom-line-3);
   border-radius: var(--atom-radius-2xl);
   background: var(--atom-surface-terminal);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  box-shadow: var(--atom-shadow-soft);
 }
 .flow-window i::before { display: block; line-height: 1; }
 
@@ -1747,7 +1862,7 @@ button { font-family: inherit; }
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.flow-eyebrow i { color: var(--atom-accent); font-size: 0.95rem; }
+.flow-eyebrow i { color: var(--atom-accent-text); font-size: 0.95rem; }
 .flow-screen-head h4 {
   margin: 0;
   color: var(--atom-ink-bright);
@@ -1818,7 +1933,7 @@ button { font-family: inherit; }
 .flow-pill.is-active {
   border-color: var(--atom-accent);
   background: var(--atom-accent-12);
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
 }
 .flow-assistant {
   display: grid;
@@ -1838,7 +1953,7 @@ button { font-family: inherit; }
   flex: none;
   border-radius: var(--atom-radius-md);
   background: linear-gradient(145deg, var(--atom-accent-28), var(--atom-accent-12));
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
   font-size: 1rem;
 }
 .flow-assistant strong { display: block; color: var(--atom-ink-bright); font-size: 0.82rem; }
@@ -1847,7 +1962,7 @@ button { font-family: inherit; }
   padding: 3px 10px;
   border-radius: 999px;
   background: var(--atom-accent-12);
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
   font: 600 0.64rem/1.5 var(--atom-font-mono);
   white-space: nowrap;
 }
@@ -1856,7 +1971,7 @@ button { font-family: inherit; }
 .flow-log li i { font-size: 1.05rem; flex: none; }
 .flow-log li.is-done i { color: var(--atom-success); }
 .flow-log li.is-active { color: var(--atom-ink-bright); }
-.flow-log li.is-active i { color: var(--atom-accent); animation: flow-spin 1s linear infinite; }
+.flow-log li.is-active i { color: var(--atom-accent-text); animation: flow-spin 1s linear infinite; }
 @keyframes flow-spin { to { transform: rotate(360deg); } }
 
 /* Step 3: capability review */
@@ -1907,7 +2022,7 @@ button { font-family: inherit; }
   flex: none;
   border-radius: var(--atom-radius-lg);
   background: linear-gradient(145deg, var(--atom-accent-28), var(--atom-accent-12));
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
   font-size: 1rem;
   font-weight: 700;
 }
@@ -1934,7 +2049,7 @@ button { font-family: inherit; }
   height: 32px;
   border-radius: var(--atom-radius-md);
   background: var(--atom-well);
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
   font-size: 1rem;
 }
 .flow-share-card strong { color: var(--atom-ink-bright); font-size: 0.82rem; }
@@ -1984,7 +2099,7 @@ button { font-family: inherit; }
   color: var(--atom-ink-soft);
 }
 .blog-breadcrumb a { color: var(--atom-ink-soft); text-decoration: none; }
-.blog-breadcrumb a:hover { color: var(--atom-accent); }
+.blog-breadcrumb a:hover { color: var(--atom-accent-text); }
 .blog-breadcrumb i { color: var(--atom-muted); font-size: 0.85rem; }
 .blog-breadcrumb [aria-current] { color: var(--atom-ink); }
 .blog-hero h1 {
@@ -2047,7 +2162,6 @@ button { font-family: inherit; }
   outline: 2px solid color-mix(in srgb, var(--atom-accent) 75%, transparent);
   outline-offset: 3px;
 }
-.blog-card .kicker { margin: 0; }
 .blog-card h2 {
   margin: 0;
   color: var(--atom-ink-bright);
@@ -2063,7 +2177,7 @@ button { font-family: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--atom-accent);
+  color: var(--atom-accent-text);
   font-size: 0.85rem;
   font-weight: 600;
 }
