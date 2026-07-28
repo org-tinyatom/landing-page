@@ -238,6 +238,145 @@ function initMockTabs() {
   });
 }
 
+const VIDEO_IDLE_MS = 2600;
+
+function formatVideoTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+  const whole = Math.floor(seconds);
+  return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`;
+}
+
+function setVideoIcon(button, name) {
+  const icon = button.querySelector('i');
+  if (icon) icon.className = name;
+}
+
+// Custom chrome for the demo video: the native controls are replaced so the
+// player matches the page, and nothing about it starts playback on its own.
+function initVideoPlayer() {
+  const player = document.querySelector('[data-video-player]');
+  if (!player) return;
+
+  const media = player.querySelector('[data-video-media]');
+  const toggles = [...player.querySelectorAll('[data-video-toggle]')];
+  const barToggle = player.querySelector('.video-btn[data-video-toggle]');
+  const timeLabel = player.querySelector('[data-video-time]');
+  const seek = player.querySelector('[data-video-seek]');
+  const muteButton = player.querySelector('[data-video-mute]');
+  const fullscreenButton = player.querySelector('[data-video-fullscreen]');
+  if (!media || !toggles.length) return;
+
+  let scrubbing = false;
+  let idleTimer = null;
+
+  const renderTime = () => {
+    const duration = Number.isFinite(media.duration) ? media.duration : 0;
+    if (timeLabel) {
+      timeLabel.textContent = `${formatVideoTime(media.currentTime)} / ${formatVideoTime(duration)}`;
+    }
+    if (seek && !scrubbing) {
+      const played = duration > 0 ? media.currentTime / duration : 0;
+      seek.value = String(Math.round(played * 1000));
+      seek.style.setProperty('--seek', played.toFixed(4));
+    }
+  };
+
+  const clearIdle = () => {
+    clearTimeout(idleTimer);
+    idleTimer = null;
+    player.classList.remove('is-idle');
+  };
+  const armIdle = () => {
+    clearIdle();
+    if (media.paused) return;
+    idleTimer = setTimeout(() => player.classList.add('is-idle'), VIDEO_IDLE_MS);
+  };
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      if (media.paused) media.play();
+      else media.pause();
+    });
+  });
+
+  media.addEventListener('play', () => {
+    const first = !player.classList.contains('is-started');
+    player.classList.add('is-started', 'is-playing');
+    player.classList.remove('is-paused');
+    toggles.forEach((toggle) => toggle.setAttribute('aria-label', 'Pause the demo'));
+    if (barToggle) setVideoIcon(barToggle, 'ph-fill ph-pause');
+    armIdle();
+    if (first) captureAnalytics('landing.demo_video_played', { location: 'how_it_works' });
+  });
+
+  media.addEventListener('pause', () => {
+    player.classList.remove('is-playing');
+    player.classList.add('is-paused');
+    toggles.forEach((toggle) => toggle.setAttribute('aria-label', 'Play the demo'));
+    if (barToggle) setVideoIcon(barToggle, 'ph-fill ph-play');
+    clearIdle();
+  });
+
+  media.addEventListener('ended', () => {
+    captureAnalytics('landing.demo_video_completed', { location: 'how_it_works' });
+  });
+
+  media.addEventListener('timeupdate', renderTime);
+  media.addEventListener('loadedmetadata', renderTime);
+  media.addEventListener('durationchange', renderTime);
+
+  if (seek) {
+    const seekTo = () => {
+      if (!Number.isFinite(media.duration)) return;
+      const fraction = Number(seek.value) / 1000;
+      seek.style.setProperty('--seek', fraction.toFixed(4));
+      media.currentTime = fraction * media.duration;
+    };
+    seek.addEventListener('pointerdown', () => (scrubbing = true));
+    seek.addEventListener('input', seekTo);
+    seek.addEventListener('change', () => {
+      scrubbing = false;
+      seekTo();
+    });
+  }
+
+  if (muteButton) {
+    muteButton.addEventListener('click', () => {
+      media.muted = !media.muted;
+      setVideoIcon(muteButton, media.muted ? 'ph-fill ph-speaker-slash' : 'ph-fill ph-speaker-high');
+      muteButton.setAttribute('aria-label', media.muted ? 'Unmute the demo' : 'Mute the demo');
+    });
+  }
+
+  if (fullscreenButton) {
+    fullscreenButton.addEventListener('click', () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else if (player.requestFullscreen) {
+        player.requestFullscreen();
+      } else if (media.webkitEnterFullscreen) {
+        // iOS Safari only ever fullscreens the video element itself.
+        media.webkitEnterFullscreen();
+      }
+    });
+    document.addEventListener('fullscreenchange', () => {
+      const full = document.fullscreenElement === player;
+      setVideoIcon(fullscreenButton, full ? 'ph ph-corners-in' : 'ph ph-corners-out');
+      fullscreenButton.setAttribute(
+        'aria-label',
+        full ? 'Leave full screen' : 'Show the demo full screen',
+      );
+    });
+  }
+
+  player.addEventListener('pointermove', armIdle);
+  player.addEventListener('pointerleave', () => {
+    if (!media.paused) player.classList.add('is-idle');
+  });
+
+  renderTime();
+}
+
 function getAnalyticsLocation(element) {
   if (element.closest('.site-header')) return 'header';
   if (element.closest('.hero')) return 'hero';
@@ -309,5 +448,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initDownloadCta();
   initMockTabs();
+  initVideoPlayer();
   initEngagementAnalytics();
 });

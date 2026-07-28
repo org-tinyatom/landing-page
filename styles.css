@@ -1783,16 +1783,193 @@ button { font-family: inherit; }
   max-width: 1120px;
   margin-inline: auto;
 }
-.how-video-player {
+/* The player chrome sits on dark video in both themes, so it keeps its own
+   dark glass palette instead of following the page surface tokens. */
+.video-player {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--atom-line-3);
+  border-radius: var(--atom-radius-2xl);
+  background: #0d0d0d;
+  box-shadow: var(--atom-shadow-soft);
+  isolation: isolate;
+}
+.video-media {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  border: 1px solid var(--atom-line-3);
-  border-radius: var(--atom-radius-2xl);
-  background: var(--atom-surface-terminal);
-  box-shadow: var(--atom-shadow-soft);
+  background: #0d0d0d;
 }
+
+/* Full-frame click target: play from the poster, pause once it is running. */
+.video-surface {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  padding: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.18));
+  cursor: pointer;
+  transition: background 260ms var(--atom-ease);
+}
+.video-player.is-playing .video-surface { background: transparent; }
+.video-surface:focus-visible {
+  outline: 2px solid var(--atom-accent-hover);
+  outline-offset: -6px;
+}
+
+.video-badge {
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--atom-accent);
+  color: #fff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+    0 22px 50px -20px rgba(0, 0, 0, 0.95);
+  transition:
+    transform 260ms var(--atom-ease),
+    opacity 200ms var(--atom-ease),
+    background 200ms var(--atom-ease);
+}
+.video-badge i {
+  font-size: 2.5rem;
+  transform: translateX(-0.5px);
+}
+.video-badge i::before { display: block; line-height: 1; }
+.video-surface:hover .video-badge { background: var(--atom-accent-hover); transform: scale(1.04); }
+.video-player.is-playing .video-badge { opacity: 0; transform: scale(0.9); pointer-events: none; }
+
+/* -- Control bar -- */
+.video-bar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.72));
+  opacity: 0;
+  transform: translateY(8px);
+  visibility: hidden;
+  transition:
+    opacity 220ms var(--atom-ease),
+    transform 220ms var(--atom-ease),
+    visibility 0s linear 220ms;
+}
+.video-player.is-started:hover .video-bar,
+.video-player.is-started:focus-within .video-bar,
+.video-player.is-started.is-paused .video-bar {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition-delay: 0s;
+}
+.video-player.is-idle .video-bar {
+  opacity: 0;
+  transform: translateY(8px);
+  visibility: hidden;
+}
+.video-player.is-idle { cursor: none; }
+
+.video-btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--atom-radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f0f0f0;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 160ms var(--atom-ease), color 160ms var(--atom-ease);
+}
+.video-btn i::before { display: block; line-height: 1; }
+.video-btn:hover { background: rgba(255, 255, 255, 0.16); }
+.video-btn:focus-visible {
+  outline: 2px solid var(--atom-accent-hover);
+  outline-offset: 2px;
+}
+
+.video-time {
+  flex: none;
+  color: #d0d0d0;
+  font: 500 0.75rem/1 var(--atom-font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* --seek is the played fraction, written by the player script. */
+.video-seek {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 18px;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.video-seek::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--atom-accent-hover) calc(var(--seek, 0) * 100%),
+    rgba(255, 255, 255, 0.24) calc(var(--seek, 0) * 100%)
+  );
+}
+.video-seek::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    var(--atom-accent-hover) calc(var(--seek, 0) * 100%),
+    rgba(255, 255, 255, 0.24) calc(var(--seek, 0) * 100%)
+  );
+}
+.video-seek::-webkit-slider-thumb {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  margin-top: -4.5px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+  transition: transform 160ms var(--atom-ease);
+}
+.video-seek::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+.video-seek:hover::-webkit-slider-thumb { transform: scale(1.2); }
+.video-seek:focus-visible {
+  outline: 2px solid var(--atom-accent-hover);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 520px) {
+  .video-bar { gap: 8px; padding: 10px; }
+  .video-badge { width: 64px; height: 64px; }
+  .video-badge i { font-size: 1.75rem; }
+  .video-time { font-size: 0.68rem; }
+  .video-btn { width: 30px; height: 30px; font-size: 0.95rem; }
+}
+
 .how-video figcaption {
   margin-top: 14px;
   text-align: center;
@@ -1863,10 +2040,15 @@ button { font-family: inherit; }
 .blog-hero .hero-actions { justify-content: center; }
 
 /* Blog listing */
+/* auto-fit (not auto-fill) so a short post list fills its row instead of
+   leaving empty tracks against the right edge of the wide page frame. */
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
   gap: 20px;
+  max-width: 1120px;
+  margin-inline: auto;
 }
 .blog-card {
   display: flex;

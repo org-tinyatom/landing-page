@@ -245,10 +245,9 @@
 
         <nav class="site-nav" aria-label="Primary">
           <a href="#what-is-tinyatom">What is TinyAtom</a>
-          <a href="#business">For startups</a>
           <a href="#how">How it works</a>
-          <a href="/blog/">Blog</a>
           <a href="#faq">FAQ</a>
+          <a href="/blog/">Blog</a>
         </nav>
 
         <a class="btn btn-primary header-cta" href="#download">Get TinyAtom</a>
@@ -261,8 +260,7 @@
           <h1>
             <span>Turn manual</span>
             <span>workflows into</span>
-            <span>internal</span>
-            <span>desktop tools.</span>
+            <span>internal tools.</span>
           </h1>
           <p class="hero-lead">
             Describe the workflow your team handles through spreadsheets, documents, and repetitive
@@ -520,8 +518,8 @@
                   build the tool with the AI coding agent your team already uses, and install it on
                   your team&rsquo;s computers. The roadmap stays untouched.
                 </p>
-                <a class="business-link" href="#business"
-                  >For startups <i class="ph ph-arrow-right" aria-hidden="true"></i
+                <a class="business-link" href="#how"
+                  >How it works <i class="ph ph-arrow-right" aria-hidden="true"></i
                 ></a>
               </article>
               <article class="what-card">
@@ -541,78 +539,6 @@
         </div>
       </section>
 
-      <section class="section business-section" id="business">
-        <div class="section-intro reveal">
-          <h2 class="section-title">The workflow already exists. Give it an app.</h2>
-          <p class="section-lead">
-            Today it runs through a spreadsheet one person maintains, a document everyone copies, and
-            a set of steps people are expected to remember. TinyAtom turns that into an internal
-            desktop tool your team installs.
-          </p>
-          <a class="business-link" href="#how"
-            >How it works <i class="ph ph-arrow-right" aria-hidden="true"></i
-          ></a>
-        </div>
-
-        <div class="value-list reveal" style="--reveal-delay: 80ms">
-          <article class="value-row">
-            <div>
-              <h3>Start from the workflow, not a blank project</h3>
-              <p>
-                Describe how the work gets done today: who touches it, which spreadsheet or document
-                it lives in, and what a finished item looks like. TinyAtom turns that description
-                into a plan for the tool before a line of code is written.
-              </p>
-              <p class="example-line">
-                Onboarding tracker · candidate comparison · implementation checklist · reconciliation
-                · weekly reporting
-              </p>
-            </div>
-            <span class="value-icon" aria-hidden="true"><i class="ph ph-note-pencil"></i></span>
-          </article>
-          <article class="value-row">
-            <div>
-              <h3>Your company&rsquo;s AI coding agent does the building</h3>
-              <p>
-                TinyAtom drives the assistant your team already pays for, then reviews what came back
-                and packages it as an installable app. Tools start from the spreadsheets, documents,
-                exports, and API data the team already passes around.
-              </p>
-              <p class="example-line">Claude · Codex · Cursor · Gemini · local shell agent</p>
-            </div>
-            <span class="value-icon" aria-hidden="true"><i class="ph ph-sparkle"></i></span>
-          </article>
-          <article class="value-row">
-            <div>
-              <h3>It ships as an app, not as a deployment</h3>
-              <p>
-                Each tool installs like normal software, and a private company list keeps your
-                internal tools together. It runs on each person&rsquo;s computer: no application
-                server, no deployment pipeline, no update infrastructure, and no on-call rotation for
-                a tool four people use.
-              </p>
-              <p class="example-line">Private company list · runs locally · no deploys · no hosting bill</p>
-            </div>
-            <span class="value-icon" aria-hidden="true"><i class="ph ph-download-simple"></i></span>
-          </article>
-          <article class="value-row">
-            <div>
-              <h3>Use tools other startups already built</h3>
-              <p>
-                Not every workflow needs a custom build. Browse the public marketplace for tools other
-                teams have already made, check what each one can access, and install the ones that
-                fit. Keep your own tools on a private company list when they should stay inside the
-                company.
-              </p>
-              <p class="example-line">
-                Public marketplace · community tools · private company list · access review
-              </p>
-            </div>
-            <span class="value-icon" aria-hidden="true"><i class="ph ph-storefront"></i></span>
-          </article>
-        </div>
-      </section>
-
       <section class="section how-section" id="how">
         <div class="section-intro how-intro reveal">
           <h2 class="section-title">From a described workflow to an installed app.</h2>
@@ -623,16 +549,52 @@
         </div>
 
         <figure class="how-video reveal" style="--reveal-delay: 60ms">
-          <video
-            class="how-video-player"
-            src="assets/tinyatom-3d-demo.mp4"
-            poster="assets/tinyatom-3d-demo-poster.jpg"
-            width="1920"
-            height="1080"
-            controls
-            preload="none"
-            playsinline
-          ></video>
+          <div class="video-player" data-video-player>
+            <video
+              class="video-media"
+              data-video-media
+              src="assets/tinyatom-3d-demo.mp4"
+              poster="assets/tinyatom-3d-demo-poster.jpg"
+              width="1920"
+              height="1080"
+              preload="none"
+              playsinline
+            ></video>
+
+            <button class="video-surface" type="button" data-video-toggle aria-label="Play the demo">
+              <span class="video-badge" aria-hidden="true">
+                <i class="ph-fill ph-play"></i>
+              </span>
+            </button>
+
+            <div class="video-bar">
+              <button class="video-btn" type="button" data-video-toggle aria-label="Play the demo">
+                <i class="ph-fill ph-play" aria-hidden="true"></i>
+              </button>
+              <span class="video-time" data-video-time>0:00 / 0:00</span>
+              <input
+                class="video-seek"
+                type="range"
+                min="0"
+                max="1000"
+                step="1"
+                value="0"
+                data-video-seek
+                aria-label="Seek through the demo"
+              />
+              <button class="video-btn" type="button" data-video-mute aria-label="Mute the demo">
+                <i class="ph-fill ph-speaker-high" aria-hidden="true"></i>
+              </button>
+              <button
+                class="video-btn"
+                type="button"
+                data-video-fullscreen
+                aria-label="Show the demo full screen"
+              >
+                <i class="ph ph-corners-out" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
           <figcaption>A two minute look at building and installing a tool with TinyAtom.</figcaption>
         </figure>
       </section>
@@ -787,7 +749,7 @@
           <h2 class="footer-nav-title">Explore</h2>
           <ul>
             <li><a href="#what-is-tinyatom">What is TinyAtom</a></li>
-            <li><a href="#business">For startups</a></li>
+            <li><a href="#how">How it works</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#security">Security</a></li>
           </ul>
