@@ -18,6 +18,7 @@ AI internal tool builder for startups: turn manual workflows into local desktop 
 - [Build internal tools](https://tinyatom.app/blog/build-internal-tools): How to build custom internal tools without assigning a dev-team project
 - [Spreadsheet to app](https://tinyatom.app/blog/spreadsheet-to-app): How to turn a spreadsheet, Excel file, or CSV workflow into a local desktop app
 - [Startup internal tool examples](https://tinyatom.app/blog/startup-internal-tool-examples): Twelve focused examples across customer operations, QA, shipping, finance, reporting, and hiring
+- [Why operations teams need to build their own tools](https://tinyatom.app/blog/why-ops-teams-need-to-build-their-own-tools): Why ops teams should own focused internal workflow tools while engineering owns production systems
 - [Retool alternative](https://tinyatom.app/blog/retool-alternative): Local-first alternative for small internal tools
 
 ## Who it is for

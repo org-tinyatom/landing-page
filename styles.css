@@ -2039,6 +2039,39 @@ button { font-family: inherit; }
 .blog-meta .blog-tags { color: var(--atom-ink-soft); font-family: var(--atom-font-mono); letter-spacing: 0.01em; }
 .blog-hero .hero-actions { justify-content: center; }
 
+/* Long-form articles use one quiet reading column instead of repeating the
+   marketing-page card pattern. */
+.article-prose {
+  max-width: 780px;
+  margin-inline: auto;
+  padding: clamp(64px, 8vw, 104px) var(--page-gutter) clamp(80px, 10vw, 128px);
+}
+.article-prose h2 {
+  margin: 64px 0 18px;
+  color: var(--atom-ink-bright);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 650;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+.article-prose p {
+  margin: 0 0 22px;
+  color: var(--atom-ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.article-prose > p:first-child {
+  color: var(--atom-ink);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+.article-prose a {
+  color: var(--atom-accent-text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.article-prose a:hover { color: var(--atom-accent-hover); }
+
 /* Blog listing */
 /* auto-fit (not auto-fill) so a short post list fills its row instead of
    leaving empty tracks against the right edge of the wide page frame. */
@@ -2097,5 +2130,8 @@ button { font-family: inherit; }
 .blog-card:hover .blog-card-foot i { transform: translateX(3px); }
 
 @media (max-width: 640px) {
+  .article-prose { padding-right: 20px; padding-left: 20px; }
+  .article-prose h2 { margin-top: 48px; }
+  .article-prose p { font-size: 1rem; line-height: 1.75; }
   .blog-list { grid-template-columns: 1fr; }
 }
