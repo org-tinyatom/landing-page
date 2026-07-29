@@ -2038,6 +2038,21 @@ button { font-family: inherit; }
 .blog-meta i { font-size: 0.95rem; }
 .blog-meta .blog-tags { color: var(--atom-ink-soft); font-family: var(--atom-font-mono); letter-spacing: 0.01em; }
 .blog-hero .hero-actions { justify-content: center; }
+.blog-cover {
+  max-width: 1120px;
+  margin: clamp(40px, 5vw, 64px) auto 0;
+  overflow: hidden;
+  border: 1px solid var(--atom-line-2);
+  border-radius: var(--atom-radius-3xl);
+  background: var(--atom-well);
+  box-shadow: var(--atom-shadow-soft);
+}
+.blog-cover img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
 
 /* Long-form articles use one quiet reading column instead of repeating the
    marketing-page card pattern. */
@@ -2107,6 +2122,17 @@ button { font-family: inherit; }
   outline: 2px solid color-mix(in srgb, var(--atom-accent) 75%, transparent);
   outline-offset: 3px;
 }
+.blog-card-image {
+  width: calc(100% + 24px);
+  max-width: none;
+  height: auto;
+  margin: -12px -12px 8px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 1px solid var(--atom-line-3);
+  border-radius: var(--atom-radius-lg);
+  background: var(--atom-well);
+}
 .blog-card h2 {
   margin: 0;
   color: var(--atom-ink-bright);
@@ -2130,6 +2156,7 @@ button { font-family: inherit; }
 .blog-card:hover .blog-card-foot i { transform: translateX(3px); }
 
 @media (max-width: 640px) {
+  .blog-cover { border-radius: var(--atom-radius-xl); }
   .article-prose { padding-right: 20px; padding-left: 20px; }
   .article-prose h2 { margin-top: 48px; }
   .article-prose p { font-size: 1rem; line-height: 1.75; }
