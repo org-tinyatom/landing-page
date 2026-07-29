@@ -15,7 +15,7 @@ The pitch: build the internal tools your startup needs without putting them on t
 
 ## Who it is for
 
-**Startup teams**: technical founders and small teams that keep hitting the same trigger — "we need this internally, but it is not worth assigning an engineer to it." The best fits are tools used by one person or a small team, too specific for off-the-shelf SaaS, and built from CSVs, files, forms, or API data: a customer-feedback organizer, a user-interview repository, a QA checklist, an incident-review organizer, a release-readiness dashboard, an investor-update generator, a candidate comparison tool. Teams install tools on their own computers and keep private tools on a company list.
+**Startup teams**: technical founders and small teams that keep hitting the same trigger: "we need this internally, but it is not worth assigning an engineer to it." The best fits are tools used by one person or a small team, too specific for off-the-shelf SaaS, and built from CSVs, files, forms, or API data: a customer-feedback organizer, a user-interview repository, a QA checklist, an incident-review organizer, a release-readiness dashboard, an investor-update generator, a candidate comparison tool. Teams install tools on their own computers and keep private tools on a company list.
 
 TinyAtom is *not* a hosted SaaS admin panel builder, and it does not ask you to deploy infrastructure.
 

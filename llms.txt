@@ -13,7 +13,7 @@ AI internal tool builder for startups: turn manual workflows into local desktop 
 ## Core pages
 
 - [Home](https://tinyatom.app/): Product overview, who it is for, how it works, security, FAQ, download
-- [Blog](https://tinyatom.app/blog/): Guides and comparisons on local-first internal tools
+- [Blog](https://tinyatom.app/blog/): Guides and comparisons for internal tools that run on your computer
 - [Local tools vs SaaS](https://tinyatom.app/blog/local-tools-vs-saas): Why local internal tools are easier, faster, and safer than buying third-party SaaS
 - [Build internal tools](https://tinyatom.app/blog/build-internal-tools): How to build custom internal tools without assigning a dev-team project
 - [Spreadsheet to app](https://tinyatom.app/blog/spreadsheet-to-app): How to turn a spreadsheet, Excel file, or CSV workflow into a local desktop app

@@ -1,6 +1,6 @@
 # TinyAtom Marketing Channels
 
-**Purpose:** Where and how to reach TinyAtom's beachhead audience — startup teams — and the positioning to use in every channel. This reflects the July 2026 repositioning of the landing page (see the homepage and `llms.txt`).
+**Purpose:** Where and how to reach TinyAtom's beachhead audience of startup teams, including the positioning to use in every channel. This reflects the July 2026 repositioning of the landing page (see the homepage and `llms.txt`).
 
 **Companion docs:** [positioning-businesses-vs-individuals](../marketing/positioning-businesses-vs-individuals.md) · [distribution-channels](../marketing/distribution-channels.md) · [monetization-model](../marketing/monetization-model.md)
 
@@ -18,7 +18,7 @@ Narrowed further, the first push targets:
 
 Why this audience works:
 
-- TinyAtom's promise — build local internal tools without servers, deployments, or update infrastructure — fits teams that understand the cost of creating "just one small internal dashboard."
+- TinyAtom's promise to build local internal tools without servers, deployments, or update infrastructure fits teams that understand the cost of creating "just one small internal dashboard."
 - The product currently requires Apple-silicon Macs, which are common in early-stage technical teams.
 - The audience is narrow enough to reach, understands the product immediately, and can tolerate an early beta.
 
@@ -71,7 +71,7 @@ A generic "internal tool builder" is harder to understand than:
 
 ## 4. Channels, ranked
 
-### 4.1 X — the best daily channel
+### 4.1 X: the best daily channel
 
 Existing posting about AI coding and software architecture gives a natural audience fit.
 
@@ -129,7 +129,7 @@ Contact the founder, CTO, head of operations, or first customer-success hire. Th
 
 Offer to build their first tool with them.
 
-### 4.4 Product Hunt — a launch event, not an ongoing channel
+### 4.4 Product Hunt: a launch event, not an ongoing channel
 
 Product Hunt can give TinyAtom awareness, but competition for attention among startup tools is substantial. Launch when someone can, without assistance:
 
@@ -138,7 +138,7 @@ Product Hunt can give TinyAtom awareness, but competition for attention among st
 3. Customize it quickly.
 4. See value on their own.
 
-### 4.5 Show HN — technical credibility
+### 4.5 Show HN: technical credibility
 
 TinyAtom has characteristics Hacker News readers appreciate:
 
