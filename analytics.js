@@ -2,6 +2,14 @@
 (function () {
   const LOCAL_HOST_PATTERN = /^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[?::1\]?)(:\d+)?$/;
   const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const AI_REFERRAL_SESSION_KEY = 'tinyatom_ai_referral';
+  const AI_REFERRERS = [
+    { source: 'chatgpt', hosts: ['chatgpt.com', 'chat.openai.com'] },
+    { source: 'perplexity', hosts: ['perplexity.ai'] },
+    { source: 'claude', hosts: ['claude.ai'] },
+    { source: 'gemini', hosts: ['gemini.google.com'] },
+    { source: 'microsoft_copilot', hosts: ['copilot.microsoft.com'] },
+  ];
 
   if (LOCAL_HOST_PATTERN.test(window.location.host) || navigator.globalPrivacyControl === true) {
     return;
@@ -38,7 +46,68 @@
     }, {});
   }
 
+  function getReferrerHost() {
+    if (!document.referrer) return '';
+    try {
+      return new URL(document.referrer).hostname.toLowerCase();
+    } catch (_error) {
+      return '';
+    }
+  }
+
+  function matchesHost(host, expectedHost) {
+    return host === expectedHost || host.endsWith('.' + expectedHost);
+  }
+
+  function getAiSourceFromHost(host) {
+    const match = AI_REFERRERS.find((referrer) =>
+      referrer.hosts.some((expectedHost) => matchesHost(host, expectedHost)),
+    );
+    return match ? match.source : '';
+  }
+
+  function getAiSourceFromUtm(source) {
+    const normalized = (source || '').toLowerCase();
+    if (normalized.includes('chatgpt')) return 'chatgpt';
+    if (normalized === 'openai') return 'openai';
+    if (normalized.includes('perplexity')) return 'perplexity';
+    if (normalized.includes('claude') || normalized.includes('anthropic')) return 'claude';
+    if (normalized.includes('gemini') || normalized.includes('bard')) return 'gemini';
+    if (normalized.includes('copilot')) return 'microsoft_copilot';
+    return '';
+  }
+
+  function getTrafficProperties(utmProperties) {
+    try {
+      const storedReferral = sessionStorage.getItem(AI_REFERRAL_SESSION_KEY);
+      if (storedReferral) return JSON.parse(storedReferral);
+    } catch (_error) {
+      // Attribution still works for the current page when session storage is unavailable.
+    }
+
+    const referrerHost = getReferrerHost();
+    const aiReferralSource =
+      getAiSourceFromUtm(utmProperties.utm_source) || getAiSourceFromHost(referrerHost);
+    const trafficProperties = Object.assign(
+      referrerHost ? { referrer_host: referrerHost } : {},
+      aiReferralSource
+        ? { ai_referral: true, ai_referral_source: aiReferralSource }
+        : { ai_referral: false },
+    );
+
+    if (aiReferralSource) {
+      try {
+        sessionStorage.setItem(AI_REFERRAL_SESSION_KEY, JSON.stringify(trafficProperties));
+      } catch (_error) {
+        // Do not block analytics when storage is disabled or full.
+      }
+    }
+
+    return trafficProperties;
+  }
+
   function baseProperties(properties) {
+    const utmProperties = getUtmProperties();
     return Object.assign(
       {
         app: 'tinyatom',
@@ -47,7 +116,8 @@
         page_type: getPageType(),
         path: window.location.pathname,
       },
-      getUtmProperties(),
+      utmProperties,
+      getTrafficProperties(utmProperties),
       properties || {},
     );
   }

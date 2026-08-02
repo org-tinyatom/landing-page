@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Build Internal Tools With Claude, Codex, Cursor, or Gemini | TinyAtom</title>
+    <meta
+      name="description"
+      content="Learn how AI coding agents build internal tools and how TinyAtom adds planning, review, installation, team sharing, and updates without servers."
+    />
+    <link rel="canonical" href="https://tinyatom.app/blog/build-internal-tools-with-ai-coding-agents/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="TinyAtom" />
+    <link rel="alternate" type="text/plain" href="https://tinyatom.app/llms.txt" title="LLM summary" />
+    <link rel="icon" href="/assets/tinyatom-mark.png" type="image/png" sizes="512x512" />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+
+    <meta property="og:site_name" content="TinyAtom" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tinyatom.app/blog/build-internal-tools-with-ai-coding-agents/" />
+    <meta property="og:title" content="Build Internal Tools With Claude, Codex, Cursor, or Gemini" />
+    <meta
+      property="og:description"
+      content="How an AI coding agent builds the tool and TinyAtom handles planning, review, installation, sharing, and updates."
+    />
+    <meta property="og:image" content="https://tinyatom.app/assets/blog/build-internal-tools.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Build Internal Tools With AI Coding Agents" />
+    <meta name="twitter:description" content="Use Claude, Codex, Cursor, or Gemini to build internal tools your team can install and share." />
+    <meta name="twitter:image" content="https://tinyatom.app/assets/blog/build-internal-tools.webp" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tinyatom.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://tinyatom.app/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Build internal tools with AI coding agents", "item": "https://tinyatom.app/blog/build-internal-tools-with-ai-coding-agents/" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Build Internal Tools With Claude, Codex, Cursor, or Gemini",
+        "description": "How AI coding agents build internal tools and how TinyAtom adds planning, review, installation, team sharing, and updates.",
+        "datePublished": "2026-08-01",
+        "dateModified": "2026-08-01",
+        "mainEntityOfPage": "https://tinyatom.app/blog/build-internal-tools-with-ai-coding-agents/",
+        "image": "https://tinyatom.app/assets/blog/build-internal-tools.webp",
+        "author": { "@type": "Organization", "name": "TinyAtom", "url": "https://tinyatom.app/" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "TinyAtom",
+          "url": "https://tinyatom.app/",
+          "logo": { "@type": "ImageObject", "url": "https://tinyatom.app/assets/tinyatom-mark.png" }
+        },
+        "about": [
+          { "@type": "Thing", "name": "AI coding agents" },
+          { "@type": "Thing", "name": "AI internal tool builder" },
+          { "@type": "Thing", "name": "Internal tools development" }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can Claude or Codex build an internal tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Claude, Codex, Cursor, Gemini, and local coding agents can implement a focused internal tool from a clear description. TinyAtom adds planning, review, packaging, installation, sharing, and updates around the build."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does TinyAtom add to an AI coding agent?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The coding agent writes the application. TinyAtom structures the requirements, reviews requested access, packages the result, installs it locally, and provides team sharing and updates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can ChatGPT build an internal tool with TinyAtom?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TinyAtom currently drives OpenAI Codex rather than the ChatGPT chat interface. Teams using OpenAI can choose Codex as the coding agent inside TinyAtom Studio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do AI-built internal tools need a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not with TinyAtom. Each tool runs on the computer where it is installed and stores its data there, so a focused internal tool does not need an application server or deployment pipeline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you share an internal tool built by an AI coding agent?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Install the tool locally, share it through a private company list, or submit it to the public marketplace. New versions can be published so teammates can update their installed tools."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=aeo1" />
+    <script src="/analytics.js?v=4" defer></script>
+    <script src="/main.js?v=flow3" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/" aria-label="TinyAtom home">
+          <img class="brand-logo" src="/assets/tinyatom-logo.svg" alt="TinyAtom logo" width="28" height="28" />
+          <span class="brand-name">TinyAtom</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#what-is-tinyatom">What is TinyAtom</a>
+          <a href="/#how">How it works</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="/#download">Get TinyAtom</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="blog-hero">
+        <div class="blog-hero-inner">
+          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <a href="/blog/">Blog</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <span aria-current="page">AI coding agents</span>
+          </nav>
+          <h1>Build internal tools with Claude, Codex, Cursor, or Gemini.</h1>
+          <p class="blog-hero-lead">
+            AI coding agents can write a focused internal tool quickly. TinyAtom gives that build a
+            plan, reviews what it can access, and turns it into software your teammates can install,
+            share, and update.
+          </p>
+          <div class="blog-meta">
+            <span><i class="ph ph-clock" aria-hidden="true"></i> 5 min read</span>
+            <span class="blog-tags">AI coding agents · Internal tools · Local software</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Download the macOS beta</span>
+            </a>
+            <a class="btn btn-outline btn-lg" href="/features/ai-internal-tool-builder/">AI internal tool builder</a>
+          </div>
+        </div>
+        <figure class="blog-cover">
+          <img
+            src="/assets/blog/build-internal-tools.webp"
+            alt="Manual workflow cards becoming one organized internal tool."
+            width="1536"
+            height="1024"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+        <aside class="blog-product-intro" aria-label="About TinyAtom">
+          <div class="blog-product-copy">
+            <span class="blog-product-kicker"><i class="ph ph-sparkle" aria-hidden="true"></i> AI internal tool builder</span>
+            <h2>Build internal tools with AI.</h2>
+            <p>TinyAtom turns manual workflows and spreadsheets into tools your team can install, share, and update. Build with Claude, Codex, Cursor, Gemini, or a local coding agent. No servers required.</p>
+          </div>
+          <a class="btn btn-outline" href="/features/ai-internal-tool-builder/">See how TinyAtom works <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </aside>
+      </header>
+
+      <article class="article-prose">
+        <div class="article-answer">
+          <strong>Short answer</strong>
+          <p>Yes. Claude, Codex, Cursor, Gemini, and local coding agents can build internal tools. TinyAtom supplies the lifecycle around the code: planning, review, packaging, installation, sharing, and updates.</p>
+        </div>
+
+        <h2>What an AI coding agent can build</h2>
+        <p>
+          A focused internal tool is a strong job for an AI coding agent. The audience is small, the
+          workflow is specific, and the people using it can describe what a correct result looks like.
+          Examples include a customer-onboarding tracker, candidate comparison tool, reconciliation
+          app, implementation checklist, document reviewer, or weekly reporting tool.
+        </p>
+        <p>
+          The best starting point is not “build a dashboard.” Describe the real job: who does it,
+          what information they open, which decisions they make, and what they need at the end.
+        </p>
+
+        <h2>The agent writes the tool. TinyAtom handles the lifecycle.</h2>
+        <p>
+          Coding is only one part of internal tools development. A useful tool also needs a clear
+          plan, a review of the files and capabilities it requests, a package teammates can install,
+          a place to share it, and a way to publish updates.
+        </p>
+        <h3>Your coding agent handles implementation</h3>
+        <ul>
+          <li>Builds the screens, forms, tables, and business rules.</li>
+          <li>Connects the local files, data, and APIs included in the plan.</li>
+          <li>Makes changes after review and testing.</li>
+        </ul>
+        <h3>TinyAtom handles the product workflow</h3>
+        <ul>
+          <li>Turns the described workflow into reviewed requirements and a build plan.</li>
+          <li>Shows which files, data, and computer capabilities the tool requests.</li>
+          <li>Packages and installs the result as a local desktop tool.</li>
+          <li>Shares private tools with teammates or public tools through the marketplace.</li>
+          <li>Publishes updated versions so installed tools can stay current.</li>
+        </ul>
+
+        <h2>Which AI coding agent should you use?</h2>
+        <p>
+          Use the one your team already pays for and trusts. TinyAtom works with Claude, OpenAI Codex,
+          Cursor, Gemini, or a local shell agent. The important difference is not the logo on the agent.
+          It is whether the workflow is described clearly enough for the agent to build and for a person
+          to review.
+        </p>
+        <p>
+          TinyAtom does not currently drive the ChatGPT chat interface. Teams using OpenAI choose Codex
+          as the coding agent inside TinyAtom Studio.
+        </p>
+
+        <h2>A simple workflow for building an internal tool with AI</h2>
+        <ol>
+          <li><strong>Pick one repeated job.</strong> Start with a workflow one person or a small team runs often.</li>
+          <li><strong>Describe the real process.</strong> Include inputs, steps, decisions, users, and the finished result.</li>
+          <li><strong>Let the coding agent build.</strong> Claude, Codex, Cursor, Gemini, or a local agent implements the approved plan.</li>
+          <li><strong>Review access.</strong> Check every file, data source, and computer feature the tool requests.</li>
+          <li><strong>Install and share.</strong> Run it locally, add it to a private company list, or publish it to the marketplace.</li>
+          <li><strong>Publish updates.</strong> Improve the tool as the workflow changes and let teammates install the new version.</li>
+        </ol>
+
+        <h2>When TinyAtom is the right fit</h2>
+        <p>
+          TinyAtom fits software used by one person or a small team, built around company-specific
+          rules, and not worth operating as another hosted production application. It is especially
+          useful when the current process lives in spreadsheets, documents, CSV exports, folders,
+          scripts, or steps people are expected to remember.
+        </p>
+        <p>
+          A shared customer-facing product, highly concurrent system, or application that needs one
+          central cloud database may still need a traditional hosted architecture. TinyAtom is for the
+          internal tools that should stay small, local, and easy to own.
+        </p>
+      </article>
+
+      <section class="faq-section" aria-labelledby="agent-faq-title">
+        <div class="faq-inner">
+          <div class="faq-intro reveal">
+            <h2 class="section-title" id="agent-faq-title">AI coding agents and internal tools</h2>
+            <p class="section-lead">Direct answers for teams deciding how to build internal software with AI.</p>
+          </div>
+          <div class="faq-list reveal" style="--reveal-delay: 60ms">
+            <details class="faq-item">
+              <summary>Can Claude or Codex build an internal tool?</summary>
+              <p>Yes. Claude, Codex, Cursor, Gemini, and local coding agents can implement a focused internal tool from a clear description. TinyAtom adds planning, review, packaging, installation, sharing, and updates around the build.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What does TinyAtom add to an AI coding agent?</summary>
+              <p>The coding agent writes the application. TinyAtom structures the requirements, reviews requested access, packages the result, installs it locally, and provides team sharing and updates.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can ChatGPT build an internal tool with TinyAtom?</summary>
+              <p>TinyAtom currently drives OpenAI Codex rather than the ChatGPT chat interface. Teams using OpenAI can choose Codex as the coding agent inside TinyAtom Studio.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do AI-built internal tools need a server?</summary>
+              <p>Not with TinyAtom. Each tool runs on the computer where it is installed and stores its data there, so a focused internal tool does not need an application server or deployment pipeline.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How do you share an internal tool built by an AI coding agent?</summary>
+              <p>Install the tool locally, share it through a private company list, or submit it to the public marketplace. New versions can be published so teammates can update their installed tools.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section reveal">
+        <div class="cta-panel">
+          <div>
+            <h2 class="section-title">Build one internal tool with the agent you already use.</h2>
+            <p class="section-lead">Free to use. Runs on your computer. No servers required.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Download the macOS beta</span>
+            </a>
+            <p class="cta-note" data-download-note hidden></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="/assets/tinyatom-logo.svg" alt="" width="24" height="24" />
+            <span>TinyAtom</span>
+          </div>
+          <p class="footer-tagline">TinyAtom is the operating system for internal tools. Build, install, share, and update the software your company needs.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Explore">
+          <h2 class="footer-nav-title">Explore</h2>
+          <ul>
+            <li><a href="/features/ai-internal-tool-builder/">AI internal tool builder</a></li>
+            <li><a href="/#how">How it works</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Blog">
+          <h2 class="footer-nav-title">Blog</h2>
+          <ul>
+            <li><a href="/blog/">All posts</a></li>
+            <li><a href="/blog/spreadsheet-to-app">Spreadsheet to app</a></li>
+            <li><a href="/blog/build-internal-tools">Build internal tools</a></li>
+            <li><a href="/blog/retool-alternative">Retool alternative</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal">
+          <h2 class="footer-nav-title">Legal</h2>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Use</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer-bottom">
+        <p>&copy; 2026 TinyAtom. All rights reserved.</p>
+        <p>Your tools and your data stay on your computer.</p>
+      </div>
+    </footer>
+
+    <button type="button" class="theme-fab" id="theme-fab" aria-label="Theme: system. Click to switch.">
+      <span class="theme-fab-icon theme-fab-icon-system" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <path d="M8 21h8"></path><path d="M12 17v4"></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-light" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-dark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path></svg>
+      </span>
+    </button>
+  </body>
+</html>
