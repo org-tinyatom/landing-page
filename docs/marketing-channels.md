@@ -1,12 +1,15 @@
 # TinyAtom Marketing Channels
 
-**Purpose:** Where and how to reach TinyAtom's beachhead audience of startup teams, including the positioning to use in every channel. This reflects the July 2026 repositioning of the landing page (see the homepage and `llms.txt`).
+**Purpose:** Where and how to reach TinyAtom's first acquisition segment. TinyAtom is for businesses of any size. A startup-focused campaign may be useful as an initial channel, but public product positioning must not imply that TinyAtom is only for startups.
 
 **Companion docs:** [positioning-businesses-vs-individuals](../marketing/positioning-businesses-vs-individuals.md) · [distribution-channels](../marketing/distribution-channels.md) · [monetization-model](../marketing/monetization-model.md)
 
 ---
 
-## 1. The audience
+## 1. The initial acquisition audience
+
+TinyAtom's product audience is business teams at companies of any size. The segment below is a
+beachhead for early distribution while the product is a macOS beta, not a product limitation.
 
 Tech startups are a better initial audience than traditional small businesses, especially while the product is a macOS beta. But "tech startups" is still too broad. The beachhead:
 
@@ -22,7 +25,7 @@ Why this audience works:
 - The product currently requires Apple-silicon Macs, which are common in early-stage technical teams.
 - The audience is narrow enough to reach, understands the product immediately, and can tolerate an early beta.
 
-## 2. Best startup use cases
+## 2. Best initial use cases
 
 Do **not** compete with Retool or large cloud-based admin platforms yet. Focus on tools that are:
 
@@ -59,15 +62,15 @@ The strongest trigger:
 
 **Use:**
 
-> Build the internal tools your startup needs without putting them on the engineering roadmap.
+> Build the internal tools your business needs, then install them and share them with your teammates.
 
 Or:
 
-> Turn your startup's spreadsheets, scripts, and manual workflows into local desktop tools.
+> Turn your business's spreadsheets, scripts, and manual workflows into local desktop tools.
 
 A generic "internal tool builder" is harder to understand than:
 
-> Build the tiny tools your startup needs, without adding them to the engineering backlog.
+> Build the small internal tools your team needs, without running another hosted application.
 
 ## 4. Channels, ranked
 
@@ -89,7 +92,7 @@ Existing posting about AI coding and software architecture gives a natural audie
 
 **Post specific builds, not generic TinyAtom promotion:**
 
-> Our startup needed a simple place to organize customer requests. It wasn't worth adding to the engineering roadmap, so I built a local desktop tool for it with TinyAtom.
+> Our team needed a simple place to organize customer requests. It wasn't worth running another hosted application, so I built a local desktop tool for it with TinyAtom.
 
 Then show a 20–40 second demo.
 
@@ -108,7 +111,7 @@ Indie Hackers is explicitly built around developers and founders sharing their p
 
 Do **not** enter with "Here is my product." Ask:
 
-> What internal tool does your startup need, but keeps postponing because customer-facing work always comes first?
+> What internal tool does your business need, but keeps postponing because other work comes first?
 
 That question yields both leads and template ideas.
 
@@ -125,7 +128,7 @@ Probably the best **controlled** acquisition channel. Look for startups that:
 
 Contact the founder, CTO, head of operations, or first customer-success hire. The message should focus on a **workflow, not the platform**:
 
-> I'm building TinyAtom for startup teams that need small internal tools but don't want another app in their engineering backlog. What workflow is your team still handling through spreadsheets, scripts, or shared docs?
+> I'm building TinyAtom for business teams that need small internal tools but don't want another hosted application. What workflow is your team still handling through spreadsheets, scripts, or shared docs?
 
 Offer to build their first tool with them.
 
@@ -134,7 +137,7 @@ Offer to build their first tool with them.
 Product Hunt can give TinyAtom awareness, but competition for attention among startup tools is substantial. Launch when someone can, without assistance:
 
 1. Download TinyAtom.
-2. Choose a recognizable startup template.
+2. Choose a recognizable business workflow template.
 3. Customize it quickly.
 4. See value on their own.
 
@@ -156,6 +159,6 @@ Lead with technical substance: architecture, security model, sharing model, limi
 
 ## 5. The first distribution loop
 
-> Build one useful startup Atom → share the demo on X → offer the template → interview installers → improve it → build the next adjacent Atom.
+> Build one useful business Atom → share the demo on X → offer the template → interview installers → improve it → build the next adjacent Atom.
 
 Repeat until a template reliably converts strangers into installers, then scale that template's channel.
