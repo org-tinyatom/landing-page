@@ -397,14 +397,6 @@ function initEngagementAnalytics() {
     });
   });
 
-  document.querySelectorAll('.header-cta[href="#download"]').forEach((cta) => {
-    cta.addEventListener('click', () => {
-      captureAnalytics('landing.download_section_requested', {
-        location: getAnalyticsLocation(cta),
-      });
-    });
-  });
-
   document.querySelectorAll('.hero-watch[href="#how"]').forEach((cta) => {
     cta.addEventListener('click', () => {
       captureAnalytics('landing.how_it_works_requested', {
