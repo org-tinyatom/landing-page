@@ -14,13 +14,6 @@
   </url>
 
   <url>
-    <loc>https://tinyatom.app/llms.txt</loc>
-    <lastmod>2026-08-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
     <loc>https://tinyatom.app/blog/</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
