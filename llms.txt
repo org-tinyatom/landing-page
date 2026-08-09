@@ -16,13 +16,13 @@ The operating system for internal tools: build with an AI coding agent, then ins
 - [AI internal tool builder](https://tinyatom.app/features/ai-internal-tool-builder/): How TinyAtom works with Claude, OpenAI Codex, Cursor, Gemini, and local coding agents
 - [Blog](https://tinyatom.app/blog/): Guides and comparisons for internal tools that run on your computer
 - [Build internal tools with AI coding agents](https://tinyatom.app/blog/build-internal-tools-with-ai-coding-agents/): The roles of the coding agent and TinyAtom from planning through updates
-- [Manual workflow automation](https://tinyatom.app/blog/manual-workflow-automation/): How to turn repeated copying, checking, approvals, and reporting into a focused internal tool
+- [Workflow app builder for manual processes](https://tinyatom.app/blog/manual-workflow-automation/): How TinyAtom turns repeated copying, checking, approvals, and reporting into a focused local tool
 - [Local tools vs SaaS](https://tinyatom.app/blog/local-tools-vs-saas): Why local internal tools are easier, faster, and safer than buying third-party SaaS
 - [Build internal tools](https://tinyatom.app/blog/build-internal-tools): How to build custom internal tools without assigning a dev-team project
-- [Spreadsheet to app](https://tinyatom.app/blog/spreadsheet-to-app): How to turn a spreadsheet, Excel file, or CSV workflow into a local desktop app
+- [Turn Excel or Google Sheets into an app](https://tinyatom.app/blog/spreadsheet-to-app): How TinyAtom turns spreadsheet workflows into local desktop apps
 - [Business internal tool examples](https://tinyatom.app/blog/business-internal-tool-examples): Twelve focused examples across customer operations, QA, shipping, finance, reporting, and hiring
 - [Why operations teams need to build their own tools](https://tinyatom.app/blog/why-ops-teams-need-to-build-their-own-tools): Why ops teams should own focused internal workflow tools while engineering owns production systems
-- [Retool alternative](https://tinyatom.app/blog/retool-alternative): Local-first alternative for small internal tools
+- [Free local Retool alternative](https://tinyatom.app/blog/retool-alternative): Why TinyAtom fits teams that want local internal tools without a hosted builder
 
 ## Who it is for
 
