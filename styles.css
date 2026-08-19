@@ -1069,35 +1069,67 @@ button { font-family: inherit; }
   max-width: 40em;
 }
 
-/* The six named tools from the lead, each paired with the artefact it replaces.
-   Two columns of "name / was" so the before-and-after is the visible pattern. */
+/* The six named tools from the lead as small atom-style cards: icon tile,
+   tool name, and the artefact each one replaced. */
 .example-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
   margin: 32px 0 0;
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--atom-line-3);
 }
 .example-grid li {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 14px 20px 14px 0;
-  border-bottom: 1px solid var(--atom-line-3);
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--atom-line-3);
+  border-radius: var(--atom-radius-lg);
+  background: var(--atom-surface-terminal);
+  box-shadow: var(--atom-shadow-card);
+  transition:
+    border-color 180ms var(--atom-ease),
+    transform 180ms var(--atom-ease);
+}
+.example-grid li:hover {
+  border-color: var(--atom-line-4);
+  transform: translateY(-1px);
+}
+.example-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: var(--atom-radius-md);
+  background: linear-gradient(145deg, var(--atom-accent-28), var(--atom-accent-12));
+  color: var(--atom-accent-text);
+  font-size: 1.05rem;
+}
+.example-grid li > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
 }
 .example-grid-name {
+  overflow: hidden;
   color: var(--atom-ink-bright);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 550;
   letter-spacing: -0.015em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .example-grid-was {
+  overflow: hidden;
   color: var(--atom-muted);
   font-family: var(--atom-font-mono);
-  font-size: 0.75rem;
+  font-size: 0.71rem;
   line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .what-who {
@@ -1937,7 +1969,7 @@ button { font-family: inherit; }
     font-size: 0.875rem;
   }
   .example-grid { grid-template-columns: 1fr; margin-top: 24px; }
-  .example-grid li { padding: 12px 0; }
+  .example-grid li { padding: 11px 12px; }
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
