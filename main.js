@@ -191,34 +191,111 @@ function initReveal() {
   });
 }
 
-const MOCK_TAB_MS = 1000;
+const MOCK_MOVE_MS = 620;
 
-function initMockTabs() {
-  const tabs = [...document.querySelectorAll('[data-mock-tab]')];
-  const views = [...document.querySelectorAll('[data-mock-view]')];
-  if (tabs.length < 2 || !views.length) return;
-
-  const show = (name) => {
-    tabs.forEach((tab) => tab.classList.toggle('is-active', tab.dataset.mockTab === name));
-    views.forEach((view) => view.classList.toggle('is-active', view.dataset.mockView === name));
-  };
-
+// The hero mock stays on the Installed view. A fake cursor opens one installed
+// atom, interacts with it, closes it, then opens the next one, forever.
+function initMockShowcase() {
+  const stage = document.querySelector('.mock-main');
+  const cursor = stage?.querySelector('[data-mock-cursor]');
+  if (!stage || !cursor) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  let index = 0;
-  let timer = null;
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const atomNames = ['onboarding', 'reporting'];
+  const atomFor = (name) => stage.querySelector(`[data-mock-atom="${name}"]`);
 
-  const advance = () => {
-    index = (index + 1) % tabs.length;
-    show(tabs[index].dataset.mockTab);
+  let session = 0;
+  let running = false;
+
+  const reset = () => {
+    cursor.classList.remove('is-visible', 'is-press');
+    atomNames.forEach((name) => atomFor(name)?.classList.remove('is-open', 'is-alt'));
+    stage.querySelectorAll('.is-mock-press').forEach((el) => el.classList.remove('is-mock-press'));
+  };
+
+  const placeCursor = (x, y, ms) => {
+    cursor.style.transitionDuration = `${ms}ms, 220ms`;
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
+  };
+
+  const moveTo = async (el, ms = MOCK_MOVE_MS) => {
+    const stageRect = stage.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+    placeCursor(
+      rect.left - stageRect.left + rect.width / 2 - 2,
+      rect.top - stageRect.top + rect.height / 2 - 2,
+      ms,
+    );
+    await sleep(ms + 60);
+  };
+
+  const press = async (el) => {
+    cursor.classList.add('is-press');
+    el.classList.add('is-mock-press');
+    await sleep(150);
+    cursor.classList.remove('is-press');
+    el.classList.remove('is-mock-press');
+    await sleep(90);
+  };
+
+  const playScene = async (name, active) => {
+    const atom = atomFor(name);
+    const opener = stage.querySelector(`[data-mock-open="${name}"]`);
+    const act = atom?.querySelector('[data-mock-act]');
+    const close = atom?.querySelector('[data-mock-atom-close]');
+    if (!atom || !opener || !act || !close) return;
+
+    await moveTo(opener);
+    if (!active()) return;
+    await press(opener);
+    atom.classList.add('is-open');
+    await sleep(1000);
+    if (!active()) return;
+
+    await moveTo(act.querySelector('[data-mock-spot]') || act, 700);
+    if (!active()) return;
+    await press(act);
+    atom.classList.add('is-alt');
+    await sleep(1900);
+    if (!active()) return;
+
+    await moveTo(close, 700);
+    if (!active()) return;
+    await press(close);
+    atom.classList.remove('is-open');
+    await sleep(420);
+    atom.classList.remove('is-alt');
+  };
+
+  const run = async () => {
+    const id = ++session;
+    const active = () => running && session === id;
+    const stageRect = stage.getBoundingClientRect();
+    placeCursor(stageRect.width * 0.5, stageRect.height * 0.6, 0);
+    await sleep(700);
+    if (!active()) return;
+    cursor.classList.add('is-visible');
+    while (active()) {
+      await playScene('onboarding', active);
+      if (!active()) break;
+      await sleep(500);
+      await playScene('reporting', active);
+      if (!active()) break;
+      await sleep(1100);
+    }
   };
 
   const start = () => {
-    if (timer === null) timer = setInterval(advance, MOCK_TAB_MS);
+    if (running) return;
+    running = true;
+    run();
   };
   const stop = () => {
-    clearInterval(timer);
-    timer = null;
+    if (!running) return;
+    running = false;
+    session += 1;
+    reset();
   };
 
   // Do not animate a window nobody is looking at.
@@ -439,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initReveal();
   initDownloadCta();
-  initMockTabs();
+  initMockShowcase();
   initVideoPlayer();
   initEngagementAnalytics();
 });

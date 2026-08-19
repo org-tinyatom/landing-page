@@ -351,7 +351,7 @@
           class="hero-product reveal"
           style="--reveal-delay: 160ms"
           role="img"
-          aria-label="The TinyAtom desktop app, cycling through its Installed, Marketplace, and Studio sections"
+          aria-label="The TinyAtom desktop app opening installed atoms: an onboarding tracker and a weekly report"
         >
           <div class="product-window" aria-hidden="true">
             <div class="mock-titlebar">
@@ -377,15 +377,15 @@
             <div class="mock-home">
               <aside class="mock-sidebar">
                 <nav class="mock-nav">
-                  <div class="mock-nav-item is-active" data-mock-tab="installed">
+                  <div class="mock-nav-item is-active">
                     <i class="ph ph-squares-four mock-nav-icon"></i><span>Installed</span
                     ><small>3</small>
                   </div>
-                  <div class="mock-nav-item" data-mock-tab="marketplace">
+                  <div class="mock-nav-item">
                     <i class="ph ph-storefront mock-nav-icon"></i><span>Marketplace</span
                     ><small>12</small>
                   </div>
-                  <div class="mock-nav-item" data-mock-tab="studio">
+                  <div class="mock-nav-item">
                     <i class="ph ph-wrench mock-nav-icon"></i><span>Studio</span><small>3</small>
                   </div>
                 </nav>
@@ -393,7 +393,7 @@
 
               <div class="mock-main">
                 <!-- Installed -->
-                <section class="mock-view is-active" data-mock-view="installed">
+                <section class="mock-view is-active">
                   <div class="mock-view-head">
                     <div>
                       <h3>Installed atoms</h3>
@@ -420,126 +420,177 @@
                       </div>
                       <p class="mock-data">Data 17 MB</p>
                       <div class="mock-card-foot">
-                        <span class="mock-btn">Open <i class="ph ph-arrow-right"></i></span>
+                        <span class="mock-btn" data-mock-open="onboarding"
+                          >Open <i class="ph ph-arrow-right"></i
+                        ></span>
                       </div>
                     </article>
-                    <article class="mock-card">
-                      <div class="mock-card-head">
-                        <span class="mock-card-tile">R</span>
-                        <div>
-                          <strong>Reconciliation app <i class="ph-fill ph-seal-check"></i></strong>
-                        </div>
-                        <i class="ph ph-dots-three-vertical mock-card-menu"></i>
-                      </div>
-                      <p class="mock-data">Data 4 MB</p>
-                      <div class="mock-card-foot">
-                        <span class="mock-btn">Open <i class="ph ph-arrow-right"></i></span>
-                      </div>
-                    </article>
-                  </div>
-                </section>
-
-                <!-- Marketplace -->
-                <section class="mock-view" data-mock-view="marketplace">
-                  <div class="mock-view-head">
-                    <div>
-                      <h3>Marketplace</h3>
-                      <p>Tools from the community</p>
-                    </div>
-                    <div class="mock-head-actions">
-                      <span class="mock-btn">Trusted publishers</span>
-                      <span class="mock-btn"
-                        ><i class="ph ph-buildings"></i> Add company atoms</span
-                      >
-                    </div>
-                  </div>
-                  <div class="mock-toolbar">
-                    <span class="mock-field-label">Category</span>
-                    <span class="mock-select">All <i class="ph ph-caret-down"></i></span>
-                    <span class="mock-field-label">Sort by</span>
-                    <span class="mock-select">Popularity <i class="ph ph-caret-down"></i></span>
-                    <span class="mock-search">
-                      <i class="ph ph-magnifying-glass"></i>Search marketplace…
-                    </span>
-                  </div>
-                  <div class="mock-cards">
                     <article class="mock-card">
                       <div class="mock-card-head">
                         <span class="mock-card-tile">W</span>
                         <div>
                           <strong>Weekly reporting <i class="ph-fill ph-seal-check"></i></strong>
-                          <small>By TinyAtom</small>
                         </div>
+                        <i class="ph ph-dots-three-vertical mock-card-menu"></i>
                       </div>
+                      <p class="mock-data">Data 4 MB</p>
                       <div class="mock-card-foot">
-                        <span class="mock-btn"
-                          ><i class="ph ph-download-simple"></i> Install</span
-                        >
-                      </div>
-                    </article>
-                    <article class="mock-card">
-                      <div class="mock-card-head">
-                        <span class="mock-card-tile">D</span>
-                        <div>
-                          <strong>Document reviewer <i class="ph-fill ph-seal-check"></i></strong>
-                          <small>By TinyAtom</small>
-                        </div>
-                      </div>
-                      <div class="mock-card-foot">
-                        <span class="mock-btn"
-                          ><i class="ph ph-download-simple"></i> Install</span
-                        >
+                        <span class="mock-btn" data-mock-open="reporting"
+                          >Open <i class="ph ph-arrow-right"></i
+                        ></span>
                       </div>
                     </article>
                   </div>
                 </section>
 
-                <!-- Studio -->
-                <section class="mock-view" data-mock-view="studio">
-                  <div class="mock-view-head">
-                    <div>
-                      <h3>Studio</h3>
-                      <p>3 creations</p>
+                <!-- Atom windows the showcase cursor opens -->
+                <div class="mock-atom" data-mock-atom="onboarding">
+                  <div class="mock-atom-bar">
+                    <span class="mock-atom-id"
+                      ><span class="mock-card-tile">O</span>Onboarding tracker</span
+                    >
+                    <span class="mock-atom-close" data-mock-atom-close><i class="ph ph-x"></i></span>
+                  </div>
+                  <div class="mock-atom-body">
+                    <div class="mock-atom-head">
+                      <div>
+                        <strong>Acme Industries</strong>
+                        <small>Kickoff Aug 12 &middot; Owner: Dana</small>
+                      </div>
+                      <span class="mock-chip"
+                        ><span class="mock-swap-off">On track</span
+                        ><span class="mock-swap-on">Complete</span></span
+                      >
                     </div>
-                    <div class="mock-head-actions">
-                      <span class="mock-btn"><i class="ph ph-plus"></i> Create atom</span>
+                    <div class="mock-progress">
+                      <div class="mock-progress-info">
+                        <span
+                          ><b
+                            ><span class="mock-swap-off">4</span
+                            ><span class="mock-swap-on">5</span></b
+                          >
+                          of 5 steps done</span
+                        >
+                        <span
+                          ><span class="mock-swap-off">80%</span
+                          ><span class="mock-swap-on">100%</span></span
+                        >
+                      </div>
+                      <div class="mock-progress-bar"><span></span></div>
+                    </div>
+                    <ul class="mock-tasks">
+                      <li class="mock-task is-done">
+                        <i class="ph ph-circle task-off"></i
+                        ><i class="ph-fill ph-check-circle task-on"></i>
+                        <span>Send welcome packet</span><small>Aug 12</small>
+                      </li>
+                      <li class="mock-task is-done">
+                        <i class="ph ph-circle task-off"></i
+                        ><i class="ph-fill ph-check-circle task-on"></i>
+                        <span>Create workspace accounts</span><small>Aug 12</small>
+                      </li>
+                      <li class="mock-task is-done">
+                        <i class="ph ph-circle task-off"></i
+                        ><i class="ph-fill ph-check-circle task-on"></i>
+                        <span>Collect signed contract</span><small>Aug 13</small>
+                      </li>
+                      <li class="mock-task is-done">
+                        <i class="ph ph-circle task-off"></i
+                        ><i class="ph-fill ph-check-circle task-on"></i>
+                        <span>Schedule kickoff call</span><small>Aug 14</small>
+                      </li>
+                      <li class="mock-task" data-mock-act>
+                        <i class="ph ph-circle task-off" data-mock-spot></i
+                        ><i class="ph-fill ph-check-circle task-on"></i>
+                        <span>Set up billing profile</span><small>Today</small>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mock-atom" data-mock-atom="reporting">
+                  <div class="mock-atom-bar">
+                    <span class="mock-atom-id"
+                      ><span class="mock-card-tile">W</span>Weekly reporting</span
+                    >
+                    <span class="mock-atom-close" data-mock-atom-close><i class="ph ph-x"></i></span>
+                  </div>
+                  <div class="mock-atom-body">
+                    <div class="mock-atom-head">
+                      <div>
+                        <strong>Sales summary</strong>
+                        <small
+                          ><span class="mock-swap-off">Aug 11 &ndash; Aug 17</span
+                          ><span class="mock-swap-on">Aug 4 &ndash; Aug 10</span></small
+                        >
+                      </div>
+                      <span class="mock-toggle" data-mock-act>
+                        <span class="mock-toggle-a">This week</span>
+                        <span class="mock-toggle-b" data-mock-spot>Last week</span>
+                      </span>
+                    </div>
+                    <div class="mock-stats">
+                      <div class="mock-stat">
+                        <small>Revenue</small>
+                        <strong
+                          ><span class="mock-swap-off">$48.2k</span
+                          ><span class="mock-swap-on">$43.1k</span></strong
+                        >
+                        <span class="mock-delta"
+                          ><span class="mock-swap-off">+12%</span
+                          ><span class="mock-swap-on">+4%</span></span
+                        >
+                      </div>
+                      <div class="mock-stat">
+                        <small>New clients</small>
+                        <strong
+                          ><span class="mock-swap-off">9</span
+                          ><span class="mock-swap-on">6</span></strong
+                        >
+                        <span class="mock-delta"
+                          ><span class="mock-swap-off">+3</span
+                          ><span class="mock-swap-on">+1</span></span
+                        >
+                      </div>
+                      <div class="mock-stat">
+                        <small>Tickets closed</small>
+                        <strong
+                          ><span class="mock-swap-off">132</span
+                          ><span class="mock-swap-on">118</span></strong
+                        >
+                        <span class="mock-delta"
+                          ><span class="mock-swap-off">+8%</span
+                          ><span class="mock-swap-on">+2%</span></span
+                        >
+                      </div>
+                    </div>
+                    <div class="mock-chart">
+                      <div class="mock-chart-col">
+                        <span style="--h: 46%; --h-alt: 38%"></span><small>Mon</small>
+                      </div>
+                      <div class="mock-chart-col">
+                        <span style="--h: 62%; --h-alt: 44%"></span><small>Tue</small>
+                      </div>
+                      <div class="mock-chart-col">
+                        <span style="--h: 54%; --h-alt: 58%"></span><small>Wed</small>
+                      </div>
+                      <div class="mock-chart-col">
+                        <span style="--h: 78%; --h-alt: 50%"></span><small>Thu</small>
+                      </div>
+                      <div class="mock-chart-col">
+                        <span style="--h: 92%; --h-alt: 70%"></span><small>Fri</small>
+                      </div>
+                      <div class="mock-chart-col">
+                        <span style="--h: 30%; --h-alt: 24%"></span><small>Sat</small>
+                      </div>
+                      <div class="mock-chart-col">
+                        <span style="--h: 22%; --h-alt: 18%"></span><small>Sun</small>
+                      </div>
                     </div>
                   </div>
-                  <div class="mock-cards">
-                    <article class="mock-card">
-                      <div class="mock-card-head">
-                        <span class="mock-card-tile">O</span>
-                        <div>
-                          <strong>Onboarding tracker</strong><small>Installed · v1.0.0</small>
-                        </div>                      </div>
-                      <div class="mock-card-foot">
-                        <span class="mock-btn"
-                          >Open in Studio <i class="ph ph-arrow-right"></i
-                        ></span>
-                      </div>
-                    </article>
-                    <article class="mock-card">
-                      <div class="mock-card-head">
-                        <span class="mock-card-tile">I</span>
-                        <div><strong>Candidate compare</strong><small>Draft · v0.2.0</small></div>                      </div>
-                      <div class="mock-card-foot">
-                        <span class="mock-btn"
-                          >Open in Studio <i class="ph ph-arrow-right"></i
-                        ></span>
-                      </div>
-                    </article>
-                    <article class="mock-card">
-                      <div class="mock-card-head">
-                        <span class="mock-card-tile">I</span>
-                        <div><strong>Implementation checklist</strong><small>Draft · v0.1.1</small></div>                      </div>
-                      <div class="mock-card-foot">
-                        <span class="mock-btn"
-                          >Open in Studio <i class="ph ph-arrow-right"></i
-                        ></span>
-                      </div>
-                    </article>
-                  </div>
-                </section>
+                </div>
+
+                <div class="mock-cursor" data-mock-cursor><i class="ph-fill ph-cursor"></i></div>
               </div>
             </div>
           </div>
