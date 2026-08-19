@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claude Code Desktop App for Building Tools | TinyAtom</title>
+    <meta name="description" content="Looking for a Claude Code desktop app? How Anthropic's official options compare with TinyAtom, the free Mac app where Claude Code builds installable tools." />
+    <link rel="canonical" href="https://tinyatom.app/blog/claude-code-desktop-app/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="TinyAtom" />
+    <link rel="alternate" type="text/plain" href="https://tinyatom.app/llms.txt" title="LLM summary" />
+    <link rel="icon" href="/assets/tinyatom-mark.png" type="image/png" sizes="512x512" />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+
+    <meta property="og:site_name" content="TinyAtom" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tinyatom.app/blog/claude-code-desktop-app/" />
+    <meta property="og:title" content="A Claude Code Desktop App for Building Tools" />
+    <meta property="og:description" content="Use Claude Code without the terminal: TinyAtom is a free Mac app where the agent builds tools you can install, share, and update." />
+    <meta property="og:image" content="https://tinyatom.app/assets/blog/local-tools-vs-saas.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Claude Code Desktop App for Building Tools" />
+    <meta name="twitter:description" content="A free Mac desktop app where Claude Code builds installable tools. No terminal, no server." />
+    <meta name="twitter:image" content="https://tinyatom.app/assets/blog/local-tools-vs-saas.webp" />
+
+            
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tinyatom.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://tinyatom.app/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Claude Code desktop app",
+      "item": "https://tinyatom.app/blog/claude-code-desktop-app/"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A Claude Code Desktop App: Build and Install Tools Without the Terminal",
+  "description": "What people mean by a Claude Code desktop app, Anthropic's official options, and the free Mac app where the agent builds installable, shareable tools.",
+  "datePublished": "2026-08-19",
+  "dateModified": "2026-08-19",
+  "mainEntityOfPage": "https://tinyatom.app/blog/claude-code-desktop-app/",
+  "image": "https://tinyatom.app/assets/blog/local-tools-vs-saas.webp",
+  "author": {
+    "@type": "Organization",
+    "name": "TinyAtom",
+    "url": "https://tinyatom.app/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TinyAtom",
+    "url": "https://tinyatom.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tinyatom.app/assets/tinyatom-mark.png"
+    }
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there an official Claude Code desktop app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anthropic ships Claude Code as a terminal tool and as IDE extensions, and the Claude desktop app can drive Claude Code sessions. None of these turn the result into software you can install and share. TinyAtom is a free macOS desktop app that drives Claude Code end to end: describe, build with live preview, review access, install."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a Claude Code app for Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, two kinds. Anthropic's own Claude app runs on macOS and can run Claude Code sessions. TinyAtom is a free Mac app that uses Claude Code specifically to build installable tools: it manages the project, shows a live preview, reviews what the tool can access, and installs the finished result like a normal app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Claude Code without the terminal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. In TinyAtom you never see a command line. You describe the tool in plain language, the app drives Claude Code for you, and you interact through a plan you approve, a live preview, and an access review before install."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TinyAtom replace Claude Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it drives it. Claude Code writes the code; TinyAtom supplies the interface and the lifecycle: structured requirements, live preview, capability review, packaging, installation, team sharing, and updates. It works the same way with Codex, Cursor, and Gemini."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is TinyAtom free? What about Claude Code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TinyAtom is free for everyone. Claude Code requires a paid Claude plan or API usage from Anthropic. If your company pays for a different agent, TinyAtom drives Codex, Cursor, and Gemini too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a Claude Code desktop app for Windows or Linux?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TinyAtom currently ships a macOS beta for Apple silicon, with Windows and Linux in progress. Anthropic's terminal version of Claude Code runs on all three platforms today."
+      }
+    }
+  ]
+}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=aeo1" />
+    <script src="/analytics.js?v=4" defer></script>
+    <script src="/main.js?v=flow3" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/" aria-label="TinyAtom home">
+          <img class="brand-logo" src="/assets/tinyatom-logo.svg" alt="TinyAtom logo" width="28" height="28" />
+          <span class="brand-name">TinyAtom</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#what-is-tinyatom">What is TinyAtom</a>
+          <a href="/#how">How it works</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="/download/mac" data-download-cta>Get TinyAtom</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="blog-hero">
+        <div class="blog-hero-inner">
+          <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <a href="/blog/">Blog</a>
+            <i class="ph ph-caret-right" aria-hidden="true"></i>
+            <span aria-current="page">Claude Code desktop app</span>
+          </nav>
+          <h1>A Claude Code desktop app: build and install tools without the terminal.</h1>
+          <p class="blog-hero-lead">
+            People searching for a Claude Code desktop app usually want one of two things: a way to use
+            the agent without a terminal, or a way to turn what it builds into a real app. TinyAtom
+            is a free macOS app that does both, and this page explains how it fits alongside
+            Anthropic&rsquo;s official options.
+          </p>
+          <div class="blog-meta">
+            <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> Published <time datetime="2026-08-19">August 19, 2026</time></span>
+            <span><i class="ph ph-clock" aria-hidden="true"></i> 6 min read</span>
+            <span class="blog-tags">Claude Code · Desktop app · macOS</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Download the macOS beta</span>
+            </a>
+            <a class="btn btn-outline btn-lg" href="/features/ai-internal-tool-builder/">AI internal tool builder</a>
+          </div>
+        </div>
+        <figure class="blog-cover">
+          <img
+            src="/assets/blog/local-tools-vs-saas.webp"
+            alt="A local desktop application compared with cloud-hosted alternatives."
+            width="1536"
+            height="1024"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+        <aside class="blog-product-intro" aria-label="About TinyAtom">
+          <div class="blog-product-copy">
+            <span class="blog-product-kicker"><i class="ph ph-sparkle" aria-hidden="true"></i> AI internal tool builder</span>
+            <h2>Build internal tools with AI.</h2>
+            <p>TinyAtom turns manual workflows and spreadsheets into tools employees can install, share, and update. Each tool runs on their computers, company data stays local, and no app server or per-seat cloud platform is required.</p>
+          </div>
+          <a class="btn btn-outline" href="/features/ai-internal-tool-builder/">See how TinyAtom works <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </aside>
+      </header>
+
+      <article class="article-prose">
+        <div class="article-answer">
+          <strong>Short answer</strong>
+          <p>Anthropic ships Claude Code for the terminal and IDEs, and its Claude desktop app can run Claude Code sessions. If what you actually want is a desktop app where Claude Code builds software you can install, share, and update, that is TinyAtom: free, macOS, local-first.</p>
+        </div>
+
+        <h2>The three things people mean by &ldquo;Claude Code desktop app&rdquo;</h2>
+        <p>
+          <strong>Anthropic&rsquo;s Claude app.</strong> The official desktop app for macOS and
+          Windows. It is built around chat, and it can drive Claude Code sessions on your machine.
+          It is the right choice for conversational work and quick agent runs.
+        </p>
+        <p>
+          <strong>IDE extensions and terminal wrappers.</strong> Claude Code plugs into editors, and
+          the community builds GUI wrappers around the CLI. These are made for developers: you still
+          work with source files, projects, and Git.
+        </p>
+        <p>
+          <strong>A desktop app that turns Claude Code into a software factory.</strong> This is
+          TinyAtom. The agent is the same; the difference is what surrounds it. You describe a tool
+          in plain language, Claude Code builds it while you watch a live preview, TinyAtom shows
+          you exactly what the finished tool can access, and the result installs like a normal app
+          and shares to your team. No terminal at any step.
+        </p>
+
+        <h2>What the desktop workflow looks like</h2>
+        <p>
+          TinyAtom Studio runs the whole build as a product workflow rather than a chat session.
+          The agent first interviews you and writes requirements and a plan you approve. Then it
+          implements step by step with a live preview, so feedback happens while the tool takes
+          shape. Before anything runs, you review the capabilities it requested: files, data,
+          network, computer features. Finally the tool installs on your Mac, publishes to a private
+          company list for teammates, and updates when you ship a new version.
+        </p>
+        <p>
+          Everything runs and stores its data locally. There is no hosting bill and no server,
+          because there is no cloud in the path at all.
+        </p>
+
+        <h2>When the terminal is still the right tool</h2>
+        <p>
+          If you are a developer working inside an existing codebase, the terminal version of
+          Claude Code is the right interface, and no desktop app should get between you and your
+          repository. TinyAtom is for the other job: creating new, self-contained tools, especially
+          when the person driving is not a developer, or when the result needs to reach a team.
+          For that audience, the walkthroughs are
+          <a href="/blog/claude-code-for-non-developers/">Claude Code for non-developers</a> and
+          <a href="/blog/claude-code-internal-tools/">build internal tools with Claude Code</a>.
+        </p>
+      </article>
+
+      <section class="faq-section" aria-labelledby="dt-faq-title">
+        <div class="faq-inner">
+          <div class="faq-intro reveal">
+            <h2 class="section-title" id="dt-faq-title">Claude Code desktop app questions</h2>
+            <p class="section-lead">Direct answers on apps, platforms, and pricing.</p>
+          </div>
+          <div class="faq-list reveal" style="--reveal-delay: 60ms">
+            <details class="faq-item">
+              <summary>Is there an official Claude Code desktop app?</summary>
+              <p>Anthropic ships Claude Code as a terminal tool and as IDE extensions, and the Claude desktop app can drive Claude Code sessions. None of these turn the result into software you can install and share. TinyAtom is a free macOS desktop app that drives Claude Code end to end: describe, build with live preview, review access, install.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is there a Claude Code app for Mac?</summary>
+              <p>Yes, two kinds. Anthropic's own Claude app runs on macOS and can run Claude Code sessions. TinyAtom is a free Mac app that uses Claude Code specifically to build installable tools: it manages the project, shows a live preview, reviews what the tool can access, and installs the finished result like a normal app.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I use Claude Code without the terminal?</summary>
+              <p>Yes. In TinyAtom you never see a command line. You describe the tool in plain language, the app drives Claude Code for you, and you interact through a plan you approve, a live preview, and an access review before install.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Does TinyAtom replace Claude Code?</summary>
+              <p>No, it drives it. Claude Code writes the code; TinyAtom supplies the interface and the lifecycle: structured requirements, live preview, capability review, packaging, installation, team sharing, and updates. It works the same way with Codex, Cursor, and Gemini.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is TinyAtom free? What about Claude Code?</summary>
+              <p>TinyAtom is free for everyone. Claude Code requires a paid Claude plan or API usage from Anthropic. If your company pays for a different agent, TinyAtom drives Codex, Cursor, and Gemini too.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is there a Claude Code desktop app for Windows or Linux?</summary>
+              <p>TinyAtom currently ships a macOS beta for Apple silicon, with Windows and Linux in progress. Anthropic's terminal version of Claude Code runs on all three platforms today.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section reveal">
+        <div class="cta-panel">
+          <div>
+            <h2 class="section-title">Use Claude Code from a desktop app.</h2>
+            <p class="section-lead">Free to use. Runs on your computer. No servers required.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg" href="/#download" data-download-cta>
+              <i class="ph ph-apple-logo" data-download-icon aria-hidden="true"></i>
+              <span data-download-label>Download the macOS beta</span>
+            </a>
+            <p class="cta-note" data-download-note hidden></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="/assets/tinyatom-logo.svg" alt="" width="24" height="24" />
+            <span>TinyAtom</span>
+          </div>
+          <p class="footer-tagline">TinyAtom is the operating system for internal tools. Build, install, share, and update the software your company needs.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Explore">
+          <h2 class="footer-nav-title">Explore</h2>
+          <ul>
+            <li><a href="/features/ai-internal-tool-builder/">AI internal tool builder</a></li>
+            <li><a href="/#how">How it works</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Blog">
+          <h2 class="footer-nav-title">Blog</h2>
+          <ul>
+            <li><a href="/blog/">All posts</a></li>
+            <li><a href="/blog/spreadsheet-to-app">Spreadsheet to app</a></li>
+            <li><a href="/blog/build-internal-tools">Build internal tools</a></li>
+            <li><a href="/blog/retool-alternative">Retool alternative</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Legal">
+          <h2 class="footer-nav-title">Legal</h2>
+          <ul>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Use</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer-bottom">
+        <p>&copy; 2026 TinyAtom. All rights reserved.</p>
+        <p>Your tools and your data stay on your computer.</p>
+      </div>
+    </footer>
+
+    <button type="button" class="theme-fab" id="theme-fab" aria-label="Theme: system. Click to switch.">
+      <span class="theme-fab-icon theme-fab-icon-system" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+          <path d="M8 21h8"></path><path d="M12 17v4"></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-light" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </span>
+      <span class="theme-fab-icon theme-fab-icon-dark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path></svg>
+      </span>
+    </button>
+  </body>
+</html>

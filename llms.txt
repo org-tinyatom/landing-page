@@ -17,6 +17,10 @@ The operating system for internal tools: build with an AI coding agent, then ins
 - [Blog](https://tinyatom.app/blog/): Guides and comparisons for internal tools that run on your computer
 - [Build internal tools with AI coding agents](https://tinyatom.app/blog/build-internal-tools-with-ai-coding-agents/): The roles of the coding agent and TinyAtom from planning through updates
 - [Build internal tools with Claude Code](https://tinyatom.app/blog/claude-code-internal-tools/): How Claude Code builds an internal tool and how TinyAtom reviews, installs, shares, and updates it without a server
+- [Claude Code for non-developers](https://tinyatom.app/blog/claude-code-for-non-developers/): How non-developers build real tools with Claude Code through a desktop workflow with no terminal
+- [Claude Code desktop app](https://tinyatom.app/blog/claude-code-desktop-app/): How TinyAtom compares with Anthropic's official options as a desktop app that drives Claude Code
+- [Vibe coding internal tools](https://tinyatom.app/blog/vibe-coding-internal-tools/): Getting a vibe-coded internal tool from prototype to software a team can install, trust, and update
+- [Base44 vs Lovable vs Claude Code](https://tinyatom.app/blog/base44-vs-lovable-vs-claude-code/): The hosted credit-metered platforms compared with the local flat-rate agent for internal tools
 - [Workflow app builder for manual processes](https://tinyatom.app/blog/manual-workflow-automation/): How TinyAtom turns repeated copying, checking, approvals, and reporting into a focused local tool
 - [Local tools vs SaaS](https://tinyatom.app/blog/local-tools-vs-saas): Why local internal tools are easier, faster, and safer than buying third-party SaaS
 - [Build internal tools](https://tinyatom.app/blog/build-internal-tools): How to build custom internal tools without assigning a dev-team project
