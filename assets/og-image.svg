@@ -46,7 +46,7 @@
     <rect width="1024" height="1024" rx="224" ry="224" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="8"/>
   </g>
 
-  <text x="478" y="300" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="118" letter-spacing="-3" fill="#eef2f3">TinyAtom</text>
+  <text x="478" y="300" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="100" letter-spacing="-2.5" fill="#eef2f3">TinyAtom</text>
 
   <text x="482" y="360" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="28" fill="#a4a8b3">Build internal tools without running servers</text>
 
