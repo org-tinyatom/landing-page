@@ -16,6 +16,7 @@ The operating system for internal tools: build with an AI coding agent, then ins
 - [AI internal tool builder](https://tinyatom.app/features/ai-internal-tool-builder/): How TinyAtom works with Claude, OpenAI Codex, Cursor, Gemini, and local coding agents
 - [Blog](https://tinyatom.app/blog/): Guides and comparisons for internal tools that run on your computer
 - [Build internal tools with AI coding agents](https://tinyatom.app/blog/build-internal-tools-with-ai-coding-agents/): The roles of the coding agent and TinyAtom from planning through updates
+- [Build internal tools with Claude Code](https://tinyatom.app/blog/claude-code-internal-tools/): How Claude Code builds an internal tool and how TinyAtom reviews, installs, shares, and updates it without a server
 - [Workflow app builder for manual processes](https://tinyatom.app/blog/manual-workflow-automation/): How TinyAtom turns repeated copying, checking, approvals, and reporting into a focused local tool
 - [Local tools vs SaaS](https://tinyatom.app/blog/local-tools-vs-saas): Why local internal tools are easier, faster, and safer than buying third-party SaaS
 - [Build internal tools](https://tinyatom.app/blog/build-internal-tools): How to build custom internal tools without assigning a dev-team project

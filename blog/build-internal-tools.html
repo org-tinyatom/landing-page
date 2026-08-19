@@ -63,7 +63,7 @@
         "url": "https://tinyatom.app/blog/build-internal-tools",
         "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tinyatom.app/blog/build-internal-tools" },
         "datePublished": "2026-07-15",
-        "dateModified": "2026-08-08",
+        "dateModified": "2026-08-19",
         "image": "https://tinyatom.app/assets/blog/build-internal-tools.webp",
         "inLanguage": "en",
         "author": { "@type": "Organization", "name": "TinyAtom", "url": "https://tinyatom.app/" },
@@ -127,6 +127,22 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Install the tool on employee computers, or keep your internal tools together on a private company list so the team can find and install them. Tools that should stay inside the business do not have to be published to the public marketplace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I build internal tools without competing for engineering time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Keep the tool out of the engineering backlog entirely. In TinyAtom, the person who owns the workflow describes the tool, an AI coding assistant builds it, and the owner reviews what it can access and installs it. No repository, sprint, or deployment pipeline is involved, so nothing competes with product work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I update and maintain an internal tool built without coding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In TinyAtom, maintenance is a rebuild, not a codebase to own. Describe the change, let the coding assistant apply it, review the result, and the update reaches every computer that installed the tool from your company list. There is no server to patch and no dependency stack to keep alive."
             }
           },
           {
@@ -200,7 +216,7 @@
           </p>
           <div class="blog-meta">
             <span><i class="ph ph-calendar-blank" aria-hidden="true"></i> Published <time datetime="2026-07-15">July 15, 2026</time></span>
-            <span><i class="ph ph-clock" aria-hidden="true"></i> 4 min read</span>
+            <span><i class="ph ph-clock" aria-hidden="true"></i> 9 min read</span>
             <span class="blog-tags">Custom internal tools · AI builder · No servers</span>
           </div>
           <div class="hero-actions">
@@ -350,6 +366,106 @@
 
       <section class="section business-section">
         <div class="section-intro reveal">
+          <h2 class="section-title">Build or buy: how to decide for each internal tool.</h2>
+          <p class="section-lead">
+            The build-versus-buy question is not answered once for the whole company. It is answered
+            per tool, and three checks settle most cases quickly.
+          </p>
+        </div>
+
+        <div class="value-list reveal" style="--reveal-delay: 80ms">
+          <article class="value-row">
+            <div>
+              <h3>Buy when the job is generic and the market is mature</h3>
+              <p>
+                Accounting, payroll, email, and CRM are solved products. A vendor spreads its
+                engineering across thousands of customers, and your process should bend to the
+                standard, not the other way around.
+              </p>
+              <p class="example-line">Generic job &middot; mature vendors &middot; adopt the standard</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-shopping-cart"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Build when the job is specific to how your team works</h3>
+              <p>
+                Intake queues, approval steps, inspection checklists, and hand-off trackers encode
+                your process. Off-the-shelf software makes you renumber your workflow to fit its
+                fields; a built tool fits the workflow you already run.
+              </p>
+              <p class="example-line">Your process &middot; your fields &middot; your rules</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-hammer"></i></span>
+          </article>
+          <article class="value-row">
+            <div>
+              <h3>Building only wins if it stays cheap to own</h3>
+              <p>
+                The classic argument against building is maintenance: a dev-team project needs a
+                repository, deployments, and an owner for years. TinyAtom changes that arithmetic.
+                A tool is described, built with a coding assistant, and installed; updating it is a
+                new build of the same description, not a maintenance backlog.
+              </p>
+              <p class="example-line">No repo to own &middot; no deployment &middot; rebuild instead of maintain</p>
+            </div>
+            <span class="value-icon" aria-hidden="true"><i class="ph ph-scales"></i></span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section business-section">
+        <div class="section-intro reveal">
+          <h2 class="section-title">What an internal tool costs, three ways.</h2>
+          <p class="section-lead">
+            Costs hide in different places depending on the route. For a small team of ten people,
+            over one year, the three routes look like this.
+          </p>
+        </div>
+
+        <div class="compare-wrap reveal" style="--reveal-delay: 80ms">
+          <table class="compare-table">
+            <caption class="sr-only">Cost comparison of three ways to get an internal tool</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">SaaS subscription</th>
+                <th scope="col">Dev-team project</th>
+                <th scope="col">TinyAtom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Up-front cost</th>
+                <td>Low: sign up and configure</td>
+                <td>High: weeks of engineering time</td>
+                <td class="cell-tinyatom">An afternoon describing and reviewing the tool</td>
+              </tr>
+              <tr>
+                <th scope="row">Ongoing cost</th>
+                <td>Per-seat bill every month, per product</td>
+                <td>Maintenance, hosting, and an owner on the team</td>
+                <td class="cell-tinyatom">Free; updates are a new build when you want one</td>
+              </tr>
+              <tr>
+                <th scope="row">Fit to your workflow</th>
+                <td>You adapt to the vendor&rsquo;s model</td>
+                <td>Exact fit, if the backlog ever gets to it</td>
+                <td class="cell-tinyatom">Exact fit, without waiting on a backlog</td>
+              </tr>
+              <tr>
+                <th scope="row">Where the data lives</th>
+                <td>The vendor&rsquo;s cloud</td>
+                <td>Your infrastructure, which you operate</td>
+                <td class="cell-tinyatom">On the computer that runs the tool</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section business-section">
+        <div class="section-intro reveal">
           <h2 class="section-title">Internal jobs business teams build tools for.</h2>
           <p class="section-lead">
             The best fits are used by one person or a small team, too specific for off-the-shelf
@@ -464,6 +580,24 @@
                 Install the tool on employee computers, or keep your internal tools together on a
                 private company list so the team can find and install them. Tools that should stay
                 inside the business do not have to be published to the public marketplace.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>How can I build internal tools without competing for engineering time?</summary>
+              <p>
+                Keep the tool out of the engineering backlog entirely. In TinyAtom, the person who
+                owns the workflow describes the tool, an AI coding assistant builds it, and the owner
+                reviews what it can access and installs it. No repository, sprint, or deployment
+                pipeline is involved, so nothing competes with product work.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>How do I update and maintain an internal tool built without coding?</summary>
+              <p>
+                In TinyAtom, maintenance is a rebuild, not a codebase to own. Describe the change,
+                let the coding assistant apply it, review the result, and the update reaches every
+                computer that installed the tool from your company list. There is no server to patch
+                and no dependency stack to keep alive.
               </p>
             </details>
             <details class="faq-item">
