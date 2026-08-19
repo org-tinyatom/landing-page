@@ -46,9 +46,9 @@
     <rect width="1024" height="1024" rx="224" ry="224" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="8"/>
   </g>
 
-  <text x="478" y="352" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="118" letter-spacing="-3" fill="#eef2f3">TinyAtom</text>
+  <text x="478" y="300" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="118" letter-spacing="-3" fill="#eef2f3">TinyAtom</text>
 
-  <text x="600" y="490" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="34" fill="#a4a8b3">Build internal tools without running servers</text>
+  <text x="482" y="360" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="28" fill="#a4a8b3">Build internal tools without running servers</text>
 
-  <text x="600" y="546" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="24" fill="#6f7480">Free for everyone &#183; Local-first &#183; macOS</text>
+  <text x="482" y="404" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="20" fill="#6f7480">Free for everyone &#183; Local-first &#183; macOS</text>
 </svg>
