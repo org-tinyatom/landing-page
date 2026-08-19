@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e1e23"/>
+      <stop offset="1" stop-color="#101013"/>
+    </linearGradient>
+    <radialGradient id="pageGlow" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#0f8ce0" stop-opacity="0.16"/>
+      <stop offset="0.55" stop-color="#0f8ce0" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#0f8ce0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2a30"/>
+      <stop offset="1" stop-color="#17171a"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#82c8ff"/>
+      <stop offset="0.55" stop-color="#2f9df0"/>
+      <stop offset="1" stop-color="#0069bd"/>
+    </linearGradient>
+    <radialGradient id="tileGlow" cx="0.5" cy="0.42" r="0.62">
+      <stop offset="0" stop-color="#0f8ce0" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#0f8ce0" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="sq"><rect width="1024" height="1024" rx="224" ry="224"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#page)"/>
+  <rect width="1200" height="630" fill="url(#pageGlow)"/>
+
+  <g transform="translate(220,208) scale(0.2)">
+    <g clip-path="url(#sq)">
+      <rect width="1024" height="1024" fill="url(#tile)"/>
+      <rect width="1024" height="1024" fill="url(#tileGlow)"/>
+      <g transform="translate(-21 -17.5)">
+        <g transform="rotate(-14 512 512)">
+          <path d="M180 560 A332 104 0 0 1 844 560" stroke="url(#blue)" stroke-width="42" fill="none" opacity="0.55"/>
+        </g>
+        <path d="M330 782 L512 278 L694 782" stroke="url(#blue)" stroke-width="94" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="rotate(-14 512 512)">
+          <path d="M180 560 A332 104 0 0 0 844 560" stroke="url(#blue)" stroke-width="46" fill="none"/>
+        </g>
+        <circle cx="846" cy="478" r="42" fill="#a8d8ff"/>
+      </g>
+    </g>
+    <rect width="1024" height="1024" rx="224" ry="224" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="8"/>
+  </g>
+
+  <text x="478" y="352" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="118" letter-spacing="-3" fill="#eef2f3">TinyAtom</text>
+
+  <text x="600" y="490" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="34" fill="#a4a8b3">Build internal tools without running servers</text>
+
+  <text x="600" y="546" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="500" font-size="24" fill="#6f7480">Free for everyone &#183; Local-first &#183; macOS</text>
+</svg>
