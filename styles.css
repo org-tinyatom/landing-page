@@ -1060,7 +1060,7 @@ button { font-family: inherit; }
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(36px, 4.5vw, 64px);
-  align-items: start;
+  align-items: center;
 }
 .what-intro .section-title {
   max-width: 18ch;
