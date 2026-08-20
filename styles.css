@@ -1671,6 +1671,21 @@ button { font-family: inherit; }
   color: var(--atom-muted);
   font-size: 0.75rem;
 }
+.footer-badge {
+  display: inline-flex;
+  line-height: 0;
+  opacity: 0.9;
+  transition: opacity 150ms var(--atom-ease);
+}
+.footer-badge:hover {
+  opacity: 1;
+}
+.footer-badge img {
+  display: block;
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+}
 
 /* -- Legal pages (privacy, terms) -- */
 .legal-page {
